@@ -295,10 +295,11 @@
             <div class="container hero-content">
                 <div class="badge"><span class="dot"></span> Open to AI & Software Engineering roles</div>
                 
-                <!-- YOUR PROFILE PICTURE IS HERE -->
+                <!-- PROFILE PICTURE WITH CACHE BUSTER AND FALLBACK -->
                 <div class="avatar-ring">
                     <div class="inner">
-                        <img src="Profile.jpg" alt="Sawaira Mumtaz">
+                        <img src="Profile.jpg?v=1" alt="Sawaira Mumtaz" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="placeholder" style="display:none;">SM</div>
                     </div>
                 </div>
 
