@@ -102,7 +102,7 @@
         .hero .badge .dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pulse-dot 2s infinite; }
         @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
         
-        /* Avatar Ring */
+        /* Avatar Ring - UPDATED WITH OBJECT-POSITION */
         .avatar-ring {
             position: relative; width: 160px; height: 160px; border-radius: 50%;
             background: linear-gradient(135deg, #9333ea, #db2777); padding: 4px;
@@ -112,7 +112,9 @@
             width: 100%; height: 100%; border-radius: 50%; background: #fdfbff;
             display: flex; align-items: center; justify-content: center; overflow: hidden;
         }
-        .avatar-ring .inner img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+        .avatar-ring .inner img { 
+            width: 100%; height: 100%; object-fit: cover; object-position: center 15%; border-radius: 50%; 
+        }
         .avatar-ring .inner .placeholder {
             font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 700;
             background: linear-gradient(135deg, #9333ea, #db2777);
@@ -295,11 +297,10 @@
             <div class="container hero-content">
                 <div class="badge"><span class="dot"></span> Open to AI & Software Engineering roles</div>
                 
-                <!-- PROFILE PICTURE WITH CACHE BUSTER AND FALLBACK -->
+                <!-- PROFILE PICTURE -->
                 <div class="avatar-ring">
                     <div class="inner">
-                        <img src="Profile.jpg?v=1" alt="Sawaira Mumtaz" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                        <div class="placeholder" style="display:none;">SM</div>
+                        <img src="Profile.jpg" alt="Sawaira Mumtaz">
                     </div>
                 </div>
 
