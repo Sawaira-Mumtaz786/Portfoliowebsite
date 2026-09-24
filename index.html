@@ -154,7 +154,6 @@
             transition: var(--transition); display: flex; flex-direction: column;
             position: relative; overflow: hidden; box-shadow: var(--shadow-sm);
         }
-        /* Faux Browser Header for consistency */
         .project-card::before {
             content: ''; display: block; height: 24px; background: #faf5ff;
             border-bottom: 1px solid #f3e8ff; position: relative;
@@ -197,22 +196,29 @@
         .btn-ds { background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); color: #fff; box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35); }
         .btn-ds:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(245, 158, 11, 0.5); }
         
-        /* ===== SKILLS (GROUPED) ===== */
+        /* ===== SKILLS (EXPANDED - 6 CATEGORIES) ===== */
         .skills { padding: 60px 0; background: #faf5ff; }
-        .skills-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px; }
+        .skills-categories { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 24px; margin-top: 40px; 
+        }
         .skill-category { 
             background: #fff; border: 1px solid #f3e8ff; border-radius: var(--radius); 
             padding: 24px; box-shadow: var(--shadow-sm); text-align: left; 
+            transition: var(--transition);
         }
+        .skill-category:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
         .skill-category h3 { 
             font-size: 1.05rem; font-weight: 700; color: #111827; margin-bottom: 16px; 
-            display: flex; align-items: center; gap: 10px; border-bottom: 2px solid #f3e8ff; padding-bottom: 12px; 
+            display: flex; align-items: center; gap: 10px; 
+            border-bottom: 2px solid #f3e8ff; padding-bottom: 12px; 
         }
         .skill-category h3 i { color: var(--accent); }
         .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
         .skill-tags span { 
             font-size: 0.8rem; font-weight: 500; background: #faf5ff; padding: 6px 14px; 
-            border-radius: 100px; color: var(--text-primary); border: 1px solid #e9d5ff; transition: var(--transition); 
+            border-radius: 100px; color: var(--text-primary); border: 1px solid #e9d5ff; 
+            transition: var(--transition); 
         }
         .skill-tags span:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
         
@@ -257,12 +263,10 @@
         .contact-info p { color: var(--text-secondary); margin-bottom: 32px; font-size: 1.05rem; line-height: 1.7; max-width: 600px; }
         .contact-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
         
-        /* Footer */
         footer { border-top: 1px solid #f3e8ff; padding: 32px 0; background: #fff; text-align: center; }
         footer p { color: #9ca3af; font-size: 0.88rem; }
         footer p i { color: #db2777; }
         
-        /* Responsive */
         @media (max-width: 900px) {
             .about-content { grid-template-columns: 1fr; gap: 40px; }
             .about-visual .code-block { max-width: 100%; }
@@ -485,42 +489,117 @@
             </div>
         </section>
 
-        <!-- ===== SKILLS (GROUPED) ===== -->
+        <!-- ===== SKILLS (FULLY UPDATED - 6 CATEGORIES) ===== -->
         <section class="skills" id="skills">
             <div class="container">
                 <div class="text-center">
                     <span class="section-label">Expertise</span>
                     <h2 class="section-title">Tech <span class="highlight">Stack</span></h2>
+                    <p class="section-sub mx-auto">A complete overview of the technologies, tools, and concepts I work with daily.</p>
                 </div>
                 <div class="skills-categories">
-                    <!-- AI & ML -->
+                    
+                    <!-- 1. AI & Machine Learning -->
                     <div class="skill-category">
                         <h3><i class="fas fa-brain"></i> AI & Machine Learning</h3>
                         <div class="skill-tags">
-                            <span>Python</span><span>LangChain</span><span>LangGraph</span><span>Gemini AI</span><span>RAG</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>Jupyter/Colab</span><span>Prompt Eng.</span>
+                            <span>LLM Integration</span>
+                            <span>RAG Systems</span>
+                            <span>Prompt Engineering</span>
+                            <span>Semantic Search</span>
+                            <span>AI Agents</span>
+                            <span>AI Automation</span>
+                            <span>Model Testing</span>
+                            <span>Deep Learning</span>
+                            <span>Machine Learning</span>
+                            <span>Vector Databases</span>
+                            <span>pgvector</span>
+                            <span>Chroma</span>
+                            <span>Scikit-learn</span>
+                            <span>Pandas</span>
+                            <span>NumPy</span>
                         </div>
                     </div>
-                    <!-- Frontend & Mobile -->
+
+                    <!-- 2. Programming Languages -->
                     <div class="skill-category">
-                        <h3><i class="fas fa-mobile-alt"></i> Frontend & Mobile</h3>
+                        <h3><i class="fas fa-code"></i> Programming Languages</h3>
                         <div class="skill-tags">
-                            <span>React</span><span>React Native</span><span>Flutter</span><span>TypeScript</span><span>Tailwind CSS</span><span>Streamlit</span><span>HTML5/CSS3</span>
+                            <span>Python</span>
+                            <span>JavaScript</span>
+                            <span>TypeScript</span>
+                            <span>Node.js</span>
+                            <span>C</span>
+                            <span>C++</span>
                         </div>
                     </div>
-                    <!-- Backend & Databases -->
+
+                    <!-- 3. Frameworks & Libraries -->
                     <div class="skill-category">
-                        <h3><i class="fas fa-server"></i> Backend & Databases</h3>
+                        <h3><i class="fas fa-cubes"></i> Frameworks & Libraries</h3>
                         <div class="skill-tags">
-                            <span>Node.js</span><span>Express</span><span>NestJS</span><span>Flask</span><span>REST APIs</span><span>SQL (SQLite, PostgreSQL)</span><span>MongoDB</span>
+                            <span>LangChain</span>
+                            <span>LangGraph</span>
+                            <span>HuggingFace</span>
+                            <span>TensorFlow.js</span>
+                            <span>Mongoose</span>
+                            <span>React</span>
+                            <span>React Native</span>
+                            <span>Flutter</span>
+                            <span>Express.js</span>
+                            <span>NestJS</span>
+                            <span>Flask</span>
+                            <span>Streamlit</span>
+                            <span>Tailwind CSS</span>
                         </div>
                     </div>
-                    <!-- Tools & Concepts -->
+
+                    <!-- 4. APIs & Integrations -->
                     <div class="skill-category">
-                        <h3><i class="fas fa-tools"></i> Tools & Concepts</h3>
+                        <h3><i class="fas fa-plug"></i> APIs & Integrations</h3>
                         <div class="skill-tags">
-                            <span>Git / GitHub</span><span>JWT Auth</span><span>Server-Sent Events</span><span>Agile / Scrum</span><span>Render</span><span>Railway</span><span>Tkinter</span><span>C / C++</span>
+                            <span>Google Gemini</span>
+                            <span>OpenAI</span>
+                            <span>Groq</span>
+                            <span>OpenRouter</span>
+                            <span>REST APIs</span>
+                            <span>Flask APIs</span>
+                            <span>Server-Sent Events (SSE)</span>
                         </div>
                     </div>
+
+                    <!-- 5. Databases & Authentication -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-database"></i> Databases & Authentication</h3>
+                        <div class="skill-tags">
+                            <span>MongoDB</span>
+                            <span>PostgreSQL</span>
+                            <span>SQLite</span>
+                            <span>JWT Authentication</span>
+                            <span>bcrypt</span>
+                            <span>Secure User Auth</span>
+                            <span>CRUD Operations</span>
+                        </div>
+                    </div>
+
+                    <!-- 6. DevOps & Tools -->
+                    <div class="skill-category">
+                        <h3><i class="fas fa-tools"></i> DevOps & Tools</h3>
+                        <div class="skill-tags">
+                            <span>Git</span>
+                            <span>GitHub</span>
+                            <span>Docker</span>
+                            <span>Nginx</span>
+                            <span>Linux</span>
+                            <span>GitLab CI/CD</span>
+                            <span>Google Colab</span>
+                            <span>Jupyter</span>
+                            <span>Render</span>
+                            <span>Railway</span>
+                            <span>Agile / Scrum</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -557,7 +636,7 @@
             </div>
         </section>
 
-        <!-- ===== CONTACT (UPDATED) ===== -->
+        <!-- ===== CONTACT ===== -->
         <section class="contact" id="contact">
             <div class="container">
                 <div class="text-center">
