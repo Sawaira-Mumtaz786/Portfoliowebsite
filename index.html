@@ -144,7 +144,7 @@
         .hero-socials a:hover { background: linear-gradient(135deg, #9333ea, #db2777); color: #fff; border-color: transparent; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4); }
         
         .projects { padding: 60px 0 80px; background: #fdf2f8; }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; margin-top: 48px; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 30px; margin-top: 48px; }
         
         .project-card {
             background: #ffffff; border: 1px solid #f3e8ff; border-radius: var(--radius);
@@ -176,9 +176,13 @@
             font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
             background: #f3e8ff; padding: 4px 12px; border-radius: 100px; color: var(--accent); border: 1px solid #e9d5ff;
         }
-        .project-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; color: #111827; line-height: 1.4; }
-        .project-card .desc { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 16px; flex: 1; line-height: 1.6; }
+        .project-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; color: #111827; line-height: 1.4; }
+        .project-card .desc { font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 16px; flex: 1; line-height: 1.7; }
         .project-card .desc strong { color: var(--accent); font-weight: 600; }
+        .project-card .desc code {
+            background: #f3e8ff; padding: 2px 6px; border-radius: 4px;
+            font-size: 0.78rem; color: var(--accent-dark); font-family: 'Courier New', monospace;
+        }
         .project-card .links { display: flex; flex-wrap: wrap; gap: 16px; padding-top: 16px; border-top: 1px solid #f3e8ff; }
         .project-card .links a { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 600; color: var(--text-secondary); transition: var(--transition); }
         .project-card .links a:hover { color: var(--accent); }
@@ -264,7 +268,6 @@
         .about-visual .code-block .comment { color: #9ca3af; font-style: italic; }
         .about-visual .code-block .func { color: #9333ea; font-weight: 600; }
         
-        /* ===== CONTACT (WITH FORM) ===== */
         .contact { padding: 60px 0 80px; background: #faf5ff; }
         .contact-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; margin-top: 48px; align-items: start; }
         
@@ -310,7 +313,6 @@
             box-shadow: 0 6px 20px rgba(168, 85, 247, 0.35);
         }
         
-        /* CONTACT FORM */
         .contact-form-container {
             background: #fff; border: 1px solid #f3e8ff; border-radius: var(--radius);
             padding: 36px; box-shadow: var(--shadow-md); position: relative;
@@ -445,7 +447,7 @@
             </div>
         </section>
 
-        <!-- ===== PROJECTS ===== -->
+        <!-- ===== PROJECTS (DETAILED DESCRIPTIONS) ===== -->
         <section class="projects" id="projects">
             <div class="container">
                 <div class="text-center">
@@ -454,126 +456,144 @@
                     <p class="section-sub mx-auto">A selection of my work — from AI-powered chatbots to full-stack applications and mobile apps.</p>
                 </div>
                 <div class="projects-grid">
+                    
+                    <!-- 1. Advanced AI Systems -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="advanced-ai.png" alt="Advanced AI Systems Dashboard" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                             <i class="fas fa-network-wired placeholder-icon" style="display:none;"></i>
                         </div>
                         <div class="project-content">
-                            <div class="tech-tags"><span>Python</span><span>LangGraph</span><span>Streamlit</span></div>
+                            <div class="tech-tags"><span>Python</span><span>LangGraph</span><span>Streamlit</span><span>Groq</span></div>
                             <h3>Advanced AI Systems: LLM Eval & Multi-Agent</h3>
-                            <p class="desc">Multi-agent orchestration with <strong>LangGraph</strong> and <strong>LLM-as-judge</strong> evaluation dashboard for hallucination detection and answer relevance.</p>
+                            <p class="desc">Built with <strong>Python</strong> using the <strong>Groq</strong> inference API (<code>openai/gpt-oss-20b</code>). <strong>Part 1:</strong> An LLM evaluation dashboard that uses <strong>LLM-as-judge methodology</strong> to score outputs on Faithfulness (hallucination detection) and Answer Relevance, visualizing results with <strong>Plotly</strong> charts in a <strong>Streamlit</strong> UI. <strong>Part 2:</strong> A <strong>LangGraph</strong> multi-agent state machine where <strong>Agent A (Structurer)</strong> converts messy text into clean JSON, and <strong>Agent B (Validator)</strong> applies business rules (flagging amounts > 1000). Execution automatically pauses at checkpoints for <strong>Human-in-the-Loop</strong> approval when anomalies are detected.</p>
                             <div class="links">
                                 <a href="https://advanced-ai-systems-fsz7jtqn7o8shhntitckpp.streamlit.app/" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/advanced-ai-systems" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 2. Notifications System -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="notifications.png" alt="Notifications System Login" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                             <i class="fas fa-bell placeholder-icon" style="display:none;"></i>
                         </div>
                         <div class="project-content">
-                            <div class="tech-tags"><span>React</span><span>NestJS</span><span>Gemini AI</span></div>
+                            <div class="tech-tags"><span>React</span><span>NestJS</span><span>TypeScript</span><span>Gemini AI</span></div>
                             <h3>Notifications & AI Incident Engine</h3>
-                            <p class="desc">Enterprise notification engine with <strong>JWT auth</strong>, real-time 90s auto-close, and <strong>Gemini AI</strong> auto-triage for incident severity scoring.</p>
+                            <p class="desc">Full-stack enterprise app with a <strong>React + TypeScript</strong> frontend and a modular <strong>NestJS</strong> backend (Controllers, Services, DTOs, Guards). Replaced legacy MD5 hashing with <strong>bcrypt (10 rounds)</strong> and cookie sessions with stateless <strong>JWT authentication</strong>. Strict resource isolation ensures users can only see their own notifications. INFO alerts auto-dismiss after <strong>90 seconds</strong> with progress indicators. Integrated <strong>Google Gemini AI</strong> for auto-triage: it determines severity, assigns urgency scores (1-10), generates executive health digests, and creates Root Cause Analysis playbooks with terminal command remediation steps.</p>
                             <div class="links">
                                 <a href="https://full-stack-app-k9jl.onrender.com" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/Notification-app" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 3. AI Clothing & Inventory -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="clothing.png" alt="AI Clothing Management System" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                             <i class="fas fa-tshirt placeholder-icon" style="display:none;"></i>
                         </div>
                         <div class="project-content">
-                            <div class="tech-tags"><span>Python</span><span>Streamlit</span><span>Gemini</span></div>
+                            <div class="tech-tags"><span>Python</span><span>Streamlit</span><span>Tkinter</span><span>Gemini</span><span>SQLite</span></div>
                             <h3>AI Clothing & Inventory System</h3>
-                            <p class="desc"><strong>Vision-based auto-tagging</strong> for inventory using Gemini 2.5 Flash. Includes real-time stock tracking and profit analytics.</p>
+                            <p class="desc"><strong>Final Year Project</strong> — originally built in <strong>Python + Tkinter</strong> with <strong>SQLite</strong> backend, then upgraded with AI. Integrated <strong>Google Gemini 2.5 Flash</strong> via the GenAI SDK for <strong>vision-based auto-tagging</strong>: users upload a product photo and the AI extracts the item name, category (Men/Women/Kids), season, size, and color. Also built a <strong>Streamlit web version</strong> for browser access. Features real-time stock tracking with low-stock badges (≤5 units), profit analytics dashboard (Gross Profit, Sales Revenue, COGS), and CSV export.</p>
                             <div class="links">
                                 <a href="https://clothe-management-system-web-application-i7qpfypguzynnux2tszqk.streamlit.app" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/Clothe-management-system-Web-Application" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 4. RAG Chatbot -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="rag-chatbot.png" alt="MGT501 RAG Chatbot" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                             <i class="fas fa-robot placeholder-icon" style="display:none;"></i>
                         </div>
                         <div class="project-content">
-                            <div class="tech-tags"><span>Flask</span><span>Gemini</span><span>RAG</span></div>
+                            <div class="tech-tags"><span>Python</span><span>Flask</span><span>Gemini</span><span>RAG</span></div>
                             <h3>MGT501 RAG AI Chatbot</h3>
-                            <p class="desc">Retrieval-augmented QA chatbot grounded in <strong>45+ university handouts</strong>. Uses Google Embeddings and Gemini for syllabus-only answers.</p>
+                            <p class="desc">Retrieval-Augmented Generation chatbot built in <strong>Python + Flask</strong>. Uses <strong>Google text-embedding-004</strong> to convert <strong>45+ MGT501 course handouts</strong> into vector embeddings stored in a vector index. When a user asks a question, the system runs <strong>cosine similarity search</strong> to fetch the Top-K most relevant lecture chunks, then passes them to <strong>Gemini</strong> with a strict academic grounding prompt. Enforces <strong>out-of-domain refusal</strong> — if the question isn't about HRM course material, the bot refuses to answer, preventing academic misinformation. Evaluated against <strong>21 benchmark questions</strong> across all syllabus topics.</p>
                             <div class="links">
                                 <a href="https://rag-chatbot-lw6m.onrender.com" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/Rag-chatbot" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 5. Posts Fusion Studio -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="posts-fusion.png" alt="Posts Fusion Studio" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                             <i class="fas fa-pen-fancy placeholder-icon" style="display:none;"></i>
                         </div>
                         <div class="project-content">
-                            <div class="tech-tags"><span>Node.js</span><span>Express</span><span>SSE</span></div>
+                            <div class="tech-tags"><span>Node.js</span><span>Express</span><span>JavaScript</span><span>SSE</span></div>
                             <h3>Posts Fusion Studio — AI Content Gen</h3>
-                            <p class="desc">Real-time AI content generator using <strong>Server-Sent Events (SSE)</strong> to stream social media posts word-by-word.</p>
+                            <p class="desc">Real-time AI content streaming app built with <strong>Node.js + Express</strong>. Implemented <strong>Server-Sent Events (SSE)</strong> architecture to push tokens from the backend to the browser as they're generated, creating a word-by-word typing effect. Two generation modes: (1) <strong>Streaming mode</strong> using <code>EventSource</code> for live token-by-token rendering, and (2) <strong>Full Post mode</strong> using standard JSON fetch. Users enter Topic, Niche, and Tone, and the app generates mock social content via a built-in generator (no API key required). Architected for easy swapping to real APIs (OpenAI, OpenRouter) via environment variables.</p>
                             <div class="links">
                                 <a href="https://posts-fusion-studio.onrender.com" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/AI-Engineering-Internship-Project" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 6. College Alert -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="collegealert.png" alt="College Alert App" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                             <i class="fas fa-calendar-check placeholder-icon" style="display:none;"></i>
                         </div>
                         <div class="project-content">
-                            <div class="tech-tags"><span>React Native</span><span>Expo</span></div>
+                            <div class="tech-tags"><span>React Native</span><span>Expo</span><span>JavaScript</span></div>
                             <h3>College Alert App</h3>
-                            <p class="desc">Cross-platform mobile event manager with <strong>scheduled local push notifications</strong> via Expo.</p>
+                            <p class="desc">Mobile app built with <strong>React Native + Expo</strong> for managing college events (Tech Fests, Career Fairs, Hackathons). State management using <strong>React useState hooks</strong> for the dynamic event list and form inputs. Renders cards via <strong>FlatList</strong> for optimized scrolling. Features add event with validation, delete with confirmation alert, and <strong>scheduled local push notifications</strong> via <code>expo-notifications</code> — the notification handler is configured to show alerts, play sounds, and update the badge. For demo purposes, reminders fire 5 seconds after clicking "Alert Me"; in production, this would map to the actual event date/time.</p>
                             <div class="links">
                                 <a href="https://andriod-app-development.onrender.com" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/Andriod-App-Development" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 7. E-Commerce Marketplace -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="ecommerce.png" alt="E-Commerce Marketplace Login" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                             <i class="fas fa-store placeholder-icon" style="display:none;"></i>
                         </div>
                         <div class="project-content">
-                            <div class="tech-tags"><span>React Native</span><span>Expo</span></div>
+                            <div class="tech-tags"><span>React Native</span><span>Expo</span><span>State Mgmt</span></div>
                             <h3>E-Commerce Marketplace App</h3>
-                            <p class="desc">Full-stack mobile marketplace with demo authentication, cart management, and simulated payment gateway.</p>
+                            <p class="desc">Multi-screen mobile marketplace built with <strong>React Native + Expo</strong> using <strong>conditional state rendering</strong> to navigate between login, home, cart, add-product, and payment screens (no external navigation library needed). Users can browse products in a <code>FlatList</code>, add items to cart with running total calculation, list their own products for sale, and complete a simulated payment flow. Uses <strong>React useState</strong> to manage products, cart, and user session. Architecture is designed for easy integration with real backends (Firebase, Node.js) in future iterations.</p>
                             <div class="links">
                                 <a href="https://e-commerce-marketplace-app.onrender.com" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/Andriod-App-Development" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 8. Digital Art Gallery -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="artgallery.png" alt="Digital Art Gallery" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                             <i class="fas fa-palette placeholder-icon" style="display:none;"></i>
                         </div>
                         <div class="project-content">
-                            <div class="tech-tags"><span>React Native</span><span>Expo</span></div>
+                            <div class="tech-tags"><span>React Native</span><span>Expo</span><span>React Native Web</span></div>
                             <h3>Digital Art Gallery</h3>
-                            <p class="desc">Curated digital art showcase built with React Native, responsive for both mobile and web browsers.</p>
+                            <p class="desc">Cross-platform gallery app built with <strong>React Native + Expo</strong> and <strong>React Native Web</strong> so the same codebase runs on both Android and the browser. Designed a responsive grid layout showcasing famous artwork (The Starry Night, Mona Lisa, Girl with a Pearl Earring, The Scream, Guernica, etc.) with title and artist credits. Deployed to the browser using <code>npx expo export --platform web</code>, then hosted on Render. Demonstrates the power of write-once, deploy-anywhere mobile-first development.</p>
                             <div class="links">
                                 <a href="https://digital-art-gallery-a11j.onrender.com" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/Andriod-App-Development" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 9. Time Zone Converter -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="timezone.png" alt="Time Zone Converter" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -582,13 +602,14 @@
                         <div class="project-content">
                             <div class="tech-tags"><span>React Native</span><span>Expo</span><span>Luxon</span></div>
                             <h3>Time Zone Converter</h3>
-                            <p class="desc">Utility app converting time across <strong>9 major global zones</strong> with auto-filled current time.</p>
+                            <p class="desc">Utility app for converting time across <strong>9 major global zones</strong> (New York, Los Angeles, London, Paris, Dubai, Kolkata, Tokyo, Sydney, Auckland). Built with <strong>React Native + Expo</strong> for cross-platform compatibility. Uses <strong>Luxon</strong> — a modern JavaScript date/time library — for accurate timezone math including DST handling. Features auto-filled current local time of the source zone, dropdowns powered by <strong>React Native Picker</strong>, and instant conversion on button press. Also deployed as a web app on Render using Expo web export.</p>
                             <div class="links">
                                 <a href="https://time-zone-converter-q165.onrender.com" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/Andriod-App-Development" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
                             </div>
                         </div>
                     </div>
+
                 </div>
                 <div class="ds-repo-section">
                     <p><i class="fas fa-database" style="color: var(--accent); margin-right: 8px;"></i> Explore all my Data Science projects — including customer segmentation, recommendation systems, and more.</p>
@@ -732,7 +753,7 @@
             </div>
         </section>
 
-        <!-- ===== CONTACT (WITH FORM) ===== -->
+        <!-- ===== CONTACT ===== -->
         <section class="contact" id="contact">
             <div class="container">
                 <div class="text-center">
@@ -742,7 +763,6 @@
                 </div>
 
                 <div class="contact-wrapper">
-                    <!-- LEFT: Contact Info -->
                     <div class="contact-info">
                         <h3>Contact Information</h3>
                         <p>I'm actively looking for AI & Software Engineering roles. Feel free to reach out via any channel below.</p>
@@ -755,7 +775,6 @@
                             </div>
                         </div>
 
-                        <!-- ✅ CORRECTED PHONE NUMBER -->
                         <div class="info-item">
                             <i class="fas fa-phone-alt"></i>
                             <div class="info-text">
@@ -779,7 +798,6 @@
                         </div>
                     </div>
 
-                    <!-- RIGHT: Schedule & Message Form -->
                     <div class="contact-form-container">
                         <h3>Schedule a Meeting or Send a Message</h3>
                         <p class="form-subtitle">Fill out the form below and I'll get back to you within 24 hours.</p>
