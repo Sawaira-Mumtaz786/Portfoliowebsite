@@ -264,19 +264,128 @@
         .about-visual .code-block .comment { color: #9ca3af; font-style: italic; }
         .about-visual .code-block .func { color: #9333ea; font-weight: 600; }
         
+        /* ===== CONTACT (WITH FORM) ===== */
         .contact { padding: 60px 0 80px; background: #faf5ff; }
-        .contact-wrapper { display: grid; grid-template-columns: 1fr; gap: 40px; margin-top: 40px; align-items: start; }
-        .contact-info { display: flex; flex-direction: column; align-items: center; text-align: center; }
-        .contact-info h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 14px; color: #111827; }
-        .contact-info p { color: var(--text-secondary); margin-bottom: 32px; font-size: 1.05rem; line-height: 1.7; max-width: 600px; }
-        .contact-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; margin-top: 48px; align-items: start; }
+        
+        .contact-info { display: flex; flex-direction: column; text-align: left; }
+        .contact-info h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 14px; color: #111827; }
+        .contact-info > p { color: var(--text-secondary); margin-bottom: 28px; font-size: 1rem; line-height: 1.7; }
+        
+        .contact-info .info-item {
+            display: flex; align-items: center; gap: 16px; margin-bottom: 16px;
+            padding: 14px 18px; background: #fff; border: 1px solid #f3e8ff;
+            border-radius: var(--radius-sm); transition: var(--transition);
+        }
+        .contact-info .info-item:hover {
+            border-color: #e9d5ff; transform: translateX(4px); box-shadow: var(--shadow-sm);
+        }
+        .contact-info .info-item i {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: linear-gradient(135deg, #f3e8ff, #fce7f3);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--accent); font-size: 1rem; flex-shrink: 0;
+        }
+        .contact-info .info-item .info-text { display: flex; flex-direction: column; gap: 2px; }
+        .contact-info .info-item .info-label {
+            font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.05em; color: var(--text-muted);
+        }
+        .contact-info .info-item .info-value {
+            font-size: 0.9rem; font-weight: 600; color: #111827;
+        }
+        
+        .contact-info .social-buttons {
+            display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px;
+        }
+        .contact-info .social-buttons a {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 18px; border-radius: 100px; font-size: 0.85rem;
+            font-weight: 600; border: 1.5px solid #e9d5ff; background: #fff;
+            color: var(--accent); transition: var(--transition);
+        }
+        .contact-info .social-buttons a:hover {
+            background: linear-gradient(135deg, #9333ea, #db2777);
+            color: #fff; border-color: transparent; transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.35);
+        }
+        
+        /* CONTACT FORM */
+        .contact-form-container {
+            background: #fff; border: 1px solid #f3e8ff; border-radius: var(--radius);
+            padding: 36px; box-shadow: var(--shadow-md); position: relative;
+        }
+        .contact-form-container::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0;
+            height: 4px; background: linear-gradient(135deg, #9333ea, #db2777);
+            border-radius: var(--radius) var(--radius) 0 0;
+        }
+        .contact-form-container h3 {
+            font-size: 1.4rem; font-weight: 700; color: #111827; margin-bottom: 6px;
+        }
+        .contact-form-container .form-subtitle {
+            color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 24px;
+        }
+        
+        .contact-form .form-row {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;
+        }
+        .contact-form .form-group { margin-bottom: 16px; }
+        .contact-form label {
+            display: block; font-size: 0.82rem; font-weight: 600;
+            margin-bottom: 6px; color: #111827;
+        }
+        .contact-form label .required { color: #db2777; margin-left: 2px; }
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%; padding: 12px 16px;
+            background: #faf5ff; border: 1.5px solid transparent;
+            border-radius: var(--radius-sm); color: #111827;
+            font-family: inherit; font-size: 0.92rem;
+            transition: var(--transition); outline: none;
+        }
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder { color: #9ca3af; }
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            background: #fff; border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.12);
+        }
+        .contact-form textarea { resize: vertical; min-height: 110px; }
+        .contact-form select { cursor: pointer; appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239333ea' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 16px center;
+            padding-right: 40px;
+        }
+        
+        .contact-form .submit-btn {
+            width: 100%; display: inline-flex; align-items: center;
+            justify-content: center; gap: 10px;
+            padding: 14px 32px; border-radius: 100px;
+            background: linear-gradient(135deg, #9333ea, #db2777);
+            color: #fff; font-weight: 600; font-size: 0.95rem;
+            border: none; cursor: pointer; font-family: inherit;
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.35);
+            transition: var(--transition); margin-top: 8px;
+        }
+        .contact-form .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(168, 85, 247, 0.5);
+        }
+        
+        .contact-form .form-note {
+            font-size: 0.78rem; color: var(--text-muted);
+            text-align: center; margin-top: 14px;
+        }
         
         footer { border-top: 1px solid #f3e8ff; padding: 32px 0; background: #fff; text-align: center; }
         footer p { color: #9ca3af; font-size: 0.88rem; }
         footer p i { color: #db2777; }
         
         @media (max-width: 900px) {
-            .about-content { grid-template-columns: 1fr; gap: 40px; }
+            .about-content, .contact-wrapper { grid-template-columns: 1fr; gap: 40px; }
             .about-visual .code-block { max-width: 100%; }
             .hero h1 { font-size: 2.4rem; }
         }
@@ -285,13 +394,13 @@
             .nav-links { display: none; flex-direction: column; gap: 20px; background: #fff; padding: 28px 32px; border-radius: var(--radius); border: 1px solid #f3e8ff; position: absolute; top: 72px; right: 20px; width: 220px; box-shadow: var(--shadow-lg); }
             .nav-links.open { display: flex; } .hamburger { display: flex; }
             .hero h1 { font-size: 2rem; } .section-title { font-size: 1.8rem; }
-            .projects-grid { grid-template-columns: 1fr; } 
+            .projects-grid { grid-template-columns: 1fr; }
+            .contact-form .form-row { grid-template-columns: 1fr; }
         }
         @media (max-width: 480px) {
             .container { padding: 0 16px; } .project-content { padding: 16px 18px 0; }
             .hero h1 { font-size: 1.75rem; } .section-title { font-size: 1.5rem; }
-            .contact-buttons { flex-direction: column; width: 100%; }
-            .contact-buttons .btn { width: 100%; justify-content: center; }
+            .contact-form-container { padding: 24px; }
         }
     </style>
 </head>
@@ -554,7 +663,7 @@
             </div>
         </section>
 
-        <!-- ===== ABOUT (UPDATED RIDERLOCKR) ===== -->
+        <!-- ===== ABOUT ===== -->
         <section class="about" id="about">
             <div class="container">
                 <div class="text-center">
@@ -623,26 +732,114 @@
             </div>
         </section>
 
-        <!-- ===== CONTACT ===== -->
+        <!-- ===== CONTACT (WITH FORM) ===== -->
         <section class="contact" id="contact">
             <div class="container">
                 <div class="text-center">
                     <span class="section-label">Get in Touch</span>
                     <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
+                    <p class="section-sub mx-auto">Schedule a meeting or send me a message — I typically respond within 24 hours.</p>
                 </div>
+
                 <div class="contact-wrapper">
+                    <!-- LEFT: Contact Info -->
                     <div class="contact-info">
-                        <h3>Let's Connect</h3>
-                        <p>I'm actively looking for AI & Software Engineering roles. Feel free to reach out via email, LinkedIn, or WhatsApp.</p>
-                        <div class="contact-buttons">
-                            <a href="mailto:sawairamumtaz369@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Email Me</a>
-                            <a href="https://www.linkedin.com/in/sawaira-mumtaz-3b77972b1/" target="_blank" class="btn btn-outline" style="border-color: #0077b5; color: #0077b5;"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-                            <a href="https://wa.me/923155068909" target="_blank" class="btn btn-outline" style="border-color: #25d366; color: #25d366;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" class="btn btn-outline" style="border-color: #333; color: #333;"><i class="fab fa-github"></i> GitHub</a>
+                        <h3>Contact Information</h3>
+                        <p>I'm actively looking for AI & Software Engineering roles. Feel free to reach out via any channel below.</p>
+
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info-text">
+                                <span class="info-label">Email</span>
+                                <span class="info-value">sawairamumtaz369@gmail.com</span>
+                            </div>
                         </div>
-                        <div style="margin-top: 40px; background: #faf5ff; padding: 20px 40px; border-radius: var(--radius); border: 1px dashed #e9d5ff;">
-                            <p style="margin: 0; font-weight: 600; color: var(--accent);">📍 Based in Rawalpindi, Pakistan · Open to Remote / On-site</p>
+
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="info-text">
+                                <span class="info-label">Phone / WhatsApp</span>
+                                <span class="info-value">+92 315 5068909</span>
+                            </div>
                         </div>
+
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info-text">
+                                <span class="info-label">Location</span>
+                                <span class="info-value">Rawalpindi, Pakistan</span>
+                            </div>
+                        </div>
+
+                        <div class="social-buttons">
+                            <a href="https://www.linkedin.com/in/sawaira-mumtaz-3b77972b1/" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                            <a href="https://wa.me/923155068909" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Schedule & Message Form -->
+                    <div class="contact-form-container">
+                        <h3>Schedule a Meeting or Send a Message</h3>
+                        <p class="form-subtitle">Fill out the form below and I'll get back to you within 24 hours.</p>
+
+                        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Full Name <span class="required">*</span></label>
+                                    <input type="text" id="name" name="name" placeholder="e.g. John Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="company">Company / Organization</label>
+                                    <input type="text" id="company" name="company" placeholder="Optional">
+                                </div>
+                                <div class="form-group">
+                                    <label for="purpose">Purpose <span class="required">*</span></label>
+                                    <select id="purpose" name="purpose" required>
+                                        <option value="" disabled selected>Select a purpose...</option>
+                                        <option value="Job Opportunity">Job Opportunity</option>
+                                        <option value="Freelance Project">Freelance Project</option>
+                                        <option value="Collaboration">Collaboration</option>
+                                        <option value="Interview Request">Interview Request</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="meeting_date">Preferred Meeting Date</label>
+                                    <input type="date" id="meeting_date" name="meeting_date">
+                                </div>
+                                <div class="form-group">
+                                    <label for="meeting_time">Preferred Time</label>
+                                    <input type="time" id="meeting_time" name="meeting_time">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Your Message <span class="required">*</span></label>
+                                <textarea id="message" name="message" placeholder="Tell me about the opportunity, project, or what you'd like to discuss..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+
+                            <p class="form-note">
+                                <i class="fas fa-lock" style="color: #9333ea;"></i>
+                                Your information is safe and will only be used to contact you.
+                            </p>
+
+                        </form>
                     </div>
                 </div>
             </div>
