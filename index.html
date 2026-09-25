@@ -117,7 +117,7 @@
         
         .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700; color: #111827; margin-bottom: 8px; letter-spacing: -0.02em; }
         .hero .subtitle { font-size: 1.05rem; font-weight: 600; color: var(--accent); margin-bottom: 16px; letter-spacing: 0.02em; }
-        .hero p { font-size: 1rem; color: var(--text-secondary); max-width: 640px; margin-bottom: 28px; line-height: 1.8; }
+        .hero p { font-size: 1rem; color: var(--text-secondary); max-width: 720px; margin-bottom: 28px; line-height: 1.8; }
         .hero-buttons { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
         .btn {
             display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px;
@@ -418,10 +418,10 @@
             </div>
         </header>
 
-        <!-- ===== HERO ===== -->
+        <!-- ===== HERO (NO "INTERNSHIP" WORD) ===== -->
         <section class="hero">
             <div class="container hero-content">
-                <div class="badge"><span class="dot"></span> Open to AI & Software Engineering roles</div>
+                <div class="badge"><span class="dot"></span> Open to entry-level AI & Software Engineering roles</div>
                 
                 <div class="avatar-ring">
                     <div class="inner">
@@ -431,7 +431,7 @@
 
                 <h1>Sawaira Mumtaz</h1>
                 <div class="subtitle">AI & Software Engineer | LLM, RAG & Chatbot Systems</div>
-                <p>BS Computer Science graduate specializing in production-ready LLM applications, RAG pipelines, and scalable software solutions. Experienced across AI engineering, full-stack development, and cross-platform mobile apps through hands-on work with Post Fusion, Arch Technology, NASTP, and self-driven AI projects.</p>
+                <p>Final-semester <strong>BS Computer Science student</strong> at Virtual University of Pakistan (<strong>graduating April 2027</strong>), specializing in <strong>production-ready LLM applications</strong>, <strong>RAG pipelines</strong>, <strong>chatbot systems</strong>, and <strong>scalable full-stack software</strong>. Built a <strong>Final Year Project (FYP)</strong> — an AI-powered Clothing & Inventory Management System in Python with Gemini AI, deployed online. Gained professional experience working with <strong>Post Fusion, Arch Technology, and NASTP</strong> across AI engineering, data science, and full-stack development.</p>
                 
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
@@ -447,7 +447,7 @@
             </div>
         </section>
 
-        <!-- ===== PROJECTS (DETAILED DESCRIPTIONS) ===== -->
+        <!-- ===== PROJECTS ===== -->
         <section class="projects" id="projects">
             <div class="container">
                 <div class="text-center">
@@ -457,7 +457,6 @@
                 </div>
                 <div class="projects-grid">
                     
-                    <!-- 1. Advanced AI Systems -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="advanced-ai.png" alt="Advanced AI Systems Dashboard" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -466,7 +465,7 @@
                         <div class="project-content">
                             <div class="tech-tags"><span>Python</span><span>LangGraph</span><span>Streamlit</span><span>Groq</span></div>
                             <h3>Advanced AI Systems: LLM Eval & Multi-Agent</h3>
-                            <p class="desc">Built with <strong>Python</strong> using the <strong>Groq</strong> inference API (<code>openai/gpt-oss-20b</code>). <strong>Part 1:</strong> An LLM evaluation dashboard that uses <strong>LLM-as-judge methodology</strong> to score outputs on Faithfulness (hallucination detection) and Answer Relevance, visualizing results with <strong>Plotly</strong> charts in a <strong>Streamlit</strong> UI. <strong>Part 2:</strong> A <strong>LangGraph</strong> multi-agent state machine where <strong>Agent A (Structurer)</strong> converts messy text into clean JSON, and <strong>Agent B (Validator)</strong> applies business rules (flagging amounts > 1000). Execution automatically pauses at checkpoints for <strong>Human-in-the-Loop</strong> approval when anomalies are detected.</p>
+                            <p class="desc">Built with <strong>Python</strong> using the <strong>Groq</strong> inference API. <strong>Part 1:</strong> An LLM evaluation dashboard using <strong>LLM-as-judge methodology</strong> to score outputs on Faithfulness (hallucination detection) and Answer Relevance, visualized with <strong>Plotly</strong> charts in a <strong>Streamlit</strong> UI. <strong>Part 2:</strong> A <strong>LangGraph</strong> multi-agent state machine where <strong>Agent A (Structurer)</strong> converts messy text into clean JSON and <strong>Agent B (Validator)</strong> applies business rules. Execution pauses at checkpoints for <strong>Human-in-the-Loop</strong> approval when anomalies are detected.</p>
                             <div class="links">
                                 <a href="https://advanced-ai-systems-fsz7jtqn7o8shhntitckpp.streamlit.app/" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/advanced-ai-systems" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
@@ -474,7 +473,6 @@
                         </div>
                     </div>
 
-                    <!-- 2. Notifications System -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="notifications.png" alt="Notifications System Login" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -483,7 +481,7 @@
                         <div class="project-content">
                             <div class="tech-tags"><span>React</span><span>NestJS</span><span>TypeScript</span><span>Gemini AI</span></div>
                             <h3>Notifications & AI Incident Engine</h3>
-                            <p class="desc">Full-stack enterprise app with a <strong>React + TypeScript</strong> frontend and a modular <strong>NestJS</strong> backend (Controllers, Services, DTOs, Guards). Replaced legacy MD5 hashing with <strong>bcrypt (10 rounds)</strong> and cookie sessions with stateless <strong>JWT authentication</strong>. Strict resource isolation ensures users can only see their own notifications. INFO alerts auto-dismiss after <strong>90 seconds</strong> with progress indicators. Integrated <strong>Google Gemini AI</strong> for auto-triage: it determines severity, assigns urgency scores (1-10), generates executive health digests, and creates Root Cause Analysis playbooks with terminal command remediation steps.</p>
+                            <p class="desc">Full-stack enterprise app with a <strong>React + TypeScript</strong> frontend and a modular <strong>NestJS</strong> backend (Controllers, Services, DTOs, Guards). Replaced MD5 with <strong>bcrypt (10 rounds)</strong> and cookie sessions with stateless <strong>JWT authentication</strong>. Strict resource isolation ensures users can only see their own notifications. INFO alerts auto-dismiss after <strong>90 seconds</strong>. Integrated <strong>Google Gemini AI</strong> for auto-triage, urgency scoring (1-10), and RCA playbooks with terminal remediation steps.</p>
                             <div class="links">
                                 <a href="https://full-stack-app-k9jl.onrender.com" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/Notification-app" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
@@ -491,16 +489,15 @@
                         </div>
                     </div>
 
-                    <!-- 3. AI Clothing & Inventory -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="clothing.png" alt="AI Clothing Management System" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
                             <i class="fas fa-tshirt placeholder-icon" style="display:none;"></i>
                         </div>
                         <div class="project-content">
-                            <div class="tech-tags"><span>Python</span><span>Streamlit</span><span>Tkinter</span><span>Gemini</span><span>SQLite</span></div>
-                            <h3>AI Clothing & Inventory System</h3>
-                            <p class="desc"><strong>Final Year Project</strong> — originally built in <strong>Python + Tkinter</strong> with <strong>SQLite</strong> backend, then upgraded with AI. Integrated <strong>Google Gemini 2.5 Flash</strong> via the GenAI SDK for <strong>vision-based auto-tagging</strong>: users upload a product photo and the AI extracts the item name, category (Men/Women/Kids), season, size, and color. Also built a <strong>Streamlit web version</strong> for browser access. Features real-time stock tracking with low-stock badges (≤5 units), profit analytics dashboard (Gross Profit, Sales Revenue, COGS), and CSV export.</p>
+                            <div class="tech-tags"><span>Python</span><span>Tkinter</span><span>Streamlit</span><span>Gemini</span><span>SQLite</span></div>
+                            <h3>AI Clothing & Inventory System — Final Year Project</h3>
+                            <p class="desc"><strong>Final Year Project (FYP)</strong> — Originally built as a desktop application in <strong>Python + Tkinter</strong> with a <strong>SQLite</strong> database for stock tracking and profit analytics. I then enhanced it with AI: integrated <strong>Google Gemini 2.5 Flash</strong> via the GenAI SDK for <strong>vision-based auto-tagging</strong> (users upload a photo and AI extracts item name, category, season, size, and color). Finally, I built a <strong>Streamlit web version</strong> and deployed it online for public access.</p>
                             <div class="links">
                                 <a href="https://clothe-management-system-web-application-i7qpfypguzynnux2tszqk.streamlit.app" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/Clothe-management-system-Web-Application" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
@@ -508,7 +505,6 @@
                         </div>
                     </div>
 
-                    <!-- 4. RAG Chatbot -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="rag-chatbot.png" alt="MGT501 RAG Chatbot" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -517,7 +513,7 @@
                         <div class="project-content">
                             <div class="tech-tags"><span>Python</span><span>Flask</span><span>Gemini</span><span>RAG</span></div>
                             <h3>MGT501 RAG AI Chatbot</h3>
-                            <p class="desc">Retrieval-Augmented Generation chatbot built in <strong>Python + Flask</strong>. Uses <strong>Google text-embedding-004</strong> to convert <strong>45+ MGT501 course handouts</strong> into vector embeddings stored in a vector index. When a user asks a question, the system runs <strong>cosine similarity search</strong> to fetch the Top-K most relevant lecture chunks, then passes them to <strong>Gemini</strong> with a strict academic grounding prompt. Enforces <strong>out-of-domain refusal</strong> — if the question isn't about HRM course material, the bot refuses to answer, preventing academic misinformation. Evaluated against <strong>21 benchmark questions</strong> across all syllabus topics.</p>
+                            <p class="desc">Retrieval-Augmented Generation chatbot built in <strong>Python + Flask</strong>. Uses <strong>Google text-embedding-004</strong> to convert <strong>45+ MGT501 course handouts</strong> into vector embeddings. When a user asks a question, the system runs <strong>cosine similarity search</strong> to fetch Top-K relevant lecture chunks, then passes them to <strong>Gemini</strong> with a strict academic grounding prompt. Enforces <strong>out-of-domain refusal</strong> — if a question isn't about HRM material, the bot refuses, preventing misinformation.</p>
                             <div class="links">
                                 <a href="https://rag-chatbot-lw6m.onrender.com" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/Rag-chatbot" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
@@ -525,7 +521,6 @@
                         </div>
                     </div>
 
-                    <!-- 5. Posts Fusion Studio -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="posts-fusion.png" alt="Posts Fusion Studio" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -534,7 +529,7 @@
                         <div class="project-content">
                             <div class="tech-tags"><span>Node.js</span><span>Express</span><span>JavaScript</span><span>SSE</span></div>
                             <h3>Posts Fusion Studio — AI Content Gen</h3>
-                            <p class="desc">Real-time AI content streaming app built with <strong>Node.js + Express</strong>. Implemented <strong>Server-Sent Events (SSE)</strong> architecture to push tokens from the backend to the browser as they're generated, creating a word-by-word typing effect. Two generation modes: (1) <strong>Streaming mode</strong> using <code>EventSource</code> for live token-by-token rendering, and (2) <strong>Full Post mode</strong> using standard JSON fetch. Users enter Topic, Niche, and Tone, and the app generates mock social content via a built-in generator (no API key required). Architected for easy swapping to real APIs (OpenAI, OpenRouter) via environment variables.</p>
+                            <p class="desc">Real-time AI content streaming app built with <strong>Node.js + Express</strong>. Implemented <strong>Server-Sent Events (SSE)</strong> to push tokens from backend to browser as they're generated. Two modes: (1) <strong>Streaming mode</strong> using <code>EventSource</code> for live word-by-word rendering, (2) <strong>Full Post mode</strong> with JSON fetch. Architected for easy swapping to real APIs (OpenAI, OpenRouter) via environment variables.</p>
                             <div class="links">
                                 <a href="https://posts-fusion-studio.onrender.com" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/AI-Engineering-Internship-Project" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
@@ -542,7 +537,6 @@
                         </div>
                     </div>
 
-                    <!-- 6. College Alert -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="collegealert.png" alt="College Alert App" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -551,7 +545,7 @@
                         <div class="project-content">
                             <div class="tech-tags"><span>React Native</span><span>Expo</span><span>JavaScript</span></div>
                             <h3>College Alert App</h3>
-                            <p class="desc">Mobile app built with <strong>React Native + Expo</strong> for managing college events (Tech Fests, Career Fairs, Hackathons). State management using <strong>React useState hooks</strong> for the dynamic event list and form inputs. Renders cards via <strong>FlatList</strong> for optimized scrolling. Features add event with validation, delete with confirmation alert, and <strong>scheduled local push notifications</strong> via <code>expo-notifications</code> — the notification handler is configured to show alerts, play sounds, and update the badge. For demo purposes, reminders fire 5 seconds after clicking "Alert Me"; in production, this would map to the actual event date/time.</p>
+                            <p class="desc">Mobile app built with <strong>React Native + Expo</strong> for managing college events. State management using <strong>React useState hooks</strong>. Renders cards via <strong>FlatList</strong> for optimized scrolling. Features add event with validation, delete with confirmation, and <strong>scheduled local push notifications</strong> via <code>expo-notifications</code>.</p>
                             <div class="links">
                                 <a href="https://andriod-app-development.onrender.com" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/Andriod-App-Development" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
@@ -559,7 +553,6 @@
                         </div>
                     </div>
 
-                    <!-- 7. E-Commerce Marketplace -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="ecommerce.png" alt="E-Commerce Marketplace Login" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -568,7 +561,7 @@
                         <div class="project-content">
                             <div class="tech-tags"><span>React Native</span><span>Expo</span><span>State Mgmt</span></div>
                             <h3>E-Commerce Marketplace App</h3>
-                            <p class="desc">Multi-screen mobile marketplace built with <strong>React Native + Expo</strong> using <strong>conditional state rendering</strong> to navigate between login, home, cart, add-product, and payment screens (no external navigation library needed). Users can browse products in a <code>FlatList</code>, add items to cart with running total calculation, list their own products for sale, and complete a simulated payment flow. Uses <strong>React useState</strong> to manage products, cart, and user session. Architecture is designed for easy integration with real backends (Firebase, Node.js) in future iterations.</p>
+                            <p class="desc">Multi-screen mobile marketplace built with <strong>React Native + Expo</strong> using <strong>conditional state rendering</strong> to navigate between login, home, cart, add-product, and payment screens. Users browse products in a <code>FlatList</code>, add items to cart with running total, list products for sale, and complete a simulated payment flow.</p>
                             <div class="links">
                                 <a href="https://e-commerce-marketplace-app.onrender.com" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/Andriod-App-Development" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
@@ -576,7 +569,6 @@
                         </div>
                     </div>
 
-                    <!-- 8. Digital Art Gallery -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="artgallery.png" alt="Digital Art Gallery" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -585,7 +577,7 @@
                         <div class="project-content">
                             <div class="tech-tags"><span>React Native</span><span>Expo</span><span>React Native Web</span></div>
                             <h3>Digital Art Gallery</h3>
-                            <p class="desc">Cross-platform gallery app built with <strong>React Native + Expo</strong> and <strong>React Native Web</strong> so the same codebase runs on both Android and the browser. Designed a responsive grid layout showcasing famous artwork (The Starry Night, Mona Lisa, Girl with a Pearl Earring, The Scream, Guernica, etc.) with title and artist credits. Deployed to the browser using <code>npx expo export --platform web</code>, then hosted on Render. Demonstrates the power of write-once, deploy-anywhere mobile-first development.</p>
+                            <p class="desc">Cross-platform gallery app built with <strong>React Native + Expo</strong> and <strong>React Native Web</strong> so the same codebase runs on both Android and browser. Designed a responsive grid layout showcasing famous artwork (The Starry Night, Mona Lisa, Girl with a Pearl Earring, The Scream, Guernica) with title and artist credits.</p>
                             <div class="links">
                                 <a href="https://digital-art-gallery-a11j.onrender.com" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/Andriod-App-Development" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
@@ -593,7 +585,6 @@
                         </div>
                     </div>
 
-                    <!-- 9. Time Zone Converter -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="timezone.png" alt="Time Zone Converter" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -602,7 +593,7 @@
                         <div class="project-content">
                             <div class="tech-tags"><span>React Native</span><span>Expo</span><span>Luxon</span></div>
                             <h3>Time Zone Converter</h3>
-                            <p class="desc">Utility app for converting time across <strong>9 major global zones</strong> (New York, Los Angeles, London, Paris, Dubai, Kolkata, Tokyo, Sydney, Auckland). Built with <strong>React Native + Expo</strong> for cross-platform compatibility. Uses <strong>Luxon</strong> — a modern JavaScript date/time library — for accurate timezone math including DST handling. Features auto-filled current local time of the source zone, dropdowns powered by <strong>React Native Picker</strong>, and instant conversion on button press. Also deployed as a web app on Render using Expo web export.</p>
+                            <p class="desc">Utility app for converting time across <strong>9 major global zones</strong> (NY, LA, London, Paris, Dubai, Kolkata, Tokyo, Sydney, Auckland). Built with <strong>React Native + Expo</strong> for cross-platform support. Uses <strong>Luxon</strong> for accurate timezone math including DST handling.</p>
                             <div class="links">
                                 <a href="https://time-zone-converter-q165.onrender.com" target="_blank" class="live"><i class="fas fa-globe"></i> Live Demo</a>
                                 <a href="https://github.com/Sawaira-Mumtaz786/Andriod-App-Development" target="_blank" class="github"><i class="fab fa-github"></i> Source</a>
@@ -635,6 +626,7 @@
                             <span>Model Testing</span><span>Deep Learning</span><span>Machine Learning</span>
                             <span>Vector Databases</span><span>pgvector</span><span>Chroma</span>
                             <span>Scikit-learn</span><span>Pandas</span><span>NumPy</span>
+                            <span>K-Means Clustering</span><span>Collaborative Filtering (SVD)</span>
                         </div>
                     </div>
                     <div class="skill-category">
@@ -652,7 +644,7 @@
                             <span>LangChain</span><span>LangGraph</span><span>HuggingFace</span>
                             <span>TensorFlow.js</span><span>Mongoose</span><span>Flutter</span>
                             <span>Express.js</span><span>NestJS</span><span>Flask</span>
-                            <span>Streamlit</span><span>Tailwind CSS</span>
+                            <span>Streamlit</span><span>Tkinter</span><span>Tailwind CSS</span>
                         </div>
                     </div>
                     <div class="skill-category">
@@ -684,7 +676,7 @@
             </div>
         </section>
 
-        <!-- ===== ABOUT ===== -->
+        <!-- ===== ABOUT (NO "INTERNSHIP" WORD) ===== -->
         <section class="about" id="about">
             <div class="container">
                 <div class="text-center">
@@ -693,10 +685,12 @@
                 </div>
                 <div class="about-content">
                     <div class="about-text">
-                        <p><strong>I'm Sawaira Mumtaz</strong> — an <strong>AI and Software Engineer</strong> with a <strong>BS in Computer Science</strong> from <strong>Virtual University of Pakistan</strong>. I build production-ready LLM applications, RAG pipelines, and scalable software solutions that solve real-world problems.</p>
-                        
-                        <p>My professional experience spans leading technology companies in Pakistan:</p>
-                        
+                        <p><strong>I'm Sawaira Mumtaz</strong> — an <strong>AI and Software Engineer</strong>, currently in my <strong>final semester of BS Computer Science</strong> at <strong>Virtual University of Pakistan</strong> (graduating <strong>April 2027</strong>). I build <strong>production-ready LLM applications</strong>, <strong>RAG pipelines</strong>, and <strong>scalable full-stack software</strong> that solve real-world problems.</p>
+
+                        <p>My <strong>Final Year Project (FYP)</strong> was an <strong>AI-Powered Clothing & Inventory Management System</strong>, originally built in <strong>Python + Tkinter</strong> with a <strong>SQLite</strong> database. I enhanced it with AI by integrating <strong>Google Gemini 2.5 Flash</strong> for vision-based product auto-tagging, added real-time stock tracking and profit analytics, then rebuilt a <strong>Streamlit web version</strong> and deployed it online.</p>
+
+                        <p>I've also worked with leading technology companies in Pakistan, gaining hands-on experience across AI engineering, data science, and full-stack development:</p>
+
                         <ul class="company-list">
                             <li>
                                 <i class="fas fa-robot"></i>
@@ -712,7 +706,7 @@
                                 <div class="company-info">
                                     <span class="company-name">Arch Technology</span>
                                     <span class="company-role">Data Science & Mobile Development</span>
-                                    <span class="company-desc">Built ML models for customer segmentation and cross-platform mobile apps.</span>
+                                    <span class="company-desc">Built ML models for <strong>customer segmentation using K-Means clustering</strong> and a <strong>collaborative filtering recommendation system (SVD algorithm)</strong>. Analyzed datasets with <strong>Pandas, NumPy, and Scikit-learn</strong>.</span>
                                     <span class="company-location">📍 Remote · Islamabad, Pakistan</span>
                                 </div>
                             </li>
@@ -730,20 +724,22 @@
                                 <div class="company-info">
                                     <span class="company-name">Riderlockr</span>
                                     <span class="company-role">Self-Learning AI Project</span>
-                                    <span class="company-desc">Independently built <strong>Advanced AI Systems</strong> — an LLM evaluation dashboard using <strong>LLM-as-judge</strong> and a <strong>LangGraph multi-agent orchestration</strong> system for business intelligence applications.</span>
+                                    <span class="company-desc">Independently built <strong>Advanced AI Systems</strong> — an LLM evaluation dashboard using <strong>LLM-as-judge</strong> and a <strong>LangGraph multi-agent orchestration</strong> system.</span>
                                 </div>
                             </li>
                         </ul>
                         
-                        <p>I specialize in <strong>full-stack development</strong> (React, Node.js, Python), <strong>LLM integration</strong> (Gemini, RAG), and <strong>cloud deployment</strong> (Render, Railway). I'm currently seeking <strong>AI & Software Engineering</strong> roles where I can combine my technical skills with a passion for intelligent systems.</p>
+                        <p>I specialize in <strong>full-stack development</strong> (React, Node.js, Python), <strong>LLM integration</strong> (Gemini, RAG), <strong>Data Science & Machine Learning</strong> (K-Means, SVD, Scikit-learn, Pandas), and <strong>cloud deployment</strong> (Render, Railway). I'm actively seeking <strong>entry-level AI & Software Engineering roles</strong> starting immediately or after graduation.</p>
                     </div>
                     <div class="about-visual">
                         <div class="code-block">
                             <div style="margin-top: 20px;"><span class="comment">// about.js</span></div>
                             <div><span class="key">const</span> engineer = {</div>
                             <div>&nbsp;&nbsp;name: <span class="string">"Sawaira Mumtaz"</span>,</div>
-                            <div>&nbsp;&nbsp;education: <span class="string">"BS CS (Graduate)"</span>,</div>
-                            <div>&nbsp;&nbsp;experience: [<span class="string">"Post Fusion"</span>, <span class="string">"Arch Tech"</span>],</div>
+                            <div>&nbsp;&nbsp;education: <span class="string">"BS CS (Final Semester, Apr 2027)"</span>,</div>
+                            <div>&nbsp;&nbsp;fyp: <span class="string">"AI Clothing Inventory"</span>,</div>
+                            <div>&nbsp;&nbsp;dataScience: [<span class="string">"K-Means"</span>, <span class="string">"SVD"</span>],</div>
+                            <div>&nbsp;&nbsp;companies: [<span class="string">"Post Fusion"</span>, <span class="string">"Arch Tech"</span>, <span class="string">"NASTP"</span>],</div>
                             <div>&nbsp;&nbsp;passions: [<span class="string">"AI"</span>, <span class="string">"Full-Stack"</span>],</div>
                             <div>&nbsp;&nbsp;<span class="func">build</span>: () => <span class="string">"impactful AI products"</span></div>
                             <div>};</div>
@@ -765,7 +761,7 @@
                 <div class="contact-wrapper">
                     <div class="contact-info">
                         <h3>Contact Information</h3>
-                        <p>I'm actively looking for AI & Software Engineering roles. Feel free to reach out via any channel below.</p>
+                        <p>I'm actively looking for entry-level AI & Software Engineering roles. Feel free to reach out via any channel below.</p>
 
                         <div class="info-item">
                             <i class="fas fa-envelope"></i>
