@@ -59,7 +59,7 @@ img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
-/* ==================== VARIABLES (ORIGINAL PURPLE/PINK SCHEME) ==================== */
+/* ==================== VARIABLES ==================== */
 :root {
   --gradient: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
   --gradient-soft: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
@@ -391,10 +391,8 @@ section { padding: 80px 0; }
   box-shadow: var(--shadow-lg);
   border-color: var(--border-strong);
 }
-
-/* 🖼️ IMAGE STYLING FOR PROJECT SCREENSHOTS */
 .project-thumb {
-  height: 200px;
+  height: 210px;
   position: relative;
   overflow: hidden;
   background: var(--gradient-soft);
@@ -410,7 +408,7 @@ section { padding: 80px 0; }
   transform: scale(1.05);
 }
 .project-type-label {
-  position: absolute; top: 16px; left: 16px;
+  position: absolute; top: 14px; left: 14px;
   z-index: 2;
   font-family: var(--font-mono);
   font-size: 0.65rem; font-weight: 500;
@@ -421,7 +419,6 @@ section { padding: 80px 0; }
   border-radius: var(--radius-pill);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-
 .project-body {
   padding: 24px;
   display: flex; flex-direction: column; flex: 1;
@@ -585,7 +582,7 @@ section { padding: 80px 0; }
   padding: 5px 12px; border-radius: var(--radius-pill);
 }
 
-/* ==================== CONTACT (LET'S CONNECT) ==================== */
+/* ==================== CONTACT ==================== */
 .contact { background: #faf5ff; }
 .contact-grid {
   display: grid; grid-template-columns: 1fr 1.15fr;
@@ -1005,8 +1002,7 @@ section { padding: 80px 0; }
       <!-- Project 1 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-1.png -->
-          <img src="images/project-1.png" alt="LLM Evaluation Dashboard screenshot" loading="lazy">
+          <img src="advanced-ai.png" alt="LLM Evaluation Dashboard screenshot" loading="lazy">
           <span class="project-type-label">LLM &amp; AI Systems</span>
         </div>
         <div class="project-body">
@@ -1033,8 +1029,7 @@ section { padding: 80px 0; }
       <!-- Project 2 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-2.png -->
-          <img src="images/project-2.png" alt="Notifications and AI Incident Engine screenshot" loading="lazy">
+          <img src="notifications.png" alt="Notifications and AI Incident Engine screenshot" loading="lazy">
           <span class="project-type-label">Full-Stack Enterprise</span>
         </div>
         <div class="project-body">
@@ -1060,8 +1055,7 @@ section { padding: 80px 0; }
       <!-- Project 3 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-3.png -->
-          <img src="images/project-3.png" alt="AI Clothing and Inventory System screenshot" loading="lazy">
+          <img src="clothing.png" alt="AI Clothing and Inventory System screenshot" loading="lazy">
           <span class="project-type-label">Final Year Project</span>
         </div>
         <div class="project-body">
@@ -1072,10 +1066,10 @@ section { padding: 80px 0; }
           <p>
             <strong>Final Year Project (FYP)</strong> — Originally built as a desktop application in
             <strong>Python + Tkinter</strong> with a <strong>SQLite</strong> database for stock tracking and
-            profit analytics. I then enhanced it with AI: integrated <strong>Google Gemini 2.5 Flash</strong>
-            via the GenAI SDK for <strong>vision-based auto-tagging</strong> (users upload a photo and AI extracts
-            item name, category, season, size, and color). Finally, I built a <strong>Streamlit web version</strong>
-            and deployed it online for public access.
+            profit analytics. Enhanced with AI: integrated <strong>Google Gemini 2.5 Flash</strong> via the
+            GenAI SDK for <strong>vision-based auto-tagging</strong> (users upload a photo and AI extracts
+            item name, category, season, size, and color). Rebuilt as a <strong>Streamlit web version</strong>
+            and deployed online.
           </p>
           <div class="project-links">
             <a href="#" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
@@ -1087,8 +1081,7 @@ section { padding: 80px 0; }
       <!-- Project 4 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-4.png -->
-          <img src="images/project-4.png" alt="MGT501 RAG AI Chatbot screenshot" loading="lazy">
+          <img src="rag-chatbot.png" alt="MGT501 RAG AI Chatbot screenshot" loading="lazy">
           <span class="project-type-label">RAG &amp; Chatbot</span>
         </div>
         <div class="project-body">
@@ -1101,8 +1094,7 @@ section { padding: 80px 0; }
             <strong>Google text-embedding-004</strong> to convert <strong>45+ MGT501 course handouts</strong>
             into vector embeddings. When a user asks a question, the system runs <strong>cosine similarity
             search</strong> to fetch Top-K relevant lecture chunks, then passes them to <strong>Gemini</strong>
-            with a strict academic grounding prompt. Enforces <strong>out-of-domain refusal</strong> — if a
-            question isn't about HRM material, the bot refuses, preventing misinformation.
+            with a strict academic grounding prompt. Enforces <strong>out-of-domain refusal</strong>.
           </p>
           <div class="project-links">
             <a href="#" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
@@ -1114,8 +1106,7 @@ section { padding: 80px 0; }
       <!-- Project 5 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-5.png -->
-          <img src="images/project-5.png" alt="Posts Fusion Studio screenshot" loading="lazy">
+          <img src="posts-fusion.png" alt="Posts Fusion Studio screenshot" loading="lazy">
           <span class="project-type-label">AI Content Gen</span>
         </div>
         <div class="project-body">
@@ -1126,9 +1117,9 @@ section { padding: 80px 0; }
           <p>
             Real-time AI content streaming app built with <strong>Node.js + Express</strong>. Implemented
             <strong>Server-Sent Events (SSE)</strong> to push tokens from backend to browser as they're
-            generated. Two modes: (1) <strong>Streaming mode</strong> using <code>EventSource</code> for live
-            word-by-word rendering, (2) <strong>Full Post mode</strong> with JSON fetch. Architected for easy
-            swapping to real APIs (OpenAI, OpenRouter) via environment variables.
+            generated. Two modes: <strong>Streaming mode</strong> using <code>EventSource</code> for live
+            word-by-word rendering, and <strong>Full Post mode</strong> with JSON fetch. Architected for
+            easy swapping to real APIs (OpenAI, OpenRouter) via environment variables.
           </p>
           <div class="project-links">
             <a href="#" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
@@ -1140,8 +1131,7 @@ section { padding: 80px 0; }
       <!-- Project 6 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-6.png -->
-          <img src="images/project-6.png" alt="College Alert App screenshot" loading="lazy">
+          <img src="collegealert.png" alt="College Alert App screenshot" loading="lazy">
           <span class="project-type-label">Mobile App</span>
         </div>
         <div class="project-body">
@@ -1165,8 +1155,7 @@ section { padding: 80px 0; }
       <!-- Project 7 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-7.png -->
-          <img src="images/project-7.png" alt="E-Commerce Marketplace App screenshot" loading="lazy">
+          <img src="ecommerce.png" alt="E-Commerce Marketplace App screenshot" loading="lazy">
           <span class="project-type-label">Mobile App</span>
         </div>
         <div class="project-body">
@@ -1190,8 +1179,7 @@ section { padding: 80px 0; }
       <!-- Project 8 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-8.png -->
-          <img src="images/project-8.png" alt="Digital Art Gallery screenshot" loading="lazy">
+          <img src="artgallery.png" alt="Digital Art Gallery screenshot" loading="lazy">
           <span class="project-type-label">Cross-Platform</span>
         </div>
         <div class="project-body">
@@ -1215,8 +1203,7 @@ section { padding: 80px 0; }
       <!-- Project 9 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-9.png -->
-          <img src="images/project-9.png" alt="Time Zone Converter screenshot" loading="lazy">
+          <img src="timezone.png" alt="Time Zone Converter screenshot" loading="lazy">
           <span class="project-type-label">Utility App</span>
         </div>
         <div class="project-body">
@@ -1359,7 +1346,6 @@ section { padding: 80px 0; }
 
     <div class="contact-grid">
 
-      <!-- Left: Contact info -->
       <div class="contact-info">
         <h3>Contact Information</h3>
         <p>Whether you have a question, a job opportunity, or a freelance project — I'll respond within 24 hours.</p>
@@ -1394,7 +1380,6 @@ section { padding: 80px 0; }
         </span>
       </div>
 
-      <!-- Right: Contact form + social buttons -->
       <div class="contact-form-wrap">
         <h3>Send a Message</h3>
         <p>I typically respond within 24 hours.</p>
@@ -1419,7 +1404,6 @@ section { padding: 80px 0; }
           <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
         </form>
 
-        <!-- GitHub / LinkedIn / Email buttons below form -->
         <div class="contact-social-row">
           <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="contact-social-btn github">
             <i class="fab fa-github"></i> GitHub
@@ -1448,7 +1432,6 @@ section { padding: 80px 0; }
 </footer>
 
 <script>
-  // Mobile nav toggle
   const hamburger = document.getElementById('hamburger');
   const navList = document.getElementById('navList');
   hamburger.addEventListener('click', () => {
