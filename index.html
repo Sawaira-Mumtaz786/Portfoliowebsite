@@ -246,7 +246,6 @@ section { padding: 96px 0; position: relative; }
 }
 .hero .summary strong { color: #111827; font-weight: 600; }
 
-/* Stats bar */
 .hero-stats {
   display: flex; flex-wrap: wrap;
   gap: 32px;
@@ -388,7 +387,6 @@ section { padding: 96px 0; position: relative; }
 }
 .about-text p strong { color: #111827; font-weight: 600; }
 
-/* Currently Learning */
 .learning-box {
   display: flex; align-items: flex-start; gap: 14px;
   padding: 18px 22px;
@@ -576,7 +574,6 @@ section { padding: 96px 0; position: relative; }
 .project-links a.source { color: var(--text-secondary); }
 .project-links a.source:hover { color: #111827; transform: translateX(3px); }
 
-/* View All Projects CTA */
 .view-all-cta {
   text-align: center;
   margin-top: 56px;
@@ -607,6 +604,7 @@ section { padding: 96px 0; position: relative; }
   padding: 30px;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+  position: relative;
 }
 .exp-item:hover {
   box-shadow: var(--shadow-md);
@@ -616,8 +614,10 @@ section { padding: 96px 0; position: relative; }
 .exp-head {
   display: flex; justify-content: space-between;
   align-items: flex-start; gap: 16px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
 }
+.exp-title-group { flex: 1; min-width: 240px; }
 .exp-role {
   font-size: 0.78rem; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.06em;
@@ -627,6 +627,12 @@ section { padding: 96px 0; position: relative; }
   font-family: var(--font-heading);
   font-size: 1.15rem; font-weight: 700;
   color: #111827;
+  line-height: 1.3;
+}
+.exp-meta {
+  display: flex; flex-direction: column;
+  align-items: flex-end; gap: 8px;
+  text-align: right;
 }
 .exp-date {
   font-size: 0.82rem; font-weight: 600;
@@ -636,7 +642,34 @@ section { padding: 96px 0; position: relative; }
   padding: 5px 14px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-strong);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
+.exp-date i { font-size: 0.75rem; }
+.exp-mode {
+  font-size: 0.72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.exp-mode.onsite {
+  background: #dbeafe; color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+.exp-mode.remote {
+  background: #d1fae5; color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+.exp-location {
+  font-size: 0.82rem; color: var(--text-muted);
+  display: inline-flex; align-items: center; gap: 5px;
+  margin-bottom: 12px;
+}
+.exp-location i { color: var(--purple); }
 .exp-desc {
   font-size: 0.92rem; color: var(--text-secondary);
   margin-bottom: 16px; line-height: 1.7;
@@ -654,6 +687,24 @@ section { padding: 96px 0; position: relative; }
   content: '→';
   color: var(--purple); font-weight: 700;
   flex-shrink: 0;
+}
+.exp-achievements li strong {
+  color: var(--purple);
+  font-weight: 600;
+}
+.exp-tech {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border-strong);
+}
+.exp-tech span {
+  font-family: var(--font-mono);
+  font-size: 0.66rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  background: var(--bg-page); color: var(--purple);
+  padding: 4px 11px; border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
 }
 
 /* ==================== EDUCATION ==================== */
@@ -955,8 +1006,8 @@ section { padding: 96px 0; position: relative; }
   .projects-grid { grid-template-columns: 1fr; }
   .education-card { padding: 26px 24px; }
   .edu-head { flex-direction: column; gap: 12px; }
-  .exp-head { flex-direction: column; gap: 8px; }
-  .exp-date { align-self: flex-start; }
+  .exp-head { flex-direction: column; gap: 12px; }
+  .exp-meta { align-items: flex-start; text-align: left; }
   .contact-social-btn { flex: 1 1 100%; }
   .hero-stats { gap: 24px; }
   .stat-value { font-size: 1.4rem; }
@@ -1028,7 +1079,8 @@ section { padding: 96px 0; position: relative; }
         specializing in production-ready <strong>LLM applications</strong>, <strong>RAG pipelines</strong>,
         <strong>chatbot systems</strong>, and scalable <strong>full-stack software</strong>. Experienced
         across AI engineering, data science, and full-stack development through hands-on work with
-        <strong>Post Fusion</strong>, <strong>Arch Technology</strong>, and <strong>NASTP</strong>.
+        <strong>GO Viral Communication (NASTP)</strong>, <strong>Post Fusion</strong>, and
+        <strong>Arch Technology</strong>.
       </p>
 
       <div class="hero-stats">
@@ -1088,10 +1140,11 @@ section { padding: 96px 0; position: relative; }
           spans LLM integration, RAG systems, chatbot architecture, and cloud-native development.
         </p>
         <p>
-          Through internships at leading Pakistan-based tech companies, I've gained hands-on experience in
-          <strong>AI engineering</strong>, <strong>data science</strong>, and <strong>full-stack development</strong>.
-          I'm actively seeking <strong>entry-level AI &amp; Software Engineering roles</strong> where I can
-          contribute to impactful AI products and scalable systems.
+          Through three internships at leading Pakistan-based tech companies, I've gained hands-on experience
+          in <strong>AI engineering</strong>, <strong>data science</strong>, <strong>mobile development</strong>,
+          and <strong>full-stack engineering</strong>. I'm actively seeking
+          <strong>entry-level AI &amp; Software Engineering roles</strong> where I can contribute to impactful
+          AI products and scalable systems.
         </p>
         <p>
           I'm <strong>open to both onsite and remote opportunities</strong> — locally in Pakistan and
@@ -1111,8 +1164,8 @@ section { padding: 96px 0; position: relative; }
         <div class="highlight">
           <h4>Specializations</h4>
           <p>Full-stack development (<strong>React, Node.js, Python</strong>), LLM integration
-          (<strong>Gemini, Groq</strong>), RAG systems, Data science &amp; ML (<strong>K-Means, SVD, Scikit-learn</strong>),
-          Cloud deployment (<strong>Render, Railway</strong>).</p>
+          (<strong>Gemini, Groq, OpenAI</strong>), RAG systems, Data science &amp; ML (<strong>K-Means, SVD, Scikit-learn</strong>),
+          Cloud deployment (<strong>Render, Railway, Vercel</strong>).</p>
         </div>
         <div class="highlight">
           <h4>Final Year Project</h4>
@@ -1121,8 +1174,9 @@ section { padding: 96px 0; position: relative; }
         </div>
         <div class="highlight">
           <h4>Professional Experience</h4>
-          <p>Internships at <strong>Post Fusion</strong> (LLM Engineering), <strong>Arch Technology</strong>
-          (Data Science &amp; Mobile Development), and <strong>NASTP</strong> (Software Engineering).</p>
+          <p>Internships at <strong>GO Viral Communication (NASTP)</strong> (Software Engineering),
+          <strong>Post Fusion</strong> (AI Engineering), and <strong>Arch Technology</strong>
+          (Data Science &amp; Mobile Development).</p>
         </div>
       </div>
     </div>
@@ -1176,8 +1230,8 @@ section { padding: 96px 0; position: relative; }
         <h3><i class="fas fa-plug"></i> APIs &amp; Integrations</h3>
         <div class="skill-tags">
           <span>Google Gemini</span><span>OpenAI</span><span>Groq</span>
-          <span>OpenRouter</span><span>REST APIs</span><span>Flask APIs</span>
-          <span>Server-Sent Events (SSE)</span>
+          <span>OpenRouter</span><span>Ollama</span><span>REST APIs</span>
+          <span>Flask APIs</span><span>Server-Sent Events (SSE)</span>
         </div>
       </div>
 
@@ -1185,7 +1239,7 @@ section { padding: 96px 0; position: relative; }
         <h3><i class="fas fa-database"></i> Databases &amp; Authentication</h3>
         <div class="skill-tags">
           <span>MongoDB</span><span>PostgreSQL</span><span>SQLite</span>
-          <span>JWT Authentication</span><span>bcrypt</span>
+          <span>Supabase</span><span>JWT Authentication</span><span>bcrypt</span>
           <span>Secure User Auth</span><span>CRUD Operations</span>
         </div>
       </div>
@@ -1193,9 +1247,9 @@ section { padding: 96px 0; position: relative; }
       <div class="skill-card">
         <h3><i class="fas fa-rocket"></i> DevOps &amp; Tools</h3>
         <div class="skill-tags">
-          <span>Git</span><span>GitHub</span><span>Docker</span>
-          <span>Nginx</span><span>Linux</span><span>Render</span>
-          <span>Railway</span><span>Google Colab</span><span>Jupyter</span>
+          <span>Git</span><span>GitHub</span><span>GitLab CI/CD</span><span>Docker</span>
+          <span>Nginx</span><span>Linux</span><span>Render</span><span>Railway</span>
+          <span>Vercel</span><span>Google Colab</span><span>Jupyter</span>
           <span>Agile / Scrum</span>
         </div>
       </div>
@@ -1335,8 +1389,8 @@ section { padding: 96px 0; position: relative; }
             <strong>Server-Sent Events (SSE)</strong> to push tokens from backend to browser as they're
             generated. Two modes: <strong>Streaming mode</strong> using <code>EventSource</code> for live
             word-by-word rendering, and <strong>Full Post mode</strong> with JSON fetch. Architected for
-            easy swapping to real APIs (OpenAI, OpenRouter) via environment variables — reducing content
-            creation time from <strong>~30 min to under 3 min</strong> per post.
+            easy swapping to real APIs (OpenAI, OpenRouter, Groq) via environment variables — reducing
+            content creation time from <strong>~30 min to under 3 min</strong> per post.
           </p>
           <div class="project-links">
             <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> View on GitHub</a>
@@ -1437,7 +1491,6 @@ section { padding: 96px 0; position: relative; }
 
     </div>
 
-    <!-- View All Projects CTA -->
     <div class="view-all-cta reveal">
       <p>Explore more experiments, work-in-progress builds, and open-source contributions on GitHub.</p>
       <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="btn btn-outline">
@@ -1447,65 +1500,104 @@ section { padding: 96px 0; position: relative; }
   </div>
 </section>
 
-<!-- ==================== 5. PROFESSIONAL EXPERIENCE ==================== -->
+<!-- ==================== 5. PROFESSIONAL EXPERIENCE (UPDATED) ==================== -->
 <section class="experience" id="experience">
   <div class="container">
     <div class="section-head reveal">
       <span class="section-label">Career</span>
       <h2 class="section-title">Professional <span class="accent">Experience</span></h2>
-      <p class="section-sub">Internships and hands-on roles across AI engineering, data science, and full-stack development.</p>
+      <p class="section-sub">Three internships across software engineering, AI engineering, and data science — most recent first.</p>
     </div>
 
     <div class="experience-list reveal">
 
+      <!-- ═══════ EXPERIENCE 1 — NASTP (Most recent / first per user request) ═══════ -->
       <article class="exp-item">
         <div class="exp-head">
-          <div>
-            <div class="exp-role">LLM Engineering</div>
-            <div class="exp-company">Post Fusion</div>
+          <div class="exp-title-group">
+            <div class="exp-role">Software Engineering Intern</div>
+            <div class="exp-company">GO Viral Communication, ISB NASTP</div>
           </div>
-          <div class="exp-date">Recent</div>
+          <div class="exp-meta">
+            <span class="exp-date"><i class="far fa-calendar-alt"></i> 4 Mar – 4 Jun 2026</span>
+            <span class="exp-mode onsite"><i class="fas fa-building"></i> Onsite</span>
+          </div>
         </div>
-        <p class="exp-desc">AI Engineering internship focused on LLM pipeline development and RAG system implementation.</p>
+        <p class="exp-location"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</p>
+        <p class="exp-desc">
+          12-week onsite software engineering internship focused on building enterprise-grade full-stack
+          systems with modern security practices.
+        </p>
         <ul class="exp-achievements">
-          <li>Engineered LLM pipelines and RAG systems using Google Gemini and LangChain</li>
-          <li>Implemented semantic search and document retrieval optimization</li>
-          <li>Optimized AI workflows for production deployment</li>
+          <li>Developed a full-stack <strong>Notifications System</strong> using <strong>React TypeScript</strong> (frontend), <strong>NestJS</strong> (backend), <strong>MongoDB</strong>, and RESTful APIs</li>
+          <li>Implemented secure authentication using <strong>JWT token-based auth</strong> and <strong>bcrypt</strong> password hashing for user data protection</li>
+          <li>Built comprehensive backend with <strong>CRUD operations</strong>, data validation, and RESTful architecture</li>
+          <li>Gained practical experience in <strong>C</strong>, <strong>Python Flask APIs</strong>, Git/GitHub, <strong>Linux</strong>, <strong>Docker</strong>, and <strong>Nginx</strong> web server administration</li>
         </ul>
+        <div class="exp-tech">
+          <span>React</span><span>TypeScript</span><span>NestJS</span><span>MongoDB</span>
+          <span>JWT</span><span>bcrypt</span><span>Docker</span><span>Nginx</span><span>Linux</span>
+        </div>
       </article>
 
+      <!-- ═══════ EXPERIENCE 2 — Post Fusion ═══════ -->
       <article class="exp-item">
         <div class="exp-head">
-          <div>
-            <div class="exp-role">Data Science &amp; Mobile Development</div>
+          <div class="exp-title-group">
+            <div class="exp-role">AI Engineer Intern — AI &amp; ML Department</div>
+            <div class="exp-company">Post Fusion (Pro Fusion AI)</div>
+          </div>
+          <div class="exp-meta">
+            <span class="exp-date"><i class="far fa-calendar-alt"></i> 1 Jun – 28 Aug 2026</span>
+            <span class="exp-mode onsite"><i class="fas fa-building"></i> Onsite</span>
+          </div>
+        </div>
+        <p class="exp-location"><i class="fas fa-map-marker-alt"></i> Rawalpindi, Pakistan</p>
+        <p class="exp-desc">
+          8-week structured AI/ML curriculum with hands-on exposure to real client projects and
+          industry-standard workflows under professional mentorship.
+        </p>
+        <ul class="exp-achievements">
+          <li>Developed <strong>LinkedIn Post Generator</strong> using <strong>Python</strong>, <strong>LangChain</strong>, and <strong>Ollama</strong>, implementing prompt engineering and AI quality scoring</li>
+          <li>Designed and deployed an AI-powered content generation studio integrating <strong>multiple LLM APIs</strong> (OpenAI, Groq, OpenRouter) with <strong>real-time streaming</strong> via Server-Sent Events (SSE)</li>
+          <li>Built a full-stack streaming content platform using <strong>React + Node.js/Express</strong>, vector databases, and multi-LLM routing</li>
+          <li>Mastered advanced concepts: <strong>Machine Learning</strong>, <strong>Deep Learning</strong>, <strong>Prompt Engineering</strong>, LLM Applications, AI Workflows, and <strong>AI Agents</strong></li>
+          <li>Implemented version control and CI/CD workflows using <strong>Git &amp; GitHub</strong> under professional mentorship</li>
+        </ul>
+        <div class="exp-tech">
+          <span>Python</span><span>LangChain</span><span>Ollama</span><span>OpenAI</span>
+          <span>Groq</span><span>OpenRouter</span><span>React</span><span>Node.js</span>
+          <span>SSE</span><span>Vector DBs</span>
+        </div>
+      </article>
+
+      <!-- ═══════ EXPERIENCE 3 — Arch Technology ═══════ -->
+      <article class="exp-item">
+        <div class="exp-head">
+          <div class="exp-title-group">
+            <div class="exp-role">Data Science &amp; Mobile Development Intern</div>
             <div class="exp-company">Arch Technology</div>
           </div>
-          <div class="exp-date">Recent</div>
-        </div>
-        <p class="exp-desc">Multi-track internship program with concurrent training in data science, machine learning, and mobile development.</p>
-        <ul class="exp-achievements">
-          <li>Data Science: Built ML models for customer segmentation using K-Means clustering and collaborative filtering (SVD)</li>
-          <li>Analyzed datasets with Pandas, NumPy, and Scikit-learn for actionable insights</li>
-          <li>Mobile Development: Built React Native apps for iOS and Android platforms with Expo</li>
-          <li>Implemented deep learning models for computer vision tasks</li>
-        </ul>
-      </article>
-
-      <article class="exp-item">
-        <div class="exp-head">
-          <div>
-            <div class="exp-role">Software Engineering</div>
-            <div class="exp-company">NASTP (Go Viral Communication)</div>
+          <div class="exp-meta">
+            <span class="exp-date"><i class="far fa-calendar-alt"></i> Jul – Sep 2026</span>
+            <span class="exp-mode remote"><i class="fas fa-wifi"></i> Remote</span>
           </div>
-          <div class="exp-date">Recent</div>
         </div>
-        <p class="exp-desc">Full-stack software engineering role developing enterprise-grade web applications.</p>
+        <p class="exp-location"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan (Remote)</p>
+        <p class="exp-desc">
+          Multi-track remote internship in data science, machine learning, and cross-platform mobile
+          development — focusing on applied business intelligence and user-facing apps.
+        </p>
         <ul class="exp-achievements">
-          <li>Developed enterprise-grade full-stack web applications using React, Node.js, and Express</li>
-          <li>Designed and implemented database schemas with MongoDB and PostgreSQL</li>
-          <li>Built RESTful APIs with proper authentication and authorization</li>
-          <li>Deployed applications to cloud platforms (Render, Railway)</li>
+          <li>Built a <strong>collaborative filtering recommendation system</strong> (SVD algorithm) using the <strong>Surprise</strong> library, achieving industry-standard RMSE scores for rating predictions</li>
+          <li>Applied <strong>K-Means clustering</strong> (Scikit-learn) to segment retail customers into <strong>5 distinct personas</strong>, enabling targeted marketing strategies</li>
+          <li>Built cross-platform mobile apps using <strong>Flutter</strong> and <strong>React Native</strong> with responsive UIs and seamless backend API integration</li>
+          <li>Performed data cleaning, visualization, and statistical analysis using <strong>Python</strong>, <strong>Pandas</strong>, and <strong>NumPy</strong> for business intelligence insights</li>
         </ul>
+        <div class="exp-tech">
+          <span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span>
+          <span>SVD</span><span>K-Means</span><span>Flutter</span><span>React Native</span>
+        </div>
       </article>
 
     </div>
@@ -1525,8 +1617,8 @@ section { padding: 96px 0; position: relative; }
         <span class="edu-icon"><i class="fas fa-graduation-cap"></i></span>
         <div>
           <h3>BS Computer Science</h3>
-          <p class="edu-institution">Virtual University of Pakistan</p>
-          <span class="edu-date">Graduated April 2027</span>
+          <p class="edu-institution">Virtual University of Pakistan — Saddar Campus, Rawalpindi</p>
+          <span class="edu-date">Oct 2022 – Apr 2027</span>
         </div>
       </div>
       <div class="edu-body">
@@ -1540,8 +1632,9 @@ section { padding: 96px 0; position: relative; }
           and web (Streamlit) applications.
         </p>
         <p>
-          <strong>Focus Areas:</strong> AI Engineering, Full-Stack Development, Machine Learning, Cloud Deployment,
-          Software Architecture, and Scalable System Design.
+          <strong>Prior Education:</strong> Intermediate in ICS-Physics (2021) — Govt. Associate College for Women
+          Dhoke Munshi, Rawalpindi · Matriculation in Science (2018) — Government Girls High School GareebAbad,
+          Rawalpindi.
         </p>
         <div class="edu-tags">
           <span>Machine Learning</span>
