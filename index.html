@@ -30,7 +30,7 @@
 <!-- Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<!-- JSON-LD -->
+<!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -59,7 +59,7 @@ img { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
-/* ==================== VARIABLES ==================== */
+/* ==================== VARIABLES (ORIGINAL PURPLE/PINK SCHEME) ==================== */
 :root {
   --gradient: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
   --gradient-soft: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
@@ -100,7 +100,7 @@ body {
 .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 section { padding: 80px 0; }
 
-/* ==================== HEADER ==================== */
+/* ==================== HEADER / NAV ==================== */
 .site-header {
   position: sticky; top: 0; z-index: 100;
   background: rgba(255, 255, 255, 0.92);
@@ -147,7 +147,8 @@ section { padding: 80px 0; }
 .hero {
   padding: 90px 0 70px;
   background: linear-gradient(180deg, #faf5ff 0%, #ffffff 100%);
-  position: relative; overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 .hero::before {
   content: ''; position: absolute; top: -100px; right: -100px;
@@ -373,8 +374,8 @@ section { padding: 80px 0; }
 .projects { background: #fdf2f8; }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
 }
 .project-card {
   background: var(--bg-card);
@@ -391,146 +392,77 @@ section { padding: 80px 0; }
   border-color: var(--border-strong);
 }
 
-/* Browser mockup thumbnail */
-.browser-frame {
-  background: #f3f4f6;
-  padding: 12px 14px 0;
-  border-bottom: 1px solid #e5e7eb;
-}
-.browser-bar {
-  display: flex; align-items: center; gap: 8px;
-  padding-bottom: 10px;
-}
-.browser-dots {
-  display: flex; gap: 5px;
-}
-.browser-dots span {
-  width: 10px; height: 10px; border-radius: 50%;
-  display: inline-block;
-}
-.browser-dots .d-red { background: #ff5f57; }
-.browser-dots .d-yellow { background: #febc2e; }
-.browser-dots .d-green { background: #28c840; }
-.browser-url {
-  flex: 1;
-  background: #fff;
-  border-radius: 6px;
-  padding: 4px 12px;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: #6b7280;
-  border: 1px solid #e5e7eb;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.browser-content {
-  background: var(--gradient-soft);
-  height: 190px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* 🖼️ IMAGE STYLING FOR PROJECT SCREENSHOTS */
+.project-thumb {
+  height: 200px;
   position: relative;
   overflow: hidden;
-  border-radius: 8px 8px 0 0;
+  background: var(--gradient-soft);
 }
-.browser-content img {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: top;
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
 }
-.browser-content .fallback-icon {
-  font-size: 4rem;
-  color: rgba(255, 255, 255, 0.9);
+.project-card:hover .project-thumb img {
+  transform: scale(1.05);
 }
+.project-type-label {
+  position: absolute; top: 16px; left: 16px;
+  z-index: 2;
+  font-family: var(--font-mono);
+  font-size: 0.65rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--purple);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 .project-body {
-  padding: 24px 26px 26px;
+  padding: 24px;
   display: flex; flex-direction: column; flex: 1;
 }
 .tech-tags {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  margin-bottom: 16px;
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-bottom: 14px;
 }
 .tech-tags span {
   font-family: var(--font-mono);
-  font-size: 0.68rem; font-weight: 500;
+  font-size: 0.66rem; font-weight: 500;
   text-transform: uppercase; letter-spacing: 0.05em;
-  background: #f3e8ff; color: var(--purple);
-  padding: 5px 14px; border-radius: var(--radius-pill);
+  background: var(--bg-muted); color: var(--purple);
+  padding: 4px 11px; border-radius: var(--radius-pill);
   border: 1px solid var(--border-strong);
 }
 .project-body h3 {
   font-family: var(--font-heading);
-  font-size: 1.2rem; font-weight: 700;
+  font-size: 1.12rem; font-weight: 700;
   color: #111827; line-height: 1.35;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .project-body p {
-  font-size: 0.9rem; color: var(--text-secondary);
-  line-height: 1.75; margin-bottom: 20px; flex: 1;
+  font-size: 0.88rem; color: var(--text-secondary);
+  line-height: 1.7; margin-bottom: 18px; flex: 1;
 }
 .project-body p strong { color: var(--purple); font-weight: 600; }
-.project-body p code {
-  background: var(--bg-muted);
-  padding: 2px 7px;
-  border-radius: 4px;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  color: var(--purple);
-}
 .project-links {
-  display: flex; flex-wrap: wrap; gap: 20px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
+  display: flex; flex-wrap: wrap; gap: 16px;
+  padding-top: 16px; border-top: 1px solid var(--border);
 }
 .project-links a {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-size: 0.86rem; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.83rem; font-weight: 600;
   color: var(--text-secondary);
   transition: var(--transition);
 }
 .project-links a.live { color: #10b981; }
 .project-links a.live:hover { color: #059669; }
-.project-links a.source { color: #374151; }
+.project-links a.source { color: var(--text-secondary); }
 .project-links a.source:hover { color: #111827; }
-
-/* Data Science CTA */
-.ds-cta {
-  margin-top: 60px;
-  padding-top: 48px;
-  border-top: 2px dashed var(--border-strong);
-  text-align: center;
-}
-.ds-cta p {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  margin-bottom: 20px;
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex; align-items: center; justify-content: center; gap: 10px;
-  flex-wrap: wrap;
-}
-.ds-cta p i {
-  color: var(--purple);
-  font-size: 1.3rem;
-}
-.ds-cta-btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  background: var(--gradient);
-  color: #fff;
-  padding: 15px 34px;
-  border-radius: var(--radius-pill);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.98rem;
-  box-shadow: 0 10px 30px rgba(147, 51, 234, 0.35);
-  transition: var(--transition);
-}
-.ds-cta-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(147, 51, 234, 0.5);
-  color: #fff;
-}
 
 /* ==================== EXPERIENCE ==================== */
 .experience { background: #ffffff; }
@@ -653,7 +585,7 @@ section { padding: 80px 0; }
   padding: 5px 12px; border-radius: var(--radius-pill);
 }
 
-/* ==================== CONTACT ==================== */
+/* ==================== CONTACT (LET'S CONNECT) ==================== */
 .contact { background: #faf5ff; }
 .contact-grid {
   display: grid; grid-template-columns: 1fr 1.15fr;
@@ -869,7 +801,6 @@ section { padding: 80px 0; }
   .avatar-ring { width: 180px; height: 180px; }
   .btn { padding: 11px 22px; font-size: 0.87rem; }
   .contact-form-wrap { padding: 24px 20px; }
-  .browser-content { height: 150px; }
 }
 </style>
 </head>
@@ -1060,7 +991,7 @@ section { padding: 80px 0; }
   </div>
 </section>
 
-<!-- ==================== 4. PROJECTS ==================== -->
+<!-- ==================== 4. PROJECTS (ALL 9 WITH SCREENSHOTS) ==================== -->
 <section class="projects" id="projects">
   <div class="container">
     <div class="section-head">
@@ -1071,16 +1002,12 @@ section { padding: 80px 0; }
 
     <div class="projects-grid">
 
-      <!-- ═══════════ PROJECT 1: Advanced AI Systems ═══════════ -->
+      <!-- Project 1 -->
       <article class="project-card">
-        <div class="browser-frame">
-          <div class="browser-bar">
-            <div class="browser-dots"><span class="d-red"></span><span class="d-yellow"></span><span class="d-green"></span></div>
-            <div class="browser-url">advanced-ai-systems.streamlit.app</div>
-          </div>
-          <div class="browser-content">
-            <i class="fas fa-network-wired fallback-icon"></i>
-          </div>
+        <div class="project-thumb">
+          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-1.png -->
+          <img src="images/project-1.png" alt="LLM Evaluation Dashboard screenshot" loading="lazy">
+          <span class="project-type-label">LLM &amp; AI Systems</span>
         </div>
         <div class="project-body">
           <div class="tech-tags">
@@ -1088,7 +1015,13 @@ section { padding: 80px 0; }
           </div>
           <h3>Advanced AI Systems: LLM Eval &amp; Multi-Agent</h3>
           <p>
-            Built with <strong>Python</strong> using the <strong>Groq</strong> inference API. <strong>Part 1:</strong> An LLM evaluation dashboard using <strong>LLM-as-judge methodology</strong> to score outputs on Faithfulness (hallucination detection) and Answer Relevance, visualized with <strong>Plotly</strong> charts in a <strong>Streamlit</strong> UI. <strong>Part 2:</strong> A <strong>LangGraph</strong> multi-agent state machine where <strong>Agent A (Structurer)</strong> converts messy text into clean JSON and <strong>Agent B (Validator)</strong> applies business rules. Execution pauses at checkpoints for <strong>Human-in-the-Loop</strong> approval when anomalies are detected.
+            Built with <strong>Python</strong> using the <strong>Groq</strong> inference API. <strong>Part 1:</strong>
+            An LLM evaluation dashboard using <strong>LLM-as-judge methodology</strong> to score outputs on
+            Faithfulness (hallucination detection) and Answer Relevance, visualized with <strong>Plotly</strong>
+            charts in a <strong>Streamlit</strong> UI. <strong>Part 2:</strong> A <strong>LangGraph</strong>
+            multi-agent state machine where <strong>Agent A (Structurer)</strong> converts messy text into clean
+            JSON and <strong>Agent B (Validator)</strong> applies business rules. Execution pauses at checkpoints
+            for <strong>Human-in-the-Loop</strong> approval when anomalies are detected.
           </p>
           <div class="project-links">
             <a href="https://advanced-ai-systems-fsz7jtqn7o8shhntitckpp.streamlit.app/" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
@@ -1097,16 +1030,12 @@ section { padding: 80px 0; }
         </div>
       </article>
 
-      <!-- ═══════════ PROJECT 2: Notifications & AI Incident Engine ═══════════ -->
+      <!-- Project 2 -->
       <article class="project-card">
-        <div class="browser-frame">
-          <div class="browser-bar">
-            <div class="browser-dots"><span class="d-red"></span><span class="d-yellow"></span><span class="d-green"></span></div>
-            <div class="browser-url">full-stack-app-k9jl.onrender.com</div>
-          </div>
-          <div class="browser-content">
-            <i class="fas fa-bell fallback-icon"></i>
-          </div>
+        <div class="project-thumb">
+          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-2.png -->
+          <img src="images/project-2.png" alt="Notifications and AI Incident Engine screenshot" loading="lazy">
+          <span class="project-type-label">Full-Stack Enterprise</span>
         </div>
         <div class="project-body">
           <div class="tech-tags">
@@ -1114,7 +1043,12 @@ section { padding: 80px 0; }
           </div>
           <h3>Notifications &amp; AI Incident Engine</h3>
           <p>
-            Full-stack enterprise app with a <strong>React + TypeScript</strong> frontend and a modular <strong>NestJS</strong> backend (Controllers, Services, DTOs, Guards). Replaced MD5 with <strong>bcrypt (10 rounds)</strong> and cookie sessions with stateless <strong>JWT authentication</strong>. Strict resource isolation ensures users can only see their own notifications. INFO alerts auto-dismiss after <strong>90 seconds</strong>. Integrated <strong>Google Gemini AI</strong> for auto-triage, urgency scoring (1-10), and RCA playbooks with terminal remediation steps.
+            Full-stack enterprise app with a <strong>React + TypeScript</strong> frontend and a modular
+            <strong>NestJS</strong> backend (Controllers, Services, DTOs, Guards). Replaced MD5 with
+            <strong>bcrypt (10 rounds)</strong> and cookie sessions with stateless <strong>JWT authentication</strong>.
+            Strict resource isolation ensures users can only see their own notifications. INFO alerts auto-dismiss
+            after <strong>90 seconds</strong>. Integrated <strong>Google Gemini AI</strong> for auto-triage,
+            urgency scoring (1-10), and RCA playbooks with terminal remediation steps.
           </p>
           <div class="project-links">
             <a href="https://full-stack-app-k9jl.onrender.com" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
@@ -1123,16 +1057,12 @@ section { padding: 80px 0; }
         </div>
       </article>
 
-      <!-- ═══════════ PROJECT 3: AI Clothing & Inventory (FYP) ═══════════ -->
+      <!-- Project 3 -->
       <article class="project-card">
-        <div class="browser-frame">
-          <div class="browser-bar">
-            <div class="browser-dots"><span class="d-red"></span><span class="d-yellow"></span><span class="d-green"></span></div>
-            <div class="browser-url">ai-clothing-inventory.streamlit.app</div>
-          </div>
-          <div class="browser-content">
-            <i class="fas fa-tshirt fallback-icon"></i>
-          </div>
+        <div class="project-thumb">
+          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-3.png -->
+          <img src="images/project-3.png" alt="AI Clothing and Inventory System screenshot" loading="lazy">
+          <span class="project-type-label">Final Year Project</span>
         </div>
         <div class="project-body">
           <div class="tech-tags">
@@ -1140,25 +1070,26 @@ section { padding: 80px 0; }
           </div>
           <h3>AI Clothing &amp; Inventory System — Final Year Project</h3>
           <p>
-            <strong>Final Year Project (FYP)</strong> — Originally built as a desktop application in <strong>Python + Tkinter</strong> with a <strong>SQLite</strong> database for stock tracking and profit analytics. I then enhanced it with AI: integrated <strong>Google Gemini 2.5 Flash</strong> via the GenAI SDK for <strong>vision-based auto-tagging</strong> (users upload a photo and AI extracts item name, category, season, size, and color). Finally, I built a <strong>Streamlit web version</strong> and deployed it online for public access.
+            <strong>Final Year Project (FYP)</strong> — Originally built as a desktop application in
+            <strong>Python + Tkinter</strong> with a <strong>SQLite</strong> database for stock tracking and
+            profit analytics. I then enhanced it with AI: integrated <strong>Google Gemini 2.5 Flash</strong>
+            via the GenAI SDK for <strong>vision-based auto-tagging</strong> (users upload a photo and AI extracts
+            item name, category, season, size, and color). Finally, I built a <strong>Streamlit web version</strong>
+            and deployed it online for public access.
           </p>
           <div class="project-links">
-            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
-            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+            <a href="#" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="#" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
           </div>
         </div>
       </article>
 
-      <!-- ═══════════ PROJECT 4: MGT501 RAG AI Chatbot ═══════════ -->
+      <!-- Project 4 -->
       <article class="project-card">
-        <div class="browser-frame">
-          <div class="browser-bar">
-            <div class="browser-dots"><span class="d-red"></span><span class="d-yellow"></span><span class="d-green"></span></div>
-            <div class="browser-url">mgt501-rag-chatbot.onrender.com</div>
-          </div>
-          <div class="browser-content">
-            <i class="fas fa-robot fallback-icon"></i>
-          </div>
+        <div class="project-thumb">
+          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-4.png -->
+          <img src="images/project-4.png" alt="MGT501 RAG AI Chatbot screenshot" loading="lazy">
+          <span class="project-type-label">RAG &amp; Chatbot</span>
         </div>
         <div class="project-body">
           <div class="tech-tags">
@@ -1166,25 +1097,26 @@ section { padding: 80px 0; }
           </div>
           <h3>MGT501 RAG AI Chatbot</h3>
           <p>
-            Retrieval-Augmented Generation chatbot built in <strong>Python + Flask</strong>. Uses <strong>Google text-embedding-004</strong> to convert <strong>45+ MGT501 course handouts</strong> into vector embeddings. When a user asks a question, the system runs <strong>cosine similarity search</strong> to fetch Top-K relevant lecture chunks, then passes them to <strong>Gemini</strong> with a strict academic grounding prompt. Enforces <strong>out-of-domain refusal</strong> — if a question isn't about HRM material, the bot refuses, preventing misinformation.
+            Retrieval-Augmented Generation chatbot built in <strong>Python + Flask</strong>. Uses
+            <strong>Google text-embedding-004</strong> to convert <strong>45+ MGT501 course handouts</strong>
+            into vector embeddings. When a user asks a question, the system runs <strong>cosine similarity
+            search</strong> to fetch Top-K relevant lecture chunks, then passes them to <strong>Gemini</strong>
+            with a strict academic grounding prompt. Enforces <strong>out-of-domain refusal</strong> — if a
+            question isn't about HRM material, the bot refuses, preventing misinformation.
           </p>
           <div class="project-links">
-            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
-            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+            <a href="#" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="#" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
           </div>
         </div>
       </article>
 
-      <!-- ═══════════ PROJECT 5: Posts Fusion Studio ═══════════ -->
+      <!-- Project 5 -->
       <article class="project-card">
-        <div class="browser-frame">
-          <div class="browser-bar">
-            <div class="browser-dots"><span class="d-red"></span><span class="d-yellow"></span><span class="d-green"></span></div>
-            <div class="browser-url">posts-fusion-studio.onrender.com</div>
-          </div>
-          <div class="browser-content">
-            <i class="fas fa-pen-fancy fallback-icon"></i>
-          </div>
+        <div class="project-thumb">
+          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-5.png -->
+          <img src="images/project-5.png" alt="Posts Fusion Studio screenshot" loading="lazy">
+          <span class="project-type-label">AI Content Gen</span>
         </div>
         <div class="project-body">
           <div class="tech-tags">
@@ -1192,25 +1124,25 @@ section { padding: 80px 0; }
           </div>
           <h3>Posts Fusion Studio — AI Content Gen</h3>
           <p>
-            Real-time AI content streaming app built with <strong>Node.js + Express</strong>. Implemented <strong>Server-Sent Events (SSE)</strong> to push tokens from backend to browser as they're generated. Two modes: (1) <strong>Streaming mode</strong> using <code>EventSource</code> for live word-by-word rendering, (2) <strong>Full Post mode</strong> with JSON fetch. Architected for easy swapping to real APIs (OpenAI, OpenRouter) via environment variables.
+            Real-time AI content streaming app built with <strong>Node.js + Express</strong>. Implemented
+            <strong>Server-Sent Events (SSE)</strong> to push tokens from backend to browser as they're
+            generated. Two modes: (1) <strong>Streaming mode</strong> using <code>EventSource</code> for live
+            word-by-word rendering, (2) <strong>Full Post mode</strong> with JSON fetch. Architected for easy
+            swapping to real APIs (OpenAI, OpenRouter) via environment variables.
           </p>
           <div class="project-links">
-            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
-            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+            <a href="#" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="#" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
           </div>
         </div>
       </article>
 
-      <!-- ═══════════ PROJECT 6: College Alert App ═══════════ -->
+      <!-- Project 6 -->
       <article class="project-card">
-        <div class="browser-frame">
-          <div class="browser-bar">
-            <div class="browser-dots"><span class="d-red"></span><span class="d-yellow"></span><span class="d-green"></span></div>
-            <div class="browser-url">college-alert-app.vercel.app</div>
-          </div>
-          <div class="browser-content">
-            <i class="fas fa-calendar-check fallback-icon"></i>
-          </div>
+        <div class="project-thumb">
+          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-6.png -->
+          <img src="images/project-6.png" alt="College Alert App screenshot" loading="lazy">
+          <span class="project-type-label">Mobile App</span>
         </div>
         <div class="project-body">
           <div class="tech-tags">
@@ -1218,25 +1150,24 @@ section { padding: 80px 0; }
           </div>
           <h3>College Alert App</h3>
           <p>
-            Mobile app built with <strong>React Native + Expo</strong> for managing college events. State management using <strong>React useState hooks</strong>. Renders cards via <strong>FlatList</strong> for optimized scrolling. Features add event with validation, delete with confirmation, and <strong>scheduled local push notifications</strong> via <code>expo-notifications</code>.
+            Mobile app built with <strong>React Native + Expo</strong> for managing college events. State
+            management using <strong>React useState hooks</strong>. Renders cards via <strong>FlatList</strong>
+            for optimized scrolling. Features add event with validation, delete with confirmation, and
+            <strong>scheduled local push notifications</strong> via <code>expo-notifications</code>.
           </p>
           <div class="project-links">
-            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
-            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+            <a href="#" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="#" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
           </div>
         </div>
       </article>
 
-      <!-- ═══════════ PROJECT 7: E-Commerce Marketplace ═══════════ -->
+      <!-- Project 7 -->
       <article class="project-card">
-        <div class="browser-frame">
-          <div class="browser-bar">
-            <div class="browser-dots"><span class="d-red"></span><span class="d-yellow"></span><span class="d-green"></span></div>
-            <div class="browser-url">marketplace-app.vercel.app</div>
-          </div>
-          <div class="browser-content">
-            <i class="fas fa-shopping-cart fallback-icon"></i>
-          </div>
+        <div class="project-thumb">
+          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-7.png -->
+          <img src="images/project-7.png" alt="E-Commerce Marketplace App screenshot" loading="lazy">
+          <span class="project-type-label">Mobile App</span>
         </div>
         <div class="project-body">
           <div class="tech-tags">
@@ -1244,25 +1175,24 @@ section { padding: 80px 0; }
           </div>
           <h3>E-Commerce Marketplace App</h3>
           <p>
-            Multi-screen mobile marketplace built with <strong>React Native + Expo</strong> using <strong>conditional state rendering</strong> to navigate between login, home, cart, add-product, and payment screens. Users browse products in a <code>FlatList</code>, add items to cart with running total, list products for sale, and complete a simulated payment flow.
+            Multi-screen mobile marketplace built with <strong>React Native + Expo</strong> using
+            <strong>conditional state rendering</strong> to navigate between login, home, cart, add-product,
+            and payment screens. Users browse products in a <code>FlatList</code>, add items to cart with
+            running total, list products for sale, and complete a simulated payment flow.
           </p>
           <div class="project-links">
-            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
-            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+            <a href="#" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="#" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
           </div>
         </div>
       </article>
 
-      <!-- ═══════════ PROJECT 8: Digital Art Gallery ═══════════ -->
+      <!-- Project 8 -->
       <article class="project-card">
-        <div class="browser-frame">
-          <div class="browser-bar">
-            <div class="browser-dots"><span class="d-red"></span><span class="d-yellow"></span><span class="d-green"></span></div>
-            <div class="browser-url">digital-art-gallery.vercel.app</div>
-          </div>
-          <div class="browser-content">
-            <i class="fas fa-palette fallback-icon"></i>
-          </div>
+        <div class="project-thumb">
+          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-8.png -->
+          <img src="images/project-8.png" alt="Digital Art Gallery screenshot" loading="lazy">
+          <span class="project-type-label">Cross-Platform</span>
         </div>
         <div class="project-body">
           <div class="tech-tags">
@@ -1270,25 +1200,24 @@ section { padding: 80px 0; }
           </div>
           <h3>Digital Art Gallery</h3>
           <p>
-            Cross-platform gallery app built with <strong>React Native + Expo</strong> and <strong>React Native Web</strong> so the same codebase runs on both Android and browser. Designed a responsive grid layout showcasing famous artwork (The Starry Night, Mona Lisa, Girl with a Pearl Earring, The Scream, Guernica) with title and artist credits.
+            Cross-platform gallery app built with <strong>React Native + Expo</strong> and
+            <strong>React Native Web</strong> so the same codebase runs on both Android and browser. Designed
+            a responsive grid layout showcasing famous artwork (The Starry Night, Mona Lisa, Girl with a Pearl
+            Earring, The Scream, Guernica) with title and artist credits.
           </p>
           <div class="project-links">
-            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
-            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+            <a href="#" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="#" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
           </div>
         </div>
       </article>
 
-      <!-- ═══════════ PROJECT 9: Time Zone Converter ═══════════ -->
+      <!-- Project 9 -->
       <article class="project-card">
-        <div class="browser-frame">
-          <div class="browser-bar">
-            <div class="browser-dots"><span class="d-red"></span><span class="d-yellow"></span><span class="d-green"></span></div>
-            <div class="browser-url">time-zone-converter.vercel.app</div>
-          </div>
-          <div class="browser-content">
-            <i class="fas fa-clock fallback-icon"></i>
-          </div>
+        <div class="project-thumb">
+          <!-- ✏️ UPLOAD YOUR SCREENSHOT AS: images/project-9.png -->
+          <img src="images/project-9.png" alt="Time Zone Converter screenshot" loading="lazy">
+          <span class="project-type-label">Utility App</span>
         </div>
         <div class="project-body">
           <div class="tech-tags">
@@ -1296,28 +1225,18 @@ section { padding: 80px 0; }
           </div>
           <h3>Time Zone Converter</h3>
           <p>
-            Utility app for converting time across <strong>9 major global zones</strong> (NY, LA, London, Paris, Dubai, Kolkata, Tokyo, Sydney, Auckland). Built with <strong>React Native + Expo</strong> for cross-platform support. Uses <strong>Luxon</strong> for accurate timezone math including DST handling.
+            Utility app for converting time across <strong>9 major global zones</strong> (NY, LA, London, Paris,
+            Dubai, Kolkata, Tokyo, Sydney, Auckland). Built with <strong>React Native + Expo</strong> for
+            cross-platform support. Uses <strong>Luxon</strong> for accurate timezone math including DST handling.
           </p>
           <div class="project-links">
-            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
-            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+            <a href="#" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="#" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
           </div>
         </div>
       </article>
 
     </div>
-
-    <!-- Data Science Projects CTA -->
-    <div class="ds-cta">
-      <p>
-        <i class="fas fa-layer-group"></i>
-        Explore all my Data Science projects — including customer segmentation, recommendation systems, and more.
-      </p>
-      <a href="https://github.com/Sawaira-Mumtaz786?tab=repositories" target="_blank" rel="noopener" class="ds-cta-btn">
-        <i class="fab fa-github"></i> View All Data Science Projects
-      </a>
-    </div>
-
   </div>
 </section>
 
@@ -1429,7 +1348,7 @@ section { padding: 80px 0; }
   </div>
 </section>
 
-<!-- ==================== 7. LET'S CONNECT ==================== -->
+<!-- ==================== 7. LET'S CONNECT (CONTACT) ==================== -->
 <section class="contact" id="contact">
   <div class="container">
     <div class="section-head">
@@ -1440,6 +1359,7 @@ section { padding: 80px 0; }
 
     <div class="contact-grid">
 
+      <!-- Left: Contact info -->
       <div class="contact-info">
         <h3>Contact Information</h3>
         <p>Whether you have a question, a job opportunity, or a freelance project — I'll respond within 24 hours.</p>
@@ -1474,6 +1394,7 @@ section { padding: 80px 0; }
         </span>
       </div>
 
+      <!-- Right: Contact form + social buttons -->
       <div class="contact-form-wrap">
         <h3>Send a Message</h3>
         <p>I typically respond within 24 hours.</p>
@@ -1498,6 +1419,7 @@ section { padding: 80px 0; }
           <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
         </form>
 
+        <!-- GitHub / LinkedIn / Email buttons below form -->
         <div class="contact-social-row">
           <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="contact-social-btn github">
             <i class="fab fa-github"></i> GitHub
@@ -1526,6 +1448,7 @@ section { padding: 80px 0; }
 </footer>
 
 <script>
+  // Mobile nav toggle
   const hamburger = document.getElementById('hamburger');
   const navList = document.getElementById('navList');
   hamburger.addEventListener('click', () => {
