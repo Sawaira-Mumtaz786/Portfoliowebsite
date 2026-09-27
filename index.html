@@ -665,6 +665,56 @@ section { padding: 96px 0; position: relative; }
   padding: 5px 12px; border-radius: var(--radius-pill);
 }
 
+/* Certifications inside Education */
+.certifications {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px dashed var(--border-strong);
+}
+.certifications h4 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.certifications h4 i {
+  color: var(--purple);
+  font-size: 0.95rem;
+}
+.certifications ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.certifications li {
+  font-size: 0.89rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: 22px;
+  position: relative;
+}
+.certifications li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--green);
+  font-weight: 700;
+}
+.certifications li strong {
+  color: var(--purple);
+  font-weight: 600;
+}
+.certifications li .issuer {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
 .contact { background: #faf5ff; }
 .contact-grid {
   display: grid; grid-template-columns: 1fr 1.15fr;
@@ -1339,9 +1389,37 @@ section { padding: 96px 0; position: relative; }
       <div class="edu-body">
         <p><strong>Specialization:</strong> Production-ready LLM applications, RAG pipelines, chatbot systems, and scalable full-stack software.</p>
         <p><strong>Final Year Project:</strong> A desktop-based <strong>Clothing Inventory Management System</strong> built in <strong>Python using the Tkinter library</strong> with <strong>SQLite (DBMS)</strong> as the backend database. The application includes separate <strong>Admin and Staff</strong> modules to manage inventory records — add, update, delete, and search clothing items with stock and pricing details. Submitted to Virtual University of Pakistan as-is for my Final Year Project to strengthen my own learning in desktop application development and database management. After submission, I <strong>extended the project with AI features</strong> by integrating <strong>Google Gemini 2.5 Flash</strong> for <strong>vision-based auto-tagging</strong> (upload a clothing photo → AI automatically extracts item name, category, season, size, and color), and rebuilt it as a <strong>Streamlit web application</strong> deployed publicly on GitHub as an enhanced portfolio version.</p>
+
         <div class="edu-tags">
-          <span>Machine Learning</span><span>Data Structures</span><span>Databases</span><span>Software Engineering</span><span>Web Technologies</span>
+          <span>Machine Learning</span>
+          <span>Data Structures</span>
+          <span>Databases</span>
+          <span>Software Engineering</span>
+          <span>Web Technologies</span>
         </div>
+
+        <div class="certifications">
+          <h4><i class="fas fa-certificate"></i> Certifications</h4>
+          <ul>
+            <li>
+              <strong>Advanced Web Application Development</strong>
+              <span class="issuer">— NAVTECH · Foundation Institute of Technology, Chaklala Rawalpindi</span>
+            </li>
+            <li>
+              <strong>CIT (Certificate in Information Technology)</strong>
+              <span class="issuer">— Foundation Institute of Technology, Chaklala Rawalpindi</span>
+            </li>
+            <li>
+              <strong>Python Programming</strong>
+              <span class="issuer">— Udemy</span>
+            </li>
+            <li>
+              <strong>C / C++ Programming</strong>
+              <span class="issuer">— NET-ACAD</span>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </article>
   </div>
