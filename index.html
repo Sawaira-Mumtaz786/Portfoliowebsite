@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sawaira Mumtaz | AI/ML & Software Engineer</title>
-<meta name="description" content="BSCS Graduate (April 2027) — AI/ML & Software Engineer specializing in LLM, RAG, and chatbot systems.">
+<meta name="description" content="BSCS Graduate (April 2027) — AI/ML & Software Engineer specializing in LLM, RAG, and chatbot systems. Chat with the AI assistant to learn more.">
 <meta name="author" content="Sawaira Mumtaz">
 <link rel="canonical" href="https://sawaira-mumtaz786.github.io/Portfoliowebsite/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -242,6 +242,21 @@ section { padding: 96px 0; position: relative; }
   background: var(--pink); color: #fff;
   transform: translateY(-3px);
   box-shadow: 0 8px 22px rgba(219, 39, 119, 0.35);
+}
+.btn-ai {
+  background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.35);
+  animation: aiBtnGlow 2.5s ease-in-out infinite;
+}
+.btn-ai:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(239, 68, 68, 0.5);
+}
+@keyframes aiBtnGlow {
+  0%, 100% { box-shadow: 0 6px 20px rgba(239, 68, 68, 0.35), 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  50% { box-shadow: 0 6px 20px rgba(239, 68, 68, 0.35), 0 0 0 8px rgba(239, 68, 68, 0); }
 }
 .hero-social { display: flex; gap: 12px; }
 .hero-social a {
@@ -884,7 +899,7 @@ section { padding: 96px 0; position: relative; }
 .site-footer .copy { margin-top: 8px; font-size: 0.82rem; color: #9ca3af; }
 
 .scroll-top {
-  position: fixed; bottom: 30px; right: 30px;
+  position: fixed; bottom: 105px; right: 30px;
   width: 48px; height: 48px;
   border-radius: 50%;
   background: var(--gradient);
@@ -896,11 +911,279 @@ section { padding: 96px 0; position: relative; }
   opacity: 0; visibility: hidden;
   transform: translateY(20px);
   transition: all 0.35s ease;
-  z-index: 999;
+  z-index: 997;
 }
 .scroll-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .scroll-top:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(147, 51, 234, 0.5); }
 
+/* ═══════════════ AI CHAT WIDGET ═══════════════ */
+.ai-chat-toggle {
+  position: fixed;
+  bottom: 30px; right: 30px;
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem;
+  box-shadow: 0 8px 28px rgba(147, 51, 234, 0.45);
+  z-index: 998;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: aiPulse 2.5s ease-in-out infinite;
+}
+.ai-chat-toggle:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 36px rgba(147, 51, 234, 0.6);
+}
+.ai-chat-toggle.hidden {
+  opacity: 0; visibility: hidden; transform: scale(0.8);
+}
+@keyframes aiPulse {
+  0%, 100% { box-shadow: 0 8px 28px rgba(147, 51, 234, 0.45), 0 0 0 0 rgba(219, 39, 119, 0.4); }
+  50% { box-shadow: 0 8px 28px rgba(147, 51, 234, 0.45), 0 0 0 14px rgba(219, 39, 119, 0); }
+}
+.ai-chat-toggle::after {
+  content: 'AI';
+  position: absolute;
+  top: -4px; right: -4px;
+  background: #fff;
+  color: #9333ea;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 100px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  letter-spacing: 0.05em;
+}
+
+.ai-chat-panel {
+  position: fixed;
+  bottom: 100px; right: 30px;
+  width: 400px;
+  max-width: calc(100vw - 40px);
+  height: 620px;
+  max-height: calc(100vh - 140px);
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(147, 51, 234, 0.28), 0 0 0 1px rgba(147, 51, 234, 0.08);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.95);
+  transform-origin: bottom right;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ai-chat-panel.open {
+  opacity: 1; visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.ai-chat-header {
+  background: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  position: relative;
+}
+.ai-chat-avatar {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  border: 2px solid rgba(255,255,255,0.35);
+  flex-shrink: 0;
+}
+.ai-chat-header-text { flex: 1; line-height: 1.25; }
+.ai-chat-header-text h4 {
+  font-size: 0.98rem; font-weight: 700;
+  margin: 0 0 2px;
+  font-family: 'Space Grotesk', sans-serif;
+  color: #fff;
+}
+.ai-chat-status {
+  font-size: 0.72rem;
+  opacity: 0.92;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.ai-chat-status-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: aiOnlinePulse 2s infinite;
+}
+@keyframes aiOnlinePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.ai-chat-close {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+.ai-chat-close:hover { background: rgba(255,255,255,0.28); }
+
+.ai-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #faf5ff;
+}
+.ai-chat-messages::-webkit-scrollbar { width: 6px; }
+.ai-chat-messages::-webkit-scrollbar-thumb { background: #e9d5ff; border-radius: 100px; }
+.ai-chat-messages::-webkit-scrollbar-track { background: transparent; }
+
+.ai-msg {
+  max-width: 85%;
+  padding: 11px 15px;
+  border-radius: 16px;
+  font-size: 0.89rem;
+  line-height: 1.55;
+  word-wrap: break-word;
+  animation: aiMsgIn 0.3s ease;
+}
+@keyframes aiMsgIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.ai-msg.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+.ai-msg.bot {
+  align-self: flex-start;
+  background: #fff;
+  color: #1f2937;
+  border: 1px solid #f3e8ff;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 2px 8px rgba(147, 51, 234, 0.06);
+}
+.ai-msg.bot a {
+  color: #9333ea;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.ai-msg.bot strong { color: #9333ea; font-weight: 700; }
+.ai-msg.bot ul {
+  margin: 6px 0 2px 16px;
+  padding: 0;
+  list-style: disc;
+}
+.ai-msg.bot li { margin-bottom: 3px; }
+
+.ai-typing {
+  display: flex;
+  gap: 4px;
+  align-self: flex-start;
+  background: #fff;
+  border: 1px solid #f3e8ff;
+  padding: 12px 16px;
+  border-radius: 16px;
+  border-bottom-left-radius: 4px;
+}
+.ai-typing span {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #9333ea;
+  animation: aiTyping 1.2s infinite;
+}
+.ai-typing span:nth-child(2) { animation-delay: 0.2s; }
+.ai-typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes aiTyping {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-5px); opacity: 1; }
+}
+
+.ai-chat-suggestions {
+  padding: 12px 16px;
+  background: #faf5ff;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-top: 1px solid #f3e8ff;
+}
+.ai-chat-suggestions.hidden { display: none; }
+.ai-suggestion {
+  background: #fff;
+  border: 1.5px solid #e9d5ff;
+  color: #9333ea;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.ai-suggestion:hover {
+  background: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.ai-chat-input {
+  display: flex;
+  gap: 8px;
+  padding: 14px;
+  background: #fff;
+  border-top: 1px solid #f3e8ff;
+}
+.ai-chat-input input {
+  flex: 1;
+  padding: 11px 16px;
+  font-size: 0.9rem;
+  border: 1.5px solid #f3e8ff;
+  background: #faf5ff;
+  border-radius: 100px;
+  outline: none;
+  font-family: inherit;
+  color: #1f2937;
+  transition: all 0.2s ease;
+}
+.ai-chat-input input:focus {
+  background: #fff;
+  border-color: #9333ea;
+  box-shadow: 0 0 0 4px rgba(147, 51, 234, 0.1);
+}
+.ai-chat-send {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(147, 51, 234, 0.3);
+}
+.ai-chat-send:hover:not(:disabled) { transform: scale(1.08); }
+.ai-chat-send:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ═══════════════ RESPONSIVE ═══════════════ */
 @media (max-width: 960px) {
   section { padding: 72px 0; }
   .hero { padding: 80px 0 60px; }
@@ -934,7 +1217,7 @@ section { padding: 96px 0; position: relative; }
   .contact-social-btn { flex: 1 1 100%; }
   .hero-stats { gap: 24px; }
   .stat-value { font-size: 1.4rem; }
-  .scroll-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
+  .scroll-top { bottom: 92px; right: 20px; width: 42px; height: 42px; }
 }
 @media (max-width: 640px) {
   .cert-grid { grid-template-columns: 1fr; }
@@ -949,6 +1232,17 @@ section { padding: 96px 0; position: relative; }
   .hero-stats { gap: 20px; }
   .stat-value { font-size: 1.3rem; }
   .stat-label { font-size: 0.72rem; }
+
+  .ai-chat-toggle { width: 54px; height: 54px; font-size: 1.25rem; bottom: 20px; right: 20px; }
+  .ai-chat-panel {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    bottom: 0; right: 0;
+    border-radius: 0;
+  }
+  .scroll-top { bottom: 88px; right: 20px; width: 42px; height: 42px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -1007,7 +1301,9 @@ section { padding: 96px 0; position: relative; }
       <div class="hero-buttons">
         <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
         <a href="SawairaMumtaz-Resume.pdf" download class="btn btn-resume"><i class="fas fa-download"></i> Download Resume</a>
-        <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+        <button type="button" class="btn btn-ai" onclick="document.getElementById('aiChatToggle').click()">
+          <i class="fas fa-robot"></i> Ask My AI
+        </button>
       </div>
       <div class="hero-social">
         <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -1506,7 +1802,7 @@ section { padding: 96px 0; position: relative; }
     <div class="section-head reveal">
       <span class="section-label">Get In Touch</span>
       <h2 class="section-title">Let's <span class="accent">Connect</span></h2>
-      <p class="section-sub">I'm actively looking for entry-level AI/ML &amp; Software Engineering roles. Open to onsite and remote opportunities worldwide.</p>
+      <p class="section-sub">I'm actively looking for entry-level AI/ML &amp; Software Engineering roles. Open to onsite and remote opportunities worldwide. Or try the <strong>AI assistant</strong> in the bottom-right corner — it answers instantly. 🤖</p>
     </div>
     <div class="contact-grid">
       <div class="contact-info reveal">
@@ -1550,7 +1846,41 @@ section { padding: 96px 0; position: relative; }
 
 <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
 
+<!-- ═══════════════ AI CHAT WIDGET ═══════════════ -->
+<button class="ai-chat-toggle" id="aiChatToggle" aria-label="Chat with Sawaira AI">
+  <i class="fas fa-comment-dots"></i>
+</button>
+
+<div class="ai-chat-panel" id="aiChatPanel" role="dialog" aria-label="AI Assistant">
+  <div class="ai-chat-header">
+    <div class="ai-chat-avatar"><i class="fas fa-robot"></i></div>
+    <div class="ai-chat-header-text">
+      <h4>Ask Sawaira AI</h4>
+      <div class="ai-chat-status">
+        <span class="ai-chat-status-dot"></span>
+        Online · Replies instantly
+      </div>
+    </div>
+    <button class="ai-chat-close" id="aiChatClose" aria-label="Close"><i class="fas fa-times"></i></button>
+  </div>
+
+  <div class="ai-chat-messages" id="aiChatMessages"></div>
+
+  <div class="ai-chat-suggestions" id="aiChatSuggestions">
+    <button class="ai-suggestion" data-q="What is Sawaira's AI and ML experience?">AI/ML experience</button>
+    <button class="ai-suggestion" data-q="Show me Sawaira's best projects">Best projects</button>
+    <button class="ai-suggestion" data-q="Is Sawaira open to remote work?">Remote work?</button>
+    <button class="ai-suggestion" data-q="What is Sawaira's tech stack?">Tech stack</button>
+  </div>
+
+  <form class="ai-chat-input" id="aiChatForm">
+    <input type="text" id="aiChatInput" placeholder="Ask about skills, projects, availability..." autocomplete="off" />
+    <button type="submit" class="ai-chat-send" id="aiChatSend" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+  </form>
+</div>
+
 <script>
+// ═══════════════ MAIN SITE SCRIPT ═══════════════
 const hamburger = document.getElementById('hamburger');
 const navList = document.getElementById('navList');
 hamburger.addEventListener('click', () => {
@@ -1587,6 +1917,247 @@ if ('IntersectionObserver' in window) {
 } else {
   revealElements.forEach(el => el.classList.add('visible'));
 }
+
+// ═══════════════ AI CHAT WIDGET SCRIPT ═══════════════
+(function() {
+  'use strict';
+
+  // ══════════════════════════════════════════════════════════
+  // ⚙️ CONFIG — REPLACE WITH YOUR GROQ API KEY
+  // Get a free key at: https://console.groq.com/keys
+  // ══════════════════════════════════════════════════════════
+  const GROQ_API_KEY = 'YOUR_GROQ_API_KEY_HERE';
+  const GROQ_MODEL = 'llama-3.3-70b-versatile';
+  const GROQ_ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
+
+  // ══════════════════════════════════════════════════════════
+  // 🧠 SYSTEM PROMPT — Sawaira's knowledge base
+  // ══════════════════════════════════════════════════════════
+  const SYSTEM_PROMPT = `You are "Sawaira AI" — a friendly, professional AI assistant embedded on the portfolio website of Sawaira Mumtaz, an AI/ML & Software Engineer. Your job is to help recruiters, hiring managers, and visitors learn about Sawaira's skills, projects, and experience.
+
+KEY FACTS:
+- Name: Sawaira Mumtaz
+- Title: AI/ML & Software Engineer
+- Education: BS Computer Science, Virtual University of Pakistan (Saddar Campus, Rawalpindi) — graduating April 2027
+- Location: Rawalpindi, Pakistan
+- Availability: Open to ONSITE (Rawalpindi/Islamabad), REMOTE (worldwide), and HYBRID
+- Email: sawairamumtaz369@gmail.com
+- Phone: +92 315 506 9089
+- GitHub: https://github.com/Sawaira-Mumtaz786
+- LinkedIn: https://www.linkedin.com/in/sawaira-mumtaz-3b77972b1/
+- Portfolio: https://sawaira-mumtaz786.github.io/Portfoliowebsite/
+
+EXPERIENCE:
+1. Software Engineering Intern @ GO Viral Communication, ISB NASTP (4 Mar – 4 Jun 2026, Onsite, Islamabad) — Built a full-stack Notifications System with React TypeScript, NestJS, MongoDB, JWT auth, bcrypt. Also worked with C, Python Flask APIs, Docker, Nginx, Linux.
+2. AI Engineer Intern @ Post Fusion (1 Jun – 28 Aug 2026, Onsite, Rawalpindi) — Built LinkedIn Post Generator with Python, LangChain, Ollama. Built AI content studio integrating OpenAI, Groq, OpenRouter with real-time SSE streaming.
+3. Self-Learning Track — Data Science & ML (Jul–Sep 2026): Built SVD collaborative filtering recommender, K-Means customer segmentation (5 personas), data analysis with Pandas/NumPy.
+4. Self-Learning Track — Mobile App Development (Jul–Sep 2026): Built 4+ cross-platform apps with React Native + Expo.
+
+PROJECTS (9 total):
+1. Advanced AI Systems: LLM Eval & Multi-Agent — LLM-as-judge dashboard + LangGraph multi-agent state machine with Human-in-the-Loop. Tech: Python, LangGraph, Streamlit, Groq. Live: https://advanced-ai-systems-fsz7jtqn7o8shhntitckpp.streamlit.app/
+2. Notifications & AI Incident Engine — React + TypeScript + NestJS + MongoDB + JWT + Gemini AI triage (reduced incident resolution by ~40%). Live: https://full-stack-app-k9jl.onrender.com
+3. AI Clothing & Inventory System (Final Year Project) — Python + Tkinter + SQLite with Google Gemini 2.5 Flash vision-based auto-tagging. Live: https://ai-powered-clothing-inventory-management-system.streamlit.app
+4. MGT501 RAG AI Chatbot — Python + Flask + Google text-embedding-004 + Gemini + cosine similarity search. Live: https://mgt501-rag-ai-chatbot.streamlit.app
+5. Posts Fusion Studio — Node.js + Express + Server-Sent Events real-time streaming. Live: https://posts-fusion-studio.streamlit.app
+6. College Alert App — React Native + Expo + local push notifications. Live: https://rainbow-crumble-1234.web.app
+7. E-Commerce Marketplace App — React Native + Expo, multi-screen, cart, simulated payment. Live: https://marketplace-green.vercel.app
+8. Digital Art Gallery — React Native Web cross-platform gallery. Live: https://digitalartgallery1.surge.sh
+9. Time Zone Converter — React Native + Expo + Luxon. Live: https://timezone-converter-six-oak.vercel.app
+
+SKILLS:
+- AI/ML: LLM Integration, RAG, Prompt Engineering, LangChain, LangGraph, Vector DBs, Scikit-learn, Pandas, NumPy, K-Means, SVD
+- Languages: Python, JavaScript, TypeScript, C, C++, SQL
+- Frontend: React, React Native, HTML5, CSS3, Tailwind CSS, Bootstrap
+- Backend: Node.js, NestJS, Express.js, Flask, Streamlit
+- Databases: MongoDB, PostgreSQL, SQLite, Supabase
+- APIs: OpenAI, Google Gemini, Groq, OpenRouter, Ollama, REST APIs, SSE
+- DevOps: Git, GitHub, Docker, Nginx, Linux, Render, Railway, Vercel
+
+CERTIFICATIONS: 16+ certifications including Advanced Web Application Development (NAVTECH), Python Programming (Udemy), Data Analytics & Business Intelligence (Cisco), UI/UX Webflow (Cisco), CEH, Web Penetration Testing, Cyber Essentials, and more.
+
+RULES:
+- Be warm, professional, and concise (typically 2-4 sentences, or short bullets).
+- If asked about a specific project, give the tech stack + 1-2 sentence summary + live link.
+- If asked about skills, list the most relevant ones.
+- If asked about availability, mention she's open to onsite (Rawalpindi/Islamabad), remote worldwide, and hybrid.
+- Never make up information. If unsure, say: "I'd suggest reaching out to Sawaira directly at sawairamumtaz369@gmail.com".
+- If someone wants to hire or collaborate, share email and LinkedIn.
+- Use short paragraphs or bullet points for lists.
+- Do NOT include a signature or "AI assistant" disclaimer in every message.`;
+
+  // ══════════════════════════════════════════════════════════
+  // 🎯 CHAT STATE
+  // ══════════════════════════════════════════════════════════
+  const conversationHistory = [];
+  let isProcessing = false;
+
+  const toggle = document.getElementById('aiChatToggle');
+  const panel = document.getElementById('aiChatPanel');
+  const closeBtn = document.getElementById('aiChatClose');
+  const messagesEl = document.getElementById('aiChatMessages');
+  const suggestionsEl = document.getElementById('aiChatSuggestions');
+  const form = document.getElementById('aiChatForm');
+  const input = document.getElementById('aiChatInput');
+  const sendBtn = document.getElementById('aiChatSend');
+
+  // ══════════════════════════════════════════════════════════
+  // 🔧 HELPERS
+  // ══════════════════════════════════════════════════════════
+  function escapeHtml(text) {
+    return text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function formatBotMessage(text) {
+    let html = escapeHtml(text);
+    html = html.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+    const lines = html.split('\n');
+    let out = [];
+    let inList = false;
+    for (let line of lines) {
+      const trimmed = line.trim();
+      if (/^[-•]\s+/.test(trimmed)) {
+        if (!inList) { out.push('<ul>'); inList = true; }
+        out.push('<li>' + trimmed.replace(/^[-•]\s+/, '') + '</li>');
+      } else {
+        if (inList) { out.push('</ul>'); inList = false; }
+        if (trimmed) out.push(trimmed + '<br>');
+      }
+    }
+    if (inList) out.push('</ul>');
+    return out.join('');
+  }
+
+  function addMessage(role, content) {
+    const div = document.createElement('div');
+    div.className = 'ai-msg ' + role;
+    if (role === 'bot') {
+      div.innerHTML = formatBotMessage(content);
+    } else {
+      div.textContent = content;
+    }
+    messagesEl.appendChild(div);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    return div;
+  }
+
+  function showTyping() {
+    const div = document.createElement('div');
+    div.className = 'ai-typing';
+    div.id = 'aiTypingIndicator';
+    div.innerHTML = '<span></span><span></span><span></span>';
+    messagesEl.appendChild(div);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  function hideTyping() {
+    const t = document.getElementById('aiTypingIndicator');
+    if (t) t.remove();
+  }
+
+  // ══════════════════════════════════════════════════════════
+  // 💬 CORE CHAT LOGIC
+  // ══════════════════════════════════════════════════════════
+  async function sendMessage(userText) {
+    if (isProcessing || !userText.trim()) return;
+    isProcessing = true;
+    sendBtn.disabled = true;
+
+    suggestionsEl.classList.add('hidden');
+
+    addMessage('user', userText);
+    conversationHistory.push({ role: 'user', content: userText });
+    input.value = '';
+
+    showTyping();
+
+    try {
+      const res = await fetch(GROQ_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + GROQ_API_KEY
+        },
+        body: JSON.stringify({
+          model: GROQ_MODEL,
+          messages: [
+            { role: 'system', content: SYSTEM_PROMPT },
+            ...conversationHistory.slice(-10)
+          ],
+          temperature: 0.6,
+          max_tokens: 500,
+          top_p: 0.9
+        })
+      });
+
+      hideTyping();
+
+      if (!res.ok) {
+        throw new Error('API ' + res.status);
+      }
+
+      const data = await res.json();
+      const reply = data.choices?.[0]?.message?.content?.trim() || "Sorry, I couldn't generate a reply. Please reach out to Sawaira directly at sawairamumtaz369@gmail.com.";
+
+      addMessage('bot', reply);
+      conversationHistory.push({ role: 'assistant', content: reply });
+
+    } catch (err) {
+      hideTyping();
+      console.error('Chat error:', err);
+      addMessage('bot', "I'm having trouble connecting right now. Please reach out to Sawaira directly at **sawairamumtaz369@gmail.com** or on [LinkedIn](https://www.linkedin.com/in/sawaira-mumtaz-3b77972b1/).");
+    } finally {
+      isProcessing = false;
+      sendBtn.disabled = false;
+      input.focus();
+    }
+  }
+
+  // ══════════════════════════════════════════════════════════
+  // 🎬 UI EVENTS
+  // ══════════════════════════════════════════════════════════
+  let greetingShown = false;
+
+  function openChat() {
+    panel.classList.add('open');
+    toggle.classList.add('hidden');
+
+    if (!greetingShown) {
+      greetingShown = true;
+      setTimeout(() => {
+        addMessage('bot', "Hi! 👋 I'm Sawaira's AI assistant. Ask me anything about her **skills**, **projects**, **experience**, or **availability** — I'll answer right away.");
+      }, 250);
+    }
+    setTimeout(() => input.focus(), 400);
+  }
+
+  function closeChat() {
+    panel.classList.remove('open');
+    toggle.classList.remove('hidden');
+  }
+
+  toggle.addEventListener('click', openChat);
+  closeBtn.addEventListener('click', closeChat);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && panel.classList.contains('open')) closeChat();
+  });
+
+  suggestionsEl.querySelectorAll('.ai-suggestion').forEach(btn => {
+    btn.addEventListener('click', () => sendMessage(btn.dataset.q));
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    sendMessage(input.value.trim());
+  });
+
+})();
 </script>
 
 </body>
