@@ -528,6 +528,12 @@ section { padding: 96px 0; position: relative; }
   transform: translateY(-3px);
   border-left-color: var(--pink);
 }
+.exp-item.self-learning {
+  border-left-color: #f59e0b;
+}
+.exp-item.self-learning:hover {
+  border-left-color: #d97706;
+}
 .exp-head {
   display: flex; justify-content: space-between;
   align-items: flex-start; gap: 16px;
@@ -539,6 +545,9 @@ section { padding: 96px 0; position: relative; }
   font-size: 0.78rem; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.06em;
   color: var(--pink); margin-bottom: 4px;
+}
+.exp-item.self-learning .exp-role {
+  color: #d97706;
 }
 .exp-company {
   font-family: var(--font-heading);
@@ -570,12 +579,14 @@ section { padding: 96px 0; position: relative; }
 }
 .exp-mode.onsite { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
 .exp-mode.remote { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+.exp-mode.self { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
 .exp-location {
   font-size: 0.82rem; color: var(--text-muted);
   display: inline-flex; align-items: center; gap: 5px;
   margin-bottom: 12px;
 }
 .exp-location i { color: var(--purple); }
+.exp-item.self-learning .exp-location i { color: #d97706; }
 .exp-desc {
   font-size: 0.92rem; color: var(--text-secondary);
   margin-bottom: 16px; line-height: 1.7;
@@ -592,7 +603,9 @@ section { padding: 96px 0; position: relative; }
   color: var(--purple); font-weight: 700;
   flex-shrink: 0;
 }
+.exp-item.self-learning .exp-achievements li::before { color: #d97706; }
 .exp-achievements li strong { color: var(--purple); font-weight: 600; }
+.exp-item.self-learning .exp-achievements li strong { color: #d97706; }
 .exp-tech {
   display: flex; flex-wrap: wrap; gap: 6px;
   margin-top: 16px;
@@ -607,10 +620,11 @@ section { padding: 96px 0; position: relative; }
   padding: 4px 11px; border-radius: var(--radius-pill);
   border: 1px solid var(--border-strong);
 }
+.exp-item.self-learning .exp-tech span { color: #d97706; }
 
 .education { background: #fdf2f8; }
 .education-card {
-  max-width: 800px; margin: 0 auto;
+  max-width: 900px; margin: 0 auto;
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -666,8 +680,8 @@ section { padding: 96px 0; position: relative; }
 }
 
 .certifications {
-  margin-top: 24px;
-  padding-top: 22px;
+  margin-top: 28px;
+  padding-top: 24px;
   border-top: 1px dashed var(--border-strong);
 }
 .certifications h4 {
@@ -675,7 +689,7 @@ section { padding: 96px 0; position: relative; }
   font-size: 0.95rem;
   font-weight: 700;
   color: #111827;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -684,19 +698,19 @@ section { padding: 96px 0; position: relative; }
   color: var(--purple);
   font-size: 0.95rem;
 }
-.certifications ul {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.cert-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 26px;
 }
-.certifications li {
-  font-size: 0.89rem;
+.cert-item {
+  font-size: 0.87rem;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.5;
   padding-left: 22px;
   position: relative;
 }
-.certifications li::before {
+.cert-item::before {
   content: '✓';
   position: absolute;
   left: 0;
@@ -704,14 +718,17 @@ section { padding: 96px 0; position: relative; }
   color: var(--green);
   font-weight: 700;
 }
-.certifications li strong {
+.cert-item strong {
   color: var(--purple);
   font-weight: 600;
+  display: block;
 }
-.certifications li .issuer {
+.cert-item .issuer {
   color: var(--text-muted);
-  font-size: 0.82rem;
+  font-size: 0.77rem;
   font-weight: 500;
+  display: block;
+  margin-top: 2px;
 }
 
 .contact { background: #faf5ff; }
@@ -929,6 +946,9 @@ section { padding: 96px 0; position: relative; }
   .stat-value { font-size: 1.4rem; }
   .scroll-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
 }
+@media (max-width: 640px) {
+  .cert-grid { grid-template-columns: 1fr; }
+}
 @media (max-width: 480px) {
   .container { padding: 0 18px; }
   .hero { padding: 70px 0 50px; }
@@ -983,13 +1003,14 @@ section { padding: 96px 0; position: relative; }
         <strong>BS Computer Science graduate (April 2027)</strong> from Virtual University of Pakistan,
         specializing in production-ready <strong>LLM applications</strong>, <strong>RAG pipelines</strong>,
         <strong>chatbot systems</strong>, and scalable <strong>full-stack software</strong>. Experienced
-        across AI engineering, data science, and full-stack development through hands-on work with
-        <strong>GO Viral Communication (NASTP)</strong>, <strong>Post Fusion</strong>, and <strong>Arch Technology</strong>.
+        across AI engineering and full-stack development through hands-on work with
+        <strong>GO Viral Communication (NASTP)</strong> and <strong>Post Fusion</strong>, plus
+        self-driven projects in Data Science and Mobile Development.
       </p>
       <div class="hero-stats">
         <div class="stat-item"><span class="stat-value">9+</span><span class="stat-label">Projects Shipped</span></div>
-        <div class="stat-item"><span class="stat-value">4</span><span class="stat-label">Companies</span></div>
-        <div class="stat-item"><span class="stat-value">2027</span><span class="stat-label">BSCS Graduate</span></div>
+        <div class="stat-item"><span class="stat-value">2</span><span class="stat-label">Companies</span></div>
+        <div class="stat-item"><span class="stat-value">16+</span><span class="stat-label">Certifications</span></div>
         <div class="stat-item"><span class="stat-value">Remote</span><span class="stat-label">&amp; Onsite Ready</span></div>
       </div>
       <div class="hero-buttons">
@@ -1019,7 +1040,7 @@ section { padding: 96px 0; position: relative; }
     <div class="about-grid">
       <div class="about-text reveal">
         <p>I'm an AI and Software Engineer focused on building <strong>production-ready LLM applications</strong> and <strong>scalable full-stack solutions</strong> that solve real-world problems. My expertise spans LLM integration, RAG systems, chatbot architecture, and cloud-native development.</p>
-        <p>I've worked with <strong>four companies</strong> across leading Pakistan-based tech organizations, gaining hands-on experience in <strong>AI engineering</strong>, <strong>data science</strong>, <strong>mobile development</strong>, and <strong>full-stack engineering</strong>. I'm actively seeking <strong>entry-level AI &amp; Software Engineering roles</strong> where I can contribute to impactful AI products and scalable systems.</p>
+        <p>I've worked with <strong>2 companies</strong> across leading Pakistan-based tech organizations, gaining hands-on experience in <strong>AI engineering</strong> and <strong>full-stack engineering</strong>. Beyond formal work, I've also built <strong>self-driven projects</strong> in <strong>Data Science</strong>, <strong>Machine Learning</strong>, and <strong>Mobile Development</strong> to broaden my skill set. I'm actively seeking <strong>entry-level AI &amp; Software Engineering roles</strong> where I can contribute to impactful AI products and scalable systems.</p>
         <p>I'm <strong>open to both onsite and remote opportunities</strong> — locally in Pakistan and internationally — as well as <strong>freelance projects</strong> in AI, LLM, and full-stack development.</p>
         <div class="learning-box">
           <i class="fas fa-graduation-cap"></i>
@@ -1029,7 +1050,7 @@ section { padding: 96px 0; position: relative; }
       <div class="about-highlights reveal">
         <div class="highlight"><h4>Specializations</h4><p>Full-stack development (<strong>React, Node.js, Python</strong>), LLM integration (<strong>Gemini, Groq, OpenAI</strong>), RAG systems, Data science &amp; ML (<strong>K-Means, SVD, Scikit-learn</strong>), Cloud deployment (<strong>Render, Railway, Vercel</strong>).</p></div>
         <div class="highlight"><h4>Final Year Project</h4><p>AI-Powered Clothing &amp; Inventory Management System with <strong>vision-based auto-tagging</strong> using Google Gemini 2.5 Flash, deployed as both desktop (Tkinter) and web (Streamlit) applications.</p></div>
-        <div class="highlight"><h4>Professional Experience</h4><p>Worked with <strong>4 companies</strong> — <strong>GO Viral Communication (NASTP)</strong> (Software Engineering), <strong>Post Fusion</strong> (AI Engineering), and <strong>Arch Technology</strong> (2 tracks — Data Science &amp; Mobile Development).</p></div>
+        <div class="highlight"><h4>Professional Experience</h4><p>Worked with <strong>2 companies</strong> — <strong>GO Viral Communication (NASTP)</strong> (Software Engineering) and <strong>Post Fusion</strong> (AI Engineering). Plus <strong>self-driven projects</strong> in Data Science, Machine Learning, and Mobile Development.</p></div>
       </div>
     </div>
   </div>
@@ -1274,14 +1295,14 @@ section { padding: 96px 0; position: relative; }
     <div class="section-head reveal">
       <span class="section-label">Career</span>
       <h2 class="section-title">Professional <span class="accent">Experience</span></h2>
-      <p class="section-sub">Worked with 4 companies across software engineering, AI engineering, data science, and mobile development — most recent first.</p>
+      <p class="section-sub">Internships and self-driven learning tracks across software engineering, AI, data science, and mobile development — most recent first.</p>
     </div>
     <div class="experience-list reveal">
 
       <article class="exp-item">
         <div class="exp-head">
           <div class="exp-title-group">
-            <div class="exp-role">Software Engineering</div>
+            <div class="exp-role">Software Engineering Intern</div>
             <div class="exp-company">GO Viral Communication, ISB NASTP</div>
           </div>
           <div class="exp-meta">
@@ -1303,7 +1324,7 @@ section { padding: 96px 0; position: relative; }
       <article class="exp-item">
         <div class="exp-head">
           <div class="exp-title-group">
-            <div class="exp-role">AI Engineering — AI &amp; ML Department</div>
+            <div class="exp-role">AI Engineer Intern — AI &amp; ML Department</div>
             <div class="exp-company">Post Fusion (Pro Fusion AI)</div>
           </div>
           <div class="exp-meta">
@@ -1318,52 +1339,52 @@ section { padding: 96px 0; position: relative; }
           <li>Designed and deployed an AI-powered content generation studio integrating <strong>multiple LLM APIs</strong> (OpenAI, Groq, OpenRouter) with <strong>real-time streaming</strong> via Server-Sent Events (SSE)</li>
           <li>Built a full-stack streaming content platform using <strong>React + Node.js/Express</strong>, vector databases, and multi-LLM routing</li>
           <li>Mastered advanced concepts: <strong>Machine Learning</strong>, <strong>Deep Learning</strong>, <strong>Prompt Engineering</strong>, LLM Applications, AI Workflows, and <strong>AI Agents</strong></li>
-          <li>Implemented version control and CI/CD workflows using <strong>Git &amp; GitHub</strong> under professional mentorship</li>
         </ul>
         <div class="exp-tech"><span>Python</span><span>LangChain</span><span>Ollama</span><span>OpenAI</span><span>Groq</span><span>OpenRouter</span><span>React</span><span>Node.js</span><span>SSE</span><span>Vector DBs</span></div>
       </article>
 
-      <article class="exp-item">
+      <article class="exp-item self-learning">
         <div class="exp-head">
           <div class="exp-title-group">
-            <div class="exp-role">Data Science</div>
-            <div class="exp-company">Arch Technology</div>
+            <div class="exp-role">Self-Learning Track</div>
+            <div class="exp-company">Data Science &amp; Machine Learning</div>
           </div>
           <div class="exp-meta">
             <span class="exp-date"><i class="far fa-calendar-alt"></i> Jul – Sep 2026</span>
-            <span class="exp-mode remote"><i class="fas fa-wifi"></i> Remote</span>
+            <span class="exp-mode self"><i class="fas fa-book-open"></i> Self-Paced</span>
           </div>
         </div>
-        <p class="exp-location"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan (Remote)</p>
-        <p class="exp-desc">Applied data science and machine learning internship focused on business intelligence, customer segmentation, and recommendation systems.</p>
+        <p class="exp-location"><i class="fas fa-laptop"></i> Independent Learning (Remote)</p>
+        <p class="exp-desc">Self-driven learning track focused on applied Data Science, Machine Learning, and business intelligence using publicly available datasets and industry-standard techniques.</p>
         <ul class="exp-achievements">
           <li>Built a <strong>collaborative filtering recommendation system</strong> (SVD algorithm) using the <strong>Surprise</strong> library, achieving industry-standard RMSE scores for rating predictions</li>
           <li>Applied <strong>K-Means clustering</strong> (Scikit-learn) to segment retail customers into <strong>5 distinct personas</strong>, enabling targeted marketing strategies</li>
           <li>Performed data cleaning, visualization, and statistical analysis using <strong>Python</strong>, <strong>Pandas</strong>, and <strong>NumPy</strong> for business intelligence insights</li>
+          <li>Practiced end-to-end ML workflows: data preprocessing, model training, evaluation, and deployment preparation</li>
         </ul>
-        <div class="exp-tech"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>SVD</span><span>K-Means</span><span>Surprise</span></div>
+        <div class="exp-tech"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>SVD</span><span>K-Means</span><span>Surprise</span><span>Google Colab</span></div>
       </article>
 
-      <article class="exp-item">
+      <article class="exp-item self-learning">
         <div class="exp-head">
           <div class="exp-title-group">
-            <div class="exp-role">Mobile Development</div>
-            <div class="exp-company">Arch Technology</div>
+            <div class="exp-role">Self-Learning Track</div>
+            <div class="exp-company">Mobile App Development</div>
           </div>
           <div class="exp-meta">
             <span class="exp-date"><i class="far fa-calendar-alt"></i> Jul – Sep 2026</span>
-            <span class="exp-mode remote"><i class="fas fa-wifi"></i> Remote</span>
+            <span class="exp-mode self"><i class="fas fa-book-open"></i> Self-Paced</span>
           </div>
         </div>
-        <p class="exp-location"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan (Remote)</p>
-        <p class="exp-desc">Cross-platform mobile development internship focused on building responsive, production-ready apps for iOS and Android with seamless backend API integration.</p>
+        <p class="exp-location"><i class="fas fa-laptop"></i> Independent Learning (Remote)</p>
+        <p class="exp-desc">Self-driven mobile development track focused on building cross-platform apps for iOS and Android with responsive UIs and seamless backend API integration.</p>
         <ul class="exp-achievements">
-          <li>Built cross-platform mobile apps using <strong>Flutter</strong> and <strong>React Native</strong> with responsive UIs</li>
-          <li>Integrated REST APIs and backend services for seamless data flow</li>
-          <li>Implemented modern state management and navigation patterns across multiple screens</li>
-          <li>Delivered fully functional mobile prototypes aligned with industry design standards</li>
+          <li>Built cross-platform mobile apps using <strong>React Native</strong> and <strong>Expo</strong> with responsive, production-style UIs</li>
+          <li>Integrated REST APIs and backend services for seamless data flow across multiple applications</li>
+          <li>Implemented modern state management and navigation patterns across multi-screen mobile apps</li>
+          <li>Shipped 4+ complete mobile projects: <strong>College Alert App</strong>, <strong>E-Commerce Marketplace</strong>, <strong>Digital Art Gallery</strong>, and <strong>Time Zone Converter</strong></li>
         </ul>
-        <div class="exp-tech"><span>Flutter</span><span>React Native</span><span>Expo</span><span>REST APIs</span></div>
+        <div class="exp-tech"><span>React Native</span><span>Expo</span><span>JavaScript</span><span>REST APIs</span><span>Expo Notifications</span></div>
       </article>
 
     </div>
@@ -1398,25 +1419,90 @@ section { padding: 96px 0; position: relative; }
         </div>
 
         <div class="certifications">
-          <h4><i class="fas fa-certificate"></i> Certifications</h4>
-          <ul>
-            <li>
+          <h4><i class="fas fa-certificate"></i> Certifications (16)</h4>
+          <div class="cert-grid">
+
+            <div class="cert-item">
               <strong>Advanced Web Application Development</strong>
-              <span class="issuer">— NAVTECH · Foundation Institute of Technology, Chaklala Rawalpindi</span>
-            </li>
-            <li>
+              <span class="issuer">NAVTECH · Foundation Institute of Technology, Chaklala Rawalpindi</span>
+            </div>
+
+            <div class="cert-item">
               <strong>CIT (Certificate in Information Technology)</strong>
-              <span class="issuer">— Foundation Institute of Technology, Chaklala Rawalpindi</span>
-            </li>
-            <li>
+              <span class="issuer">Foundation Institute of Technology, Chaklala Rawalpindi</span>
+            </div>
+
+            <div class="cert-item">
               <strong>Python Programming</strong>
-              <span class="issuer">— Udemy</span>
-            </li>
-            <li>
+              <span class="issuer">Udemy</span>
+            </div>
+
+            <div class="cert-item">
               <strong>C / C++ Programming</strong>
-              <span class="issuer">— NET-ACAD</span>
-            </li>
-          </ul>
+              <span class="issuer">NET-ACAD</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Python Course for App First Developers</strong>
+              <span class="issuer">Udemy</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Python Complete Course for Beginners</strong>
+              <span class="issuer">Udemy</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Data Analytics &amp; Business Intelligence</strong>
+              <span class="issuer">Cisco Networking Academy</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>UI &amp; UX Webflow</strong>
+              <span class="issuer">Cisco Networking Academy</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Certified Ethical Hacking (CEH)</strong>
+              <span class="issuer">Cybersecurity Certification</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Web Penetration Testing (WPT)</strong>
+              <span class="issuer">Cybersecurity Certification</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Cyber Essentials</strong>
+              <span class="issuer">Cybersecurity Certification</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Cyber Security</strong>
+              <span class="issuer">Cisco Networking Academy</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>ChatGPT 4</strong>
+              <span class="issuer">AI Tools Certification</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Web Development</strong>
+              <span class="issuer">Foundation Institute of Technology</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>WordPress Development</strong>
+              <span class="issuer">Web Development Certification</span>
+            </div>
+
+            <div class="cert-item">
+              <strong>Search Engine Optimization (SEO)</strong>
+              <span class="issuer">Digital Marketing Certification</span>
+            </div>
+
+          </div>
         </div>
 
       </div>
