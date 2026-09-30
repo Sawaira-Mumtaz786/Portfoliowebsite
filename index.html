@@ -187,11 +187,11 @@ section { padding: 96px 0; position: relative; }
 
 .hero-stats {
   display: flex; flex-wrap: wrap;
-  gap: 32px; margin-bottom: 32px;
+  gap: 28px; margin-bottom: 32px;
   padding: 20px 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  max-width: 620px;
+  max-width: 680px;
 }
 .stat-item { display: flex; flex-direction: column; gap: 2px; }
 .stat-value {
@@ -201,6 +201,10 @@ section { padding: 96px 0; position: relative; }
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1;
+}
+.stat-value.compact {
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
 }
 .stat-label {
   font-size: 0.78rem; font-weight: 600;
@@ -934,6 +938,7 @@ section { padding: 96px 0; position: relative; }
 }
 @media (max-width: 640px) {
   .cert-grid { grid-template-columns: 1fr; }
+  .stat-value.compact { font-size: 1rem; }
 }
 @media (max-width: 480px) {
   .container { padding: 0 18px; }
@@ -997,7 +1002,7 @@ section { padding: 96px 0; position: relative; }
         <div class="stat-item"><span class="stat-value">9+</span><span class="stat-label">Projects Shipped</span></div>
         <div class="stat-item"><span class="stat-value">2</span><span class="stat-label">Companies</span></div>
         <div class="stat-item"><span class="stat-value">16+</span><span class="stat-label">Certifications</span></div>
-        <div class="stat-item"><span class="stat-value">Remote · Onsite</span><span class="stat-label">Ready</span></div>
+        <div class="stat-item"><span class="stat-value compact">Remote · Onsite</span><span class="stat-label">Ready</span></div>
       </div>
       <div class="hero-buttons">
         <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
