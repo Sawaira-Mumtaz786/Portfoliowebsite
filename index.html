@@ -321,19 +321,19 @@ section { padding: 96px 0; position: relative; }
 .learning-box {
   display: flex; align-items: flex-start; gap: 14px;
   padding: 18px 22px;
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  background: linear-gradient(135deg, #f3e8ff 0%, #fce7f3 100%);
   border-radius: var(--radius-sm);
-  border-left: 4px solid #f59e0b;
+  border-left: 4px solid var(--purple);
   margin-top: 20px;
 }
-.learning-box i { color: #d97706; font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+.learning-box i { color: var(--purple); font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
 .learning-box h4 {
   font-family: var(--font-heading);
   font-size: 0.88rem; font-weight: 700;
-  color: #78350f; margin-bottom: 4px;
+  color: var(--purple); margin-bottom: 4px;
   text-transform: uppercase; letter-spacing: 0.05em;
 }
-.learning-box p { font-size: 0.88rem; color: #78350f; line-height: 1.6; margin: 0; }
+.learning-box p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin: 0; }
 .about-highlights { display: flex; flex-direction: column; gap: 16px; }
 .highlight {
   padding: 22px 26px;
@@ -528,12 +528,6 @@ section { padding: 96px 0; position: relative; }
   transform: translateY(-3px);
   border-left-color: var(--pink);
 }
-.exp-item.self-learning {
-  border-left-color: #f59e0b;
-}
-.exp-item.self-learning:hover {
-  border-left-color: #d97706;
-}
 .exp-head {
   display: flex; justify-content: space-between;
   align-items: flex-start; gap: 16px;
@@ -545,9 +539,6 @@ section { padding: 96px 0; position: relative; }
   font-size: 0.78rem; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.06em;
   color: var(--pink); margin-bottom: 4px;
-}
-.exp-item.self-learning .exp-role {
-  color: #d97706;
 }
 .exp-company {
   font-family: var(--font-heading);
@@ -579,14 +570,13 @@ section { padding: 96px 0; position: relative; }
 }
 .exp-mode.onsite { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
 .exp-mode.remote { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
-.exp-mode.self { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+.exp-mode.self { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
 .exp-location {
   font-size: 0.82rem; color: var(--text-muted);
   display: inline-flex; align-items: center; gap: 5px;
   margin-bottom: 12px;
 }
 .exp-location i { color: var(--purple); }
-.exp-item.self-learning .exp-location i { color: #d97706; }
 .exp-desc {
   font-size: 0.92rem; color: var(--text-secondary);
   margin-bottom: 16px; line-height: 1.7;
@@ -603,9 +593,7 @@ section { padding: 96px 0; position: relative; }
   color: var(--purple); font-weight: 700;
   flex-shrink: 0;
 }
-.exp-item.self-learning .exp-achievements li::before { color: #d97706; }
 .exp-achievements li strong { color: var(--purple); font-weight: 600; }
-.exp-item.self-learning .exp-achievements li strong { color: #d97706; }
 .exp-tech {
   display: flex; flex-wrap: wrap; gap: 6px;
   margin-top: 16px;
@@ -620,7 +608,6 @@ section { padding: 96px 0; position: relative; }
   padding: 4px 11px; border-radius: var(--radius-pill);
   border: 1px solid var(--border-strong);
 }
-.exp-item.self-learning .exp-tech span { color: #d97706; }
 
 .education { background: #fdf2f8; }
 .education-card {
@@ -1343,7 +1330,7 @@ section { padding: 96px 0; position: relative; }
         <div class="exp-tech"><span>Python</span><span>LangChain</span><span>Ollama</span><span>OpenAI</span><span>Groq</span><span>OpenRouter</span><span>React</span><span>Node.js</span><span>SSE</span><span>Vector DBs</span></div>
       </article>
 
-      <article class="exp-item self-learning">
+      <article class="exp-item">
         <div class="exp-head">
           <div class="exp-title-group">
             <div class="exp-role">Self-Learning Track</div>
@@ -1351,10 +1338,10 @@ section { padding: 96px 0; position: relative; }
           </div>
           <div class="exp-meta">
             <span class="exp-date"><i class="far fa-calendar-alt"></i> Jul – Sep 2026</span>
-            <span class="exp-mode self"><i class="fas fa-book-open"></i> Self-Paced</span>
+            <span class="exp-mode remote"><i class="fas fa-laptop"></i> Self-Paced</span>
           </div>
         </div>
-        <p class="exp-location"><i class="fas fa-laptop"></i> Independent Learning (Remote)</p>
+        <p class="exp-location"><i class="fas fa-map-marker-alt"></i> Rawalpindi, Pakistan (Remote)</p>
         <p class="exp-desc">Self-driven learning track focused on applied Data Science, Machine Learning, and business intelligence using publicly available datasets and industry-standard techniques.</p>
         <ul class="exp-achievements">
           <li>Built a <strong>collaborative filtering recommendation system</strong> (SVD algorithm) using the <strong>Surprise</strong> library, achieving industry-standard RMSE scores for rating predictions</li>
@@ -1365,7 +1352,7 @@ section { padding: 96px 0; position: relative; }
         <div class="exp-tech"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>SVD</span><span>K-Means</span><span>Surprise</span><span>Google Colab</span></div>
       </article>
 
-      <article class="exp-item self-learning">
+      <article class="exp-item">
         <div class="exp-head">
           <div class="exp-title-group">
             <div class="exp-role">Self-Learning Track</div>
@@ -1373,10 +1360,10 @@ section { padding: 96px 0; position: relative; }
           </div>
           <div class="exp-meta">
             <span class="exp-date"><i class="far fa-calendar-alt"></i> Jul – Sep 2026</span>
-            <span class="exp-mode self"><i class="fas fa-book-open"></i> Self-Paced</span>
+            <span class="exp-mode remote"><i class="fas fa-laptop"></i> Self-Paced</span>
           </div>
         </div>
-        <p class="exp-location"><i class="fas fa-laptop"></i> Independent Learning (Remote)</p>
+        <p class="exp-location"><i class="fas fa-map-marker-alt"></i> Rawalpindi, Pakistan (Remote)</p>
         <p class="exp-desc">Self-driven mobile development track focused on building cross-platform apps for iOS and Android with responsive UIs and seamless backend API integration.</p>
         <ul class="exp-achievements">
           <li>Built cross-platform mobile apps using <strong>React Native</strong> and <strong>Expo</strong> with responsive, production-style UIs</li>
