@@ -4,13 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sawaira Mumtaz | AI/ML & Software Engineer</title>
-<meta name="description" content="BSCS Graduate (April 2027) — AI/ML & Software Engineer specializing in LLM, RAG, and chatbot systems.">
+<meta name="description" content="BSCS Graduate (April 2027) — AI/ML & Software Engineer specializing in LLM, RAG, and chatbot systems. 9+ shipped projects, 2 internships, 16 certifications.">
 <meta name="author" content="Sawaira Mumtaz">
+<meta name="theme-color" content="#9333ea">
 <link rel="canonical" href="https://sawaira-mumtaz786.github.io/Portfoliowebsite/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sawaira Mumtaz | AI/ML & Software Engineer">
+<meta property="og:description" content="BSCS Graduate (April 2027) — AI/ML & Software Engineer specializing in LLM, RAG, and chatbot systems.">
+<meta property="og:url" content="https://sawaira-mumtaz786.github.io/Portfoliowebsite/">
+<meta property="og:site_name" content="Sawaira Mumtaz Portfolio">
+<meta property="og:image" content="https://sawaira-mumtaz786.github.io/Portfoliowebsite/og-image.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sawaira Mumtaz | AI/ML & Software Engineer">
+<meta name="twitter:description" content="Portfolio of an AI/ML & Software Engineer — 9+ shipped projects, LLM applications, RAG pipelines, full-stack apps.">
+<meta name="twitter:image" content="https://sawaira-mumtaz786.github.io/Portfoliowebsite/og-image.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sawaira Mumtaz",
+  "jobTitle": "AI/ML & Software Engineer",
+  "description": "BSCS Graduate (April 2027) specializing in LLM applications, RAG pipelines, and full-stack development",
+  "email": "sawairamumtaz369@gmail.com",
+  "telephone": "+923155069089",
+  "url": "https://sawaira-mumtaz786.github.io/Portfoliowebsite/",
+  "address": { "@type": "PostalAddress", "addressLocality": "Rawalpindi", "addressCountry": "Pakistan" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Virtual University of Pakistan" },
+  "sameAs": [
+    "https://github.com/Sawaira-Mumtaz786",
+    "https://www.linkedin.com/in/sawaira-mumtaz-3b77972b1/"
+  ],
+  "knowsAbout": ["Python","React","TypeScript","NestJS","Flask","Streamlit","LangGraph","RAG Pipelines","LLM Integration","Google Gemini","Groq API","MongoDB","PostgreSQL","JWT Authentication","Prompt Engineering"]
+}
+</script>
+
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 90px; }
@@ -100,8 +137,10 @@ section { padding: 96px 0; position: relative; }
   transition: transform 0.3s ease;
   border-radius: 2px;
 }
-.nav-list a:not(.nav-cta):hover::after { transform: scaleX(1); transform-origin: left; }
-.nav-list a:hover { color: var(--purple); }
+.nav-list a:not(.nav-cta):hover::after,
+.nav-list a:not(.nav-cta).active::after { transform: scaleX(1); transform-origin: left; }
+.nav-list a:hover,
+.nav-list a.active { color: var(--purple); }
 .nav-list a.nav-cta {
   background: var(--gradient); color: #fff;
   padding: 9px 22px; border-radius: var(--radius-pill);
@@ -318,6 +357,7 @@ section { padding: 96px 0; position: relative; }
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* About */
 .about { background: #fff; }
 .about-grid {
   display: grid; grid-template-columns: 1.15fr 1fr;
@@ -364,6 +404,51 @@ section { padding: 96px 0; position: relative; }
 .highlight p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; margin: 0; }
 .highlight p strong { color: var(--purple); font-weight: 600; }
 
+/* Open to Roles */
+.open-roles {
+  background: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
+  padding: 48px 40px;
+  border-radius: var(--radius);
+  margin-top: 56px;
+  color: #fff;
+  position: relative; overflow: hidden;
+}
+.open-roles::before {
+  content: ''; position: absolute; top: -100px; right: -100px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.open-roles h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem; font-weight: 700;
+  margin-bottom: 8px; position: relative; z-index: 1;
+}
+.open-roles > p {
+  font-size: 0.95rem; opacity: 0.92;
+  margin-bottom: 24px; max-width: 620px;
+  position: relative; z-index: 1;
+}
+.role-badges {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  position: relative; z-index: 1;
+}
+.role-badge {
+  background: rgba(255,255,255,0.18);
+  border: 1.5px solid rgba(255,255,255,0.35);
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 8px;
+  backdrop-filter: blur(8px);
+  transition: var(--transition);
+}
+.role-badge:hover {
+  background: rgba(255,255,255,0.28);
+  transform: translateY(-2px);
+}
+
+/* Skills */
 .skills { background: #faf5ff; }
 .skills-grid {
   display: grid;
@@ -415,7 +500,40 @@ section { padding: 96px 0; position: relative; }
   box-shadow: 0 4px 12px rgba(147, 51, 234, 0.3);
 }
 
+/* Projects */
 .projects { background: #fdf2f8; }
+
+.project-filter {
+  display: flex; flex-wrap: wrap;
+  gap: 10px; justify-content: center;
+  margin-bottom: 40px;
+}
+.filter-btn {
+  background: #fff;
+  border: 1.5px solid var(--border-strong);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 9px 22px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  font-family: inherit;
+  transition: var(--transition);
+  display: inline-flex; align-items: center; gap: 7px;
+}
+.filter-btn:hover {
+  border-color: var(--purple);
+  color: var(--purple);
+  transform: translateY(-2px);
+}
+.filter-btn.active {
+  background: var(--gradient);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(147, 51, 234, 0.3);
+}
+.filter-btn i { font-size: 0.78rem; }
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -429,6 +547,9 @@ section { padding: 96px 0; position: relative; }
   display: flex; flex-direction: column;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
+}
+.project-card.hidden {
+  display: none;
 }
 .project-card:hover {
   transform: translateY(-6px);
@@ -519,6 +640,7 @@ section { padding: 96px 0; position: relative; }
 .cta-buttons-row .btn-outline { padding: 14px 32px; font-size: 0.95rem; }
 .cta-buttons-row .btn-primary { padding: 14px 32px; font-size: 0.95rem; }
 
+/* Experience */
 .experience { background: #ffffff; }
 .experience-list { display: flex; flex-direction: column; gap: 24px; }
 .exp-item {
@@ -611,6 +733,7 @@ section { padding: 96px 0; position: relative; }
   border: 1px solid var(--border-strong);
 }
 
+/* Education */
 .education { background: #fdf2f8; }
 .education-card {
   max-width: 900px; margin: 0 auto;
@@ -699,6 +822,7 @@ section { padding: 96px 0; position: relative; }
   font-weight: 500; display: block; margin-top: 2px;
 }
 
+/* Contact */
 .contact { background: #faf5ff; }
 .contact-grid {
   display: grid; grid-template-columns: 1fr 1.15fr;
@@ -721,6 +845,7 @@ section { padding: 96px 0; position: relative; }
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   transition: var(--transition);
+  position: relative;
 }
 .info-row:hover {
   border-color: var(--border-strong);
@@ -733,7 +858,7 @@ section { padding: 96px 0; position: relative; }
   display: inline-flex; align-items: center; justify-content: center;
   flex-shrink: 0; font-size: 1rem;
 }
-.info-row .detail { display: flex; flex-direction: column; gap: 2px; }
+.info-row .detail { display: flex; flex-direction: column; gap: 2px; flex: 1; }
 .info-row .label {
   font-size: 0.7rem; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.06em;
@@ -745,6 +870,25 @@ section { padding: 96px 0; position: relative; }
 }
 .info-row .value a { color: var(--purple); }
 .info-row .value a:hover { color: var(--pink); }
+.copy-btn {
+  background: var(--bg-muted);
+  border: 1px solid var(--border-strong);
+  color: var(--purple);
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.85rem;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+.copy-btn:hover {
+  background: var(--gradient); color: #fff;
+  border-color: transparent;
+}
+.copy-btn.copied {
+  background: var(--green); color: #fff; border-color: transparent;
+}
 
 .availability {
   display: inline-flex; align-items: center; gap: 8px;
@@ -851,6 +995,7 @@ section { padding: 96px 0; position: relative; }
 .contact-social-btn.linkedin:hover { background: #0a66c2; color: #fff; border-color: #0a66c2; }
 .contact-social-btn.email:hover { background: var(--gradient); color: #fff; border-color: transparent; }
 
+/* Footer */
 .site-footer {
   background: #fff;
   border-top: 1px solid var(--border);
@@ -861,6 +1006,7 @@ section { padding: 96px 0; position: relative; }
 .site-footer .heart { color: var(--pink); }
 .site-footer .copy { margin-top: 8px; font-size: 0.82rem; color: #9ca3af; }
 
+/* Scroll top */
 .scroll-top {
   position: fixed; bottom: 105px; right: 30px;
   width: 48px; height: 48px;
@@ -879,7 +1025,7 @@ section { padding: 96px 0; position: relative; }
 .scroll-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .scroll-top:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(147, 51, 234, 0.5); }
 
-/* ═══════════════ AI CHAT WIDGET ═══════════════ */
+/* AI Chat Widget */
 .ai-chat-toggle {
   position: fixed; bottom: 30px; right: 30px;
   width: 60px; height: 60px;
@@ -1076,6 +1222,32 @@ section { padding: 96px 0; position: relative; }
   border-color: #9333ea;
   box-shadow: 0 0 0 4px rgba(147, 51, 234, 0.1);
 }
+.ai-chat-mic {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1.5px solid #e9d5ff;
+  color: #9333ea;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+.ai-chat-mic:hover {
+  background: #f3e8ff;
+  transform: scale(1.05);
+}
+.ai-chat-mic.listening {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #fff;
+  animation: micPulse 1s infinite;
+}
+@keyframes micPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5); }
+  50% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+}
 .ai-chat-send {
   width: 42px; height: 42px;
   border-radius: 50%;
@@ -1088,6 +1260,7 @@ section { padding: 96px 0; position: relative; }
 }
 .ai-chat-send:hover { transform: scale(1.08); }
 
+/* Responsive */
 @media (max-width: 960px) {
   section { padding: 72px 0; }
   .hero { padding: 80px 0 60px; }
@@ -1098,6 +1271,7 @@ section { padding: 96px 0; position: relative; }
   .hero-visual { order: -1; }
   .avatar-ring { width: 220px; height: 220px; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .open-roles { padding: 40px 28px; }
 }
 @media (max-width: 768px) {
   section { padding: 64px 0; }
@@ -1126,6 +1300,8 @@ section { padding: 96px 0; position: relative; }
 @media (max-width: 640px) {
   .cert-grid { grid-template-columns: 1fr; }
   .stat-value.compact { font-size: 1rem; }
+  .project-filter { gap: 8px; }
+  .filter-btn { padding: 8px 16px; font-size: 0.8rem; }
 }
 @media (max-width: 480px) {
   .container { padding: 0 18px; }
@@ -1136,6 +1312,9 @@ section { padding: 96px 0; position: relative; }
   .hero-stats { gap: 20px; }
   .stat-value { font-size: 1.3rem; }
   .stat-label { font-size: 0.72rem; }
+  .open-roles { padding: 32px 22px; }
+  .open-roles h3 { font-size: 1.2rem; }
+  .role-badge { padding: 8px 16px; font-size: 0.82rem; }
 
   .ai-chat-toggle { width: 54px; height: 54px; font-size: 1.25rem; bottom: 20px; right: 20px; }
   .ai-chat-panel {
@@ -1153,6 +1332,14 @@ section { padding: 96px 0; position: relative; }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  .reveal { opacity: 1; transform: none; }
+}
+
+@media print {
+  .site-header, .scroll-progress, .scroll-top, .ai-chat-toggle, .ai-chat-panel,
+  .hero-buttons, .hero-social, .contact-form-wrap, .site-footer { display: none !important; }
+  body { background: #fff; }
+  section { padding: 20px 0; page-break-inside: avoid; }
   .reveal { opacity: 1; transform: none; }
 }
 </style>
@@ -1214,7 +1401,7 @@ section { padding: 96px 0; position: relative; }
       </div>
     </div>
     <div class="hero-visual">
-      <div class="avatar-ring"><div class="avatar-inner"><img src="Profile.jpg" alt="Sawaira Mumtaz"></div></div>
+      <div class="avatar-ring"><div class="avatar-inner"><img src="Profile.jpg" alt="Sawaira Mumtaz" loading="lazy"></div></div>
     </div>
   </div>
 </section>
@@ -1240,6 +1427,20 @@ section { padding: 96px 0; position: relative; }
         <div class="highlight"><h4>Specializations</h4><p>Full-stack development (<strong>React, Node.js, Python</strong>), LLM integration (<strong>Gemini, Groq, OpenAI</strong>), RAG systems, Data science &amp; ML (<strong>K-Means, SVD, Scikit-learn</strong>), Cloud deployment (<strong>Render, Railway, Vercel</strong>).</p></div>
         <div class="highlight"><h4>Final Year Project</h4><p>AI-Powered Clothing &amp; Inventory Management System with <strong>vision-based auto-tagging</strong> using Google Gemini 2.5 Flash, deployed as both desktop (Tkinter) and web (Streamlit) applications.</p></div>
         <div class="highlight"><h4>Professional Experience</h4><p>Worked with <strong>2 companies</strong> — <strong>GO Viral Communication (NASTP)</strong> (Software Engineering) and <strong>Post Fusion</strong> (AI Engineering). Plus <strong>self-driven projects</strong> in Data Science, Machine Learning, and Mobile Development.</p></div>
+      </div>
+    </div>
+
+    <div class="open-roles reveal">
+      <h3><i class="fas fa-briefcase"></i> Open to These Roles</h3>
+      <p>Actively seeking full-time positions, internships, and freelance opportunities. Available for onsite (Rawalpindi / Islamabad), remote, or hybrid work.</p>
+      <div class="role-badges">
+        <span class="role-badge"><i class="fas fa-brain"></i> AI / ML Engineer</span>
+        <span class="role-badge"><i class="fas fa-robot"></i> LLM Engineer</span>
+        <span class="role-badge"><i class="fas fa-chart-line"></i> Data Scientist</span>
+        <span class="role-badge"><i class="fas fa-code"></i> Software Engineer</span>
+        <span class="role-badge"><i class="fas fa-layer-group"></i> Full-Stack Developer</span>
+        <span class="role-badge"><i class="fas fa-mobile-alt"></i> Mobile App Developer</span>
+        <span class="role-badge"><i class="fas fa-flask"></i> Python Developer</span>
       </div>
     </div>
   </div>
@@ -1317,11 +1518,18 @@ section { padding: 96px 0; position: relative; }
       <p class="section-sub">Production-ready AI systems, full-stack applications, and mobile apps — each shipped from design to deployment.</p>
     </div>
 
-    <div class="projects-grid reveal">
+    <div class="project-filter reveal">
+      <button class="filter-btn active" data-filter="all"><i class="fas fa-th"></i> All Projects</button>
+      <button class="filter-btn" data-filter="ai"><i class="fas fa-brain"></i> AI / ML</button>
+      <button class="filter-btn" data-filter="fullstack"><i class="fas fa-layer-group"></i> Full-Stack</button>
+      <button class="filter-btn" data-filter="mobile"><i class="fas fa-mobile-alt"></i> Mobile</button>
+    </div>
 
-      <article class="project-card">
+    <div class="projects-grid reveal" id="projectsGrid">
+
+      <article class="project-card" data-category="ai">
         <div class="project-thumb">
-          <img src="advanced-ai.png" alt="LLM Evaluation Dashboard">
+          <img src="advanced-ai.png" alt="LLM Evaluation Dashboard" loading="lazy">
           <span class="project-type-label">LLM &amp; AI Systems</span>
         </div>
         <div class="project-body">
@@ -1335,9 +1543,9 @@ section { padding: 96px 0; position: relative; }
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card" data-category="fullstack">
         <div class="project-thumb">
-          <img src="notifications.png" alt="Notifications and AI Incident Engine">
+          <img src="notifications.png" alt="Notifications and AI Incident Engine" loading="lazy">
           <span class="project-type-label">Full-Stack Enterprise</span>
         </div>
         <div class="project-body">
@@ -1351,9 +1559,9 @@ section { padding: 96px 0; position: relative; }
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card" data-category="ai">
         <div class="project-thumb">
-          <img src="clothing.png" alt="AI Clothing and Inventory System">
+          <img src="clothing.png" alt="AI Clothing and Inventory System" loading="lazy">
           <span class="project-type-label">Final Year Project</span>
         </div>
         <div class="project-body">
@@ -1367,9 +1575,9 @@ section { padding: 96px 0; position: relative; }
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card" data-category="ai">
         <div class="project-thumb">
-          <img src="rag-chatbot.png" alt="MGT501 RAG AI Chatbot">
+          <img src="rag-chatbot.png" alt="MGT501 RAG AI Chatbot" loading="lazy">
           <span class="project-type-label">RAG &amp; Chatbot</span>
         </div>
         <div class="project-body">
@@ -1383,9 +1591,9 @@ section { padding: 96px 0; position: relative; }
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card" data-category="fullstack">
         <div class="project-thumb">
-          <img src="posts-fusion.png" alt="Posts Fusion Studio">
+          <img src="posts-fusion.png" alt="Posts Fusion Studio" loading="lazy">
           <span class="project-type-label">AI Content Gen</span>
         </div>
         <div class="project-body">
@@ -1399,9 +1607,9 @@ section { padding: 96px 0; position: relative; }
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card" data-category="mobile">
         <div class="project-thumb">
-          <img src="collegealert.png" alt="College Alert App">
+          <img src="collegealert.png" alt="College Alert App" loading="lazy">
           <span class="project-type-label">Mobile App</span>
         </div>
         <div class="project-body">
@@ -1415,9 +1623,9 @@ section { padding: 96px 0; position: relative; }
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card" data-category="mobile">
         <div class="project-thumb">
-          <img src="ecommerce.png" alt="E-Commerce Marketplace App">
+          <img src="ecommerce.png" alt="E-Commerce Marketplace App" loading="lazy">
           <span class="project-type-label">Mobile App</span>
         </div>
         <div class="project-body">
@@ -1431,9 +1639,9 @@ section { padding: 96px 0; position: relative; }
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card" data-category="mobile">
         <div class="project-thumb">
-          <img src="artgallery.png" alt="Digital Art Gallery">
+          <img src="artgallery.png" alt="Digital Art Gallery" loading="lazy">
           <span class="project-type-label">Cross-Platform</span>
         </div>
         <div class="project-body">
@@ -1447,9 +1655,9 @@ section { padding: 96px 0; position: relative; }
         </div>
       </article>
 
-      <article class="project-card">
+      <article class="project-card" data-category="mobile">
         <div class="project-thumb">
-          <img src="timezone.png" alt="Time Zone Converter">
+          <img src="timezone.png" alt="Time Zone Converter" loading="lazy">
           <span class="project-type-label">Utility App</span>
         </div>
         <div class="project-body">
@@ -1610,87 +1818,22 @@ section { padding: 96px 0; position: relative; }
         <div class="certifications">
           <h4><i class="fas fa-certificate"></i> Certifications (16)</h4>
           <div class="cert-grid">
-
-            <div class="cert-item">
-              <strong>Advanced Web Application Development</strong>
-              <span class="issuer">NAVTECH · Foundation Institute of Technology, Chaklala Rawalpindi</span>
-            </div>
-
-            <div class="cert-item">
-              <strong>CIT (Certificate in Information Technology)</strong>
-              <span class="issuer">Foundation Institute of Technology, Chaklala Rawalpindi</span>
-            </div>
-
-            <div class="cert-item">
-              <strong>Python Programming</strong>
-              <span class="issuer">Udemy</span>
-            </div>
-
-            <div class="cert-item">
-              <strong>C / C++ Programming</strong>
-              <span class="issuer">NET-ACAD</span>
-            </div>
-
-            <div class="cert-item">
-              <strong>Python Course for App First Developers</strong>
-              <span class="issuer">Udemy</span>
-            </div>
-
-            <div class="cert-item">
-              <strong>Python Complete Course for Beginners</strong>
-              <span class="issuer">Udemy</span>
-            </div>
-
-            <div class="cert-item">
-              <strong>Data Analytics &amp; Business Intelligence</strong>
-              <span class="issuer">Cisco Networking Academy</span>
-            </div>
-
-            <div class="cert-item">
-              <strong>UI &amp; UX Webflow</strong>
-              <span class="issuer">Cisco Networking Academy</span>
-            </div>
-
-            <div class="cert-item">
-              <strong>Certified Ethical Hacking (CEH)</strong>
-              <span class="issuer">Cybersecurity Certification</span>
-            </div>
-
-            <div class="cert-item">
-              <strong>Web Penetration Testing (WPT)</strong>
-              <span class="issuer">Cybersecurity Certification</span>
-            </div>
-
-            <div class="cert-item">
-              <strong>Cyber Essentials</strong>
-              <span class="issuer">Cybersecurity Certification</span>
-            </div>
-
-            <div class="cert-item">
-              <strong>Cyber Security</strong>
-              <span class="issuer">Cisco Networking Academy</span>
-            </div>
-
-            <div class="cert-item">
-              <strong>ChatGPT 4</strong>
-              <span class="issuer">AI Tools Certification</span>
-            </div>
-
-            <div class="cert-item">
-              <strong>Web Development</strong>
-              <span class="issuer">Foundation Institute of Technology</span>
-            </div>
-
-            <div class="cert-item">
-              <strong>WordPress Development</strong>
-              <span class="issuer">Web Development Certification</span>
-            </div>
-
-            <div class="cert-item">
-              <strong>Search Engine Optimization (SEO)</strong>
-              <span class="issuer">Digital Marketing Certification</span>
-            </div>
-
+            <div class="cert-item"><strong>Advanced Web Application Development</strong><span class="issuer">NAVTECH · Foundation Institute of Technology, Chaklala Rawalpindi</span></div>
+            <div class="cert-item"><strong>CIT (Certificate in Information Technology)</strong><span class="issuer">Foundation Institute of Technology, Chaklala Rawalpindi</span></div>
+            <div class="cert-item"><strong>Python Programming</strong><span class="issuer">Udemy</span></div>
+            <div class="cert-item"><strong>C / C++ Programming</strong><span class="issuer">NET-ACAD</span></div>
+            <div class="cert-item"><strong>Python Course for App First Developers</strong><span class="issuer">Udemy</span></div>
+            <div class="cert-item"><strong>Python Complete Course for Beginners</strong><span class="issuer">Udemy</span></div>
+            <div class="cert-item"><strong>Data Analytics &amp; Business Intelligence</strong><span class="issuer">Cisco Networking Academy</span></div>
+            <div class="cert-item"><strong>UI &amp; UX Webflow</strong><span class="issuer">Cisco Networking Academy</span></div>
+            <div class="cert-item"><strong>Certified Ethical Hacking (CEH)</strong><span class="issuer">Cybersecurity Certification</span></div>
+            <div class="cert-item"><strong>Web Penetration Testing (WPT)</strong><span class="issuer">Cybersecurity Certification</span></div>
+            <div class="cert-item"><strong>Cyber Essentials</strong><span class="issuer">Cybersecurity Certification</span></div>
+            <div class="cert-item"><strong>Cyber Security</strong><span class="issuer">Cisco Networking Academy</span></div>
+            <div class="cert-item"><strong>ChatGPT 4</strong><span class="issuer">AI Tools Certification</span></div>
+            <div class="cert-item"><strong>Web Development</strong><span class="issuer">Foundation Institute of Technology</span></div>
+            <div class="cert-item"><strong>WordPress Development</strong><span class="issuer">Web Development Certification</span></div>
+            <div class="cert-item"><strong>Search Engine Optimization (SEO)</strong><span class="issuer">Digital Marketing Certification</span></div>
           </div>
         </div>
 
@@ -1711,9 +1854,33 @@ section { padding: 96px 0; position: relative; }
         <h3>Contact Information</h3>
         <p>Whether you have a question, a job opportunity, or a freelance project — I'll respond within 24 hours.</p>
         <div class="info-list">
-          <div class="info-row"><span class="icon"><i class="fas fa-envelope"></i></span><div class="detail"><span class="label">Email</span><span class="value"><a href="mailto:sawairamumtaz369@gmail.com">sawairamumtaz369@gmail.com</a></span></div></div>
-          <div class="info-row"><span class="icon"><i class="fas fa-phone"></i></span><div class="detail"><span class="label">Phone / WhatsApp</span><span class="value"><a href="tel:+923155069089">+92 315 506 9089</a></span></div></div>
-          <div class="info-row"><span class="icon"><i class="fas fa-map-marker-alt"></i></span><div class="detail"><span class="label">Location</span><span class="value">Rawalpindi, Pakistan</span></div></div>
+          <div class="info-row">
+            <span class="icon"><i class="fas fa-envelope"></i></span>
+            <div class="detail">
+              <span class="label">Email</span>
+              <span class="value"><a href="mailto:sawairamumtaz369@gmail.com">sawairamumtaz369@gmail.com</a></span>
+            </div>
+            <button class="copy-btn" data-copy="sawairamumtaz369@gmail.com" aria-label="Copy email" title="Copy email">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+          <div class="info-row">
+            <span class="icon"><i class="fas fa-phone"></i></span>
+            <div class="detail">
+              <span class="label">Phone / WhatsApp</span>
+              <span class="value"><a href="tel:+923155069089">+92 315 506 9089</a></span>
+            </div>
+            <button class="copy-btn" data-copy="+923155069089" aria-label="Copy phone" title="Copy phone">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+          <div class="info-row">
+            <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+            <div class="detail">
+              <span class="label">Location</span>
+              <span class="value">Rawalpindi, Pakistan</span>
+            </div>
+          </div>
         </div>
         <span class="availability"><i class="fas fa-circle-check"></i> Open to Onsite &amp; Remote Opportunities</span>
       </div>
@@ -1748,7 +1915,7 @@ section { padding: 96px 0; position: relative; }
 
 <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
 
-<!-- ═══════════════ AI CHAT WIDGET ═══════════════ -->
+<!-- AI CHAT WIDGET -->
 <button class="ai-chat-toggle" id="aiChatToggle" aria-label="Chat with Sawaira AI">
   <i class="fas fa-comment-dots"></i>
 </button>
@@ -1785,6 +1952,7 @@ section { padding: 96px 0; position: relative; }
 
   <form class="ai-chat-input" id="aiChatForm">
     <input type="text" id="aiChatInput" placeholder="Ask about skills, projects, availability..." autocomplete="off" />
+    <button type="button" class="ai-chat-mic" id="aiChatMic" aria-label="Voice input" title="Voice input"><i class="fas fa-microphone"></i></button>
     <button type="submit" class="ai-chat-send" id="aiChatSend" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
   </form>
 </div>
@@ -1802,17 +1970,33 @@ navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav
 const scrollProgress = document.getElementById('scrollProgress');
 const siteHeader = document.getElementById('siteHeader');
 const scrollTop = document.getElementById('scrollTop');
+
+// Scroll Spy
+const navLinksAll = document.querySelectorAll('.nav-list a[href^="#"]');
+const spySections = document.querySelectorAll('section[id]');
+
 function updateScrollUI() {
   const s = window.pageYOffset || document.documentElement.scrollTop;
   const d = document.documentElement.scrollHeight - window.innerHeight;
   scrollProgress.style.width = (d > 0 ? (s / d) * 100 : 0) + '%';
   siteHeader.classList.toggle('scrolled', s > 40);
   scrollTop.classList.toggle('visible', s > 400);
+
+  // Scroll spy
+  let current = '';
+  spySections.forEach(section => {
+    const top = section.offsetTop - 120;
+    if (s >= top) current = section.getAttribute('id');
+  });
+  navLinksAll.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+  });
 }
 window.addEventListener('scroll', updateScrollUI, { passive: true });
 updateScrollUI();
 scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+// Reveal
 const revealElements = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {
@@ -1828,13 +2012,49 @@ if ('IntersectionObserver' in window) {
   revealElements.forEach(el => el.classList.add('visible'));
 }
 
-// ═══════════════ AI CHAT WIDGET — FAQ ENGINE (No API needed) ═══════════════
+// Project Filter
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    projectCards.forEach(card => {
+      const cat = card.dataset.category;
+      const show = filter === 'all' || cat === filter;
+      card.classList.toggle('hidden', !show);
+      if (show) {
+        card.style.animation = 'none';
+        void card.offsetWidth;
+        card.style.animation = 'aiMsgIn 0.4s ease';
+      }
+    });
+  });
+});
+
+// Copy buttons
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const text = btn.dataset.copy;
+    try {
+      await navigator.clipboard.writeText(text);
+      btn.classList.add('copied');
+      btn.innerHTML = '<i class="fas fa-check"></i>';
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = '<i class="fas fa-copy"></i>';
+      }, 1800);
+    } catch (e) {
+      console.warn('Copy failed', e);
+    }
+  });
+});
+
+// ═══════════════ AI CHAT WIDGET — FAQ ENGINE ═══════════════
 (function() {
   'use strict';
 
-  // ══════════════════════════════════════════════════════════
-  // 📚 FAQ DATABASE — Every answer is guaranteed accurate
-  // ══════════════════════════════════════════════════════════
   const FAQ = {
     education: {
       label: "Education",
@@ -1846,7 +2066,7 @@ if ('IntersectionObserver' in window) {
     },
     projects: {
       label: "Projects",
-      answer: "**9+ Featured Projects** 🚀\n\n1. **Advanced AI Systems** — LLM Eval + LangGraph Multi-Agent\n2. **Notifications & AI Incident Engine** — React + NestJS + Gemini\n3. **AI Clothing & Inventory (FYP)** — Python + Tkinter + Gemini Vision\n4. **MGT501 RAG Chatbot** — Flask + Gemini + Vector Search\n5. **Posts Fusion Studio** — Node.js + SSE streaming\n6. **College Alert App** — React Native + Expo\n7. **E-Commerce Marketplace** — React Native + Expo\n8. **Digital Art Gallery** — React Native Web\n9. **Time Zone Converter** — React Native + Luxon\n\n👉 Scroll to the **Projects** section to see live demos."
+      answer: "**9+ Featured Projects** 🚀\n\n1. **Advanced AI Systems** — LLM Eval + LangGraph Multi-Agent\n2. **Notifications & AI Incident Engine** — React + NestJS + Gemini\n3. **AI Clothing & Inventory (FYP)** — Python + Tkinter + Gemini Vision\n4. **MGT501 RAG Chatbot** — Flask + Gemini + Vector Search\n5. **Posts Fusion Studio** — Node.js + SSE streaming\n6. **College Alert App** — React Native + Expo\n7. **E-Commerce Marketplace** — React Native + Expo\n8. **Digital Art Gallery** — React Native Web\n9. **Time Zone Converter** — React Native + Luxon\n\n👉 Scroll to the **Projects** section for live demos."
     },
     experience: {
       label: "Professional Experience",
@@ -1886,27 +2106,21 @@ if ('IntersectionObserver' in window) {
     }
   };
 
-  // ══════════════════════════════════════════════════════════
-  // 🔑 KEYWORD → TOPIC MATCHER
-  // ══════════════════════════════════════════════════════════
   const KEYWORDS = {
-    education: ['education','degree','university','study','studied','college','vu','virtual university','bscs','bs computer','graduate','graduation','academic','qualification','cgpa','gpa'],
+    education: ['education','degree','university','study','studied','college','vu','virtual university','bscs','bs computer','graduate','graduation','academic','qualification'],
     skills: ['skill','tech stack','technology','technologies','framework','language','python','react','node','tools','expertise','proficiency','know','knowledge'],
-    projects: ['project','portfolio','work','built','apps','application','showcase','demos','demos','sample work'],
+    projects: ['project','portfolio','work','built','apps','application','showcase','demos','sample work'],
     experience: ['experience','work experience','professional','career','company','companies','job','worked'],
     selflearning: ['self learning','self-learning','learning','self driven','self-driven','data science','machine learning','mobile development','self study','self paced'],
     internship: ['internship','intern','train','training','onsite','interned'],
     fyp: ['fyp','final year','final project','capstone','clothing','inventory','gemini vision','t-shirt','tshirt'],
     contact: ['contact','email','phone','whatsapp','reach','number','mail','call','message'],
-    availability: ['available','availability','hire','hiring','remote','onsite','hybrid','location','relocate','freelance','full time','fulltime','part time'],
+    availability: ['available','availability','hire','hiring','remote','hybrid','location','relocate','freelance','full time','fulltime','part time'],
     certifications: ['certif','certificate','credentials','courses','achievement','award'],
     connectform: ['connect','hire me','talk','discuss','chat','send message','form'],
     resume: ['resume','cv','download','pdf']
   };
 
-  // ══════════════════════════════════════════════════════════
-  // 🎯 WIDGET STATE
-  // ══════════════════════════════════════════════════════════
   const toggle = document.getElementById('aiChatToggle');
   const panel = document.getElementById('aiChatPanel');
   const closeBtn = document.getElementById('aiChatClose');
@@ -1914,29 +2128,13 @@ if ('IntersectionObserver' in window) {
   const suggestionsEl = document.getElementById('aiChatSuggestions');
   const form = document.getElementById('aiChatForm');
   const input = document.getElementById('aiChatInput');
-
-  // ══════════════════════════════════════════════════════════
-  // 🔧 HELPERS
-  // ══════════════════════════════════════════════════════════
-  function escapeHtml(text) {
-    return text
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
-  }
+  const micBtn = document.getElementById('aiChatMic');
 
   function formatMessage(text) {
-    // Escape first (but preserve markdown syntax placeholders)
     let html = text;
-    // Bold **text**
     html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-    // Links [text](url)
     html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
-    // Inline code `text`
     html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
-    // Bullet lists
     const lines = html.split('\n');
     let out = [];
     let inList = false;
@@ -1968,31 +2166,20 @@ if ('IntersectionObserver' in window) {
 
   function detectTopic(text) {
     const lower = text.toLowerCase();
-    // Priority order (most specific first)
     const order = ['fyp','selflearning','internship','connectform','resume','availability','certifications','contact','experience','education','skills','projects'];
     for (const topic of order) {
-      if (KEYWORDS[topic].some(kw => lower.includes(kw))) {
-        return topic;
-      }
+      if (KEYWORDS[topic].some(kw => lower.includes(kw))) return topic;
     }
     return null;
   }
 
-  // ══════════════════════════════════════════════════════════
-  // 🎬 TOPIC HANDLER
-  // ══════════════════════════════════════════════════════════
   function handleTopic(topic, userQuery) {
-    if (userQuery) {
-      addMessage('user', userQuery);
-    } else {
-      addMessage('user', FAQ[topic].label);
-    }
+    if (userQuery) addMessage('user', userQuery);
+    else addMessage('user', FAQ[topic].label);
 
-    // Small delay for realism
     setTimeout(() => {
       addMessage('bot', FAQ[topic].answer);
 
-      // Special actions
       if (topic === 'connectform') {
         setTimeout(() => {
           closeChat();
@@ -2018,19 +2205,14 @@ if ('IntersectionObserver' in window) {
   function handleNoMatch(query) {
     addMessage('user', query);
     setTimeout(() => {
-      addMessage('bot', "I'm not sure about that one. 🤔 I can help with these topics — just tap one below or ask differently:\n\n• **Education** 🎓\n• **Skills** 💻\n• **Projects** 🚀\n• **Experience** 💼\n• **Self Learning** 📚\n• **Internships** 🏢\n• **Final Year Project** 🎓\n• **Contact Info** 📧\n• **Availability** 🌍\n• **Certifications** 🏆\n• **Let's Connect** 🤝\n• **Download Resume** 📄\n\nOr reach Sawaira directly at [sawairamumtaz369@gmail.com](mailto:sawairamumtaz369@gmail.com)");
+      addMessage('bot', "I'm not sure about that one. 🤔 Here's what I can help with:\n\n• **Education** 🎓\n• **Skills** 💻\n• **Projects** 🚀\n• **Experience** 💼\n• **Self Learning** 📚\n• **Internships** 🏢\n• **Final Year Project** 🎓\n• **Contact Info** 📧\n• **Availability** 🌍\n• **Certifications** 🏆\n• **Let's Connect** 🤝\n• **Download Resume** 📄\n\nOr reach Sawaira directly at [sawairamumtaz369@gmail.com](mailto:sawairamumtaz369@gmail.com)");
     }, 400);
   }
 
-  // ══════════════════════════════════════════════════════════
-  // 🎬 UI EVENTS
-  // ══════════════════════════════════════════════════════════
   let greetingShown = false;
-
   function openChat() {
     panel.classList.add('open');
     toggle.classList.add('hidden');
-
     if (!greetingShown) {
       greetingShown = true;
       setTimeout(() => {
@@ -2039,7 +2221,6 @@ if ('IntersectionObserver' in window) {
     }
     setTimeout(() => input.focus(), 400);
   }
-
   function closeChat() {
     panel.classList.remove('open');
     toggle.classList.remove('hidden');
@@ -2047,12 +2228,10 @@ if ('IntersectionObserver' in window) {
 
   toggle.addEventListener('click', openChat);
   closeBtn.addEventListener('click', closeChat);
-
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && panel.classList.contains('open')) closeChat();
   });
 
-  // Topic buttons
   suggestionsEl.querySelectorAll('.ai-suggestion').forEach(btn => {
     btn.addEventListener('click', () => {
       const topic = btn.dataset.topic;
@@ -2060,20 +2239,58 @@ if ('IntersectionObserver' in window) {
     });
   });
 
-  // Free-form text input
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const q = input.value.trim();
     if (!q) return;
     input.value = '';
-
     const topic = detectTopic(q);
-    if (topic && FAQ[topic]) {
-      handleTopic(topic, q);
-    } else {
-      handleNoMatch(q);
-    }
+    if (topic && FAQ[topic]) handleTopic(topic, q);
+    else handleNoMatch(q);
   });
+
+  // Voice input
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (SpeechRecognition) {
+    const recognition = new SpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = 'en-US';
+
+    let listening = false;
+    micBtn.addEventListener('click', () => {
+      if (listening) {
+        recognition.stop();
+        return;
+      }
+      try {
+        recognition.start();
+      } catch(e) { /* already started */ }
+    });
+
+    recognition.onstart = () => {
+      listening = true;
+      micBtn.classList.add('listening');
+      input.placeholder = 'Listening...';
+    };
+    recognition.onresult = (e) => {
+      const text = e.results[0][0].transcript;
+      input.value = text;
+    };
+    recognition.onend = () => {
+      listening = false;
+      micBtn.classList.remove('listening');
+      input.placeholder = 'Ask about skills, projects, availability...';
+      if (input.value.trim()) form.dispatchEvent(new Event('submit', { cancelable: true }));
+    };
+    recognition.onerror = () => {
+      listening = false;
+      micBtn.classList.remove('listening');
+      input.placeholder = 'Ask about skills, projects, availability...';
+    };
+  } else {
+    micBtn.style.display = 'none';
+  }
 
 })();
 </script>
