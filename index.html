@@ -893,7 +893,7 @@ section { padding: 96px 0; position: relative; }
 .chat-widget {
   position: fixed;
   bottom: 30px;
-  right: 90px; /* Positioned to the left of the scroll-top button */
+  right: 90px;
   z-index: 1000;
 }
 .chat-toggle {
@@ -913,7 +913,7 @@ section { padding: 96px 0; position: relative; }
   position: absolute;
   bottom: 70px; right: 0;
   width: 350px;
-  height: 450px;
+  height: 480px;
   background: #fff;
   border-radius: var(--radius);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
@@ -968,6 +968,31 @@ section { padding: 96px 0; position: relative; }
   align-self: flex-end;
   border-bottom-right-radius: 2px;
 }
+.msg.bot a { color: var(--purple); text-decoration: underline; font-weight: 600; }
+
+/* Typing Indicator */
+.typing-indicator {
+  display: flex; gap: 4px;
+  padding: 12px 16px;
+  background: var(--bg-muted);
+  border-radius: var(--radius-sm);
+  border-bottom-left-radius: 2px;
+  align-self: flex-start;
+  width: fit-content;
+}
+.typing-indicator span {
+  width: 6px; height: 6px;
+  background: var(--purple);
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+.typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+.typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
+
 .chat-input-wrap {
   padding: 16px;
   background: #fff;
@@ -996,9 +1021,32 @@ section { padding: 96px 0; position: relative; }
 }
 .chat-send:hover { transform: scale(1.05); }
 
+/* Quick Replies */
+.chat-quick-replies {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  padding: 0 16px 12px;
+  background: #fff;
+}
+.quick-reply-btn {
+  background: #fff;
+  border: 1px solid var(--purple);
+  color: var(--purple);
+  border-radius: var(--radius-pill);
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.quick-reply-btn:hover {
+  background: var(--purple);
+  color: #fff;
+}
+
 @media (max-width: 480px) {
   .chat-widget { bottom: 20px; right: 20px; }
-  .chat-window { width: 300px; height: 400px; bottom: 80px; }
+  .chat-window { width: 300px; height: 450px; bottom: 80px; }
+  .scroll-top { display: none; } /* Hide scroll top on mobile to make room for chat */
 }
 
 @media (max-width: 960px) {
@@ -1588,6 +1636,15 @@ section { padding: 96px 0; position: relative; }
       <!-- Initial Greeting -->
       <div class="msg bot">Hi! I'm Sawaira's AI assistant. I can answer questions about her skills, experience, projects, or education. How can I help you?</div>
     </div>
+    
+    <!-- Quick Replies -->
+    <div class="chat-quick-replies" id="quickReplies">
+      <button type="button" class="quick-reply-btn" data-query="What are your skills?">Skills</button>
+      <button type="button" class="quick-reply-btn" data-query="Show me your projects">Projects</button>
+      <button type="button" class="quick-reply-btn" data-query="What is your experience?">Experience</button>
+      <button type="button" class="quick-reply-btn" data-query="How can I contact you?">Contact</button>
+    </div>
+
     <form class="chat-input-wrap" id="chatForm">
       <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything..." autocomplete="off">
       <button type="submit" class="chat-send"><i class="fas fa-paper-plane"></i></button>
@@ -1646,6 +1703,8 @@ const chatClose = document.getElementById('chatClose');
 const chatForm = document.getElementById('chatForm');
 const chatInput = document.getElementById('chatInput');
 const chatMessages = document.getElementById('chatMessages');
+const quickReplies = document.getElementById('quickReplies');
+let isBotTyping = false;
 
 // Toggle Chat Window
 chatToggle.addEventListener('click', () => {
@@ -1664,27 +1723,33 @@ const knowledgeBase = [
   },
   {
     keywords: ['skill', 'tech', 'stack', 'know', 'language'],
-    response: "Sawaira specializes in <strong>AI & Machine Learning</strong> (LLM Integration, RAG Systems, LangChain, LangGraph) and <strong>Full-Stack Development</strong> (Python, React, Node.js, NestJS, Flask). She also has strong knowledge of databases like MongoDB and PostgreSQL."
+    response: "Sawaira specializes in <strong>AI & Machine Learning</strong> (LLM Integration, RAG Systems, LangChain, LangGraph) and <strong>Full-Stack Development</strong> (Python, React, Node.js, NestJS, Flask). She also has strong knowledge of databases like MongoDB and PostgreSQL.",
+    scrollTo: 'skills'
   },
   {
     keywords: ['experience', 'work', 'company', 'job', 'intern'],
-    response: "She has worked with <strong>2 companies</strong>:<br>1. <strong>GO Viral Communication (ISB NASTP)</strong> as a Software Engineer Intern.<br>2. <strong>Post Fusion</strong> as an AI Engineer Intern.<br>She also works on self-driven Data Science and Mobile Development projects."
+    response: "She has worked with <strong>2 companies</strong>:<br>1. <strong>GO Viral Communication (ISB NASTP)</strong> as a Software Engineer Intern.<br>2. <strong>Post Fusion</strong> as an AI Engineer Intern.<br>She also works on self-driven Data Science and Mobile Development projects.",
+    scrollTo: 'experience'
   },
   {
     keywords: ['project', 'portfolio', 'build', 'app', 'chatbot', 'rag'],
-    response: "Sawaira has built 9+ projects! Her top AI projects include the <strong>MGT501 RAG AI Chatbot</strong>, an <strong>LLM Evaluation Dashboard</strong>, a <strong>Notifications & AI Incident Engine</strong>, and an <strong>AI Clothing & Inventory System</strong> (Final Year Project). Check out the Projects section to see live demos!"
+    response: "Sawaira has built 9+ projects! Her top AI projects include the <strong>MGT501 RAG AI Chatbot</strong>, an <strong>LLM Evaluation Dashboard</strong>, a <strong>Notifications & AI Incident Engine</strong>, and an <strong>AI Clothing & Inventory System</strong> (Final Year Project). Check out the Projects section to see live demos!",
+    scrollTo: 'projects'
   },
   {
     keywords: ['education', 'degree', 'study', 'university', 'graduate', 'vu'],
-    response: "She is a <strong>BS Computer Science graduate (February 2027)</strong> from <strong>Virtual University of Pakistan</strong> (Saddar Campus, Rawalpindi)."
+    response: "She is a <strong>BS Computer Science graduate (February 2027)</strong> from <strong>Virtual University of Pakistan</strong> (Saddar Campus, Rawalpindi).",
+    scrollTo: 'education'
   },
   {
     keywords: ['certification', 'certificate', 'course'],
-    response: "She holds 13 certifications, including Advanced Web Application Development (NAVTECH), CIT, Python Programming, C/C++, Certified Ethical Hacking, Cloud Computing, and Data Analytics."
+    response: "She holds 13 certifications, including Advanced Web Application Development (NAVTECH), CIT, Python Programming, C/C++, Certified Ethical Hacking, Cloud Computing, and Data Analytics.",
+    scrollTo: 'education'
   },
   {
     keywords: ['contact', 'email', 'hire', 'reach', 'linkedin', 'phone'],
-    response: "You can reach Sawaira at <strong>sawairamumtaz369@gmail.com</strong> or call <strong>+92 315 506 9089</strong>. She is open to onsite and remote opportunities worldwide!"
+    response: "You can reach Sawaira at <strong>sawairamumtaz369@gmail.com</strong> or call <strong>+92 315 506 9089</strong>. She is open to onsite and remote opportunities worldwide!",
+    scrollTo: 'contact'
   },
   {
     keywords: ['resume', 'cv', 'download'],
@@ -1692,26 +1757,73 @@ const knowledgeBase = [
   },
   {
     keywords: ['fyp', 'final year'],
-    response: "Her Final Year Project is an <strong>AI-Powered Clothing & Inventory Management System</strong>. It uses Python, Tkinter, SQLite, and Google Gemini 2.5 Flash for vision-based auto-tagging."
+    response: "Her Final Year Project is an <strong>AI-Powered Clothing & Inventory Management System</strong>. It uses Python, Tkinter, SQLite, and Google Gemini 2.5 Flash for vision-based auto-tagging.",
+    scrollTo: 'projects'
   }
 ];
+
+// Handle Quick Replies
+document.querySelectorAll('.quick-reply-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (isBotTyping) return;
+    const query = btn.getAttribute('data-query');
+    processUserMessage(query);
+  });
+});
 
 // Handle Message Submit
 chatForm.addEventListener('submit', (e) => {
   e.preventDefault();
+  if (isBotTyping) return;
   const text = chatInput.value.trim();
   if (!text) return;
+  processUserMessage(text);
+  chatInput.value = '';
+});
 
+// Process the user's message
+function processUserMessage(text) {
   // Add User Message
   appendMessage(text, 'user');
-  chatInput.value = '';
+  
+  // Hide quick replies while bot is thinking
+  quickReplies.style.display = 'none';
+  isBotTyping = true;
+
+  // Show typing indicator
+  const typingIndicator = document.createElement('div');
+  typingIndicator.classList.add('typing-indicator');
+  typingIndicator.id = 'typingIndicator';
+  typingIndicator.innerHTML = '<span></span><span></span><span></span>';
+  chatMessages.appendChild(typingIndicator);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
 
   // Simulate AI Thinking
   setTimeout(() => {
-    const response = getBotResponse(text);
-    appendMessage(response, 'bot');
-  }, 600);
-});
+    // Remove typing indicator
+    const indicator = document.getElementById('typingIndicator');
+    if (indicator) indicator.remove();
+
+    const responseData = getBotResponse(text);
+    
+    // Add Bot Message
+    appendMessage(responseData.response, 'bot');
+    isBotTyping = false;
+
+    // Scroll to section if applicable
+    if (responseData.scrollTo) {
+      setTimeout(() => {
+        document.getElementById(responseData.scrollTo).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 500);
+    }
+
+    // Bring back quick replies
+    setTimeout(() => {
+      quickReplies.style.display = 'flex';
+    }, 2000);
+
+  }, 1200); // 1.2 seconds delay to feel human
+}
 
 // Add Message to UI
 function appendMessage(text, sender) {
@@ -1728,12 +1840,14 @@ function getBotResponse(input) {
   
   for (let item of knowledgeBase) {
     if (item.keywords.some(kw => lowerInput.includes(kw))) {
-      return item.response;
+      return item;
     }
   }
 
   // Fallback
-  return "I'm still learning! You can ask me about her <strong>skills</strong>, <strong>experience</strong>, <strong>projects</strong>, or <strong>education</strong>. Or contact Sawaira directly at <a href='mailto:sawairamumtaz369@gmail.com' style='color:var(--purple);text-decoration:underline;'>sawairamumtaz369@gmail.com</a>.";
+  return {
+    response: "I'm still learning! You can ask me about her <strong>skills</strong>, <strong>experience</strong>, <strong>projects</strong>, or <strong>education</strong>. Or contact Sawaira directly at <a href='mailto:sawairamumtaz369@gmail.com'>sawairamumtaz369@gmail.com</a>."
+  };
 }
 </script>
 
