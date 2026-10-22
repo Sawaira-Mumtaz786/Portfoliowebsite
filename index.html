@@ -708,11 +708,6 @@ section { padding: 96px 0; position: relative; }
   color: var(--purple);
   font-weight: 600;
 }
-.certifications li .issuer {
-  color: var(--text-muted);
-  font-size: 0.82rem;
-  font-weight: 500;
-}
 
 .contact { background: #faf5ff; }
 .contact-grid {
@@ -894,6 +889,118 @@ section { padding: 96px 0; position: relative; }
 .scroll-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .scroll-top:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(147, 51, 234, 0.5); }
 
+/* ==================== AI CHATBOT WIDGET ==================== */
+.chat-widget {
+  position: fixed;
+  bottom: 30px;
+  right: 90px; /* Positioned to the left of the scroll-top button */
+  z-index: 1000;
+}
+.chat-toggle {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--gradient);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 8px 24px rgba(147, 51, 234, 0.4);
+  transition: var(--transition);
+}
+.chat-toggle:hover { transform: scale(1.05); box-shadow: 0 12px 32px rgba(147, 51, 234, 0.5); }
+.chat-window {
+  position: absolute;
+  bottom: 70px; right: 0;
+  width: 350px;
+  height: 450px;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-strong);
+}
+.chat-window.open {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.chat-header {
+  background: var(--gradient);
+  color: #fff;
+  padding: 16px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.chat-header h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem; font-weight: 600;
+  display: flex; align-items: center; gap: 8px;
+}
+.chat-close {
+  background: none; border: none; color: #fff;
+  font-size: 1.2rem; cursor: pointer; opacity: 0.8;
+  transition: var(--transition);
+}
+.chat-close:hover { opacity: 1; }
+.chat-messages {
+  flex: 1; padding: 20px;
+  overflow-y: auto;
+  display: flex; flex-direction: column; gap: 12px;
+  background: #fdfbff;
+}
+.msg {
+  max-width: 80%;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.msg.bot {
+  background: var(--bg-muted);
+  color: var(--text-primary);
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+.msg.user {
+  background: var(--purple);
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+}
+.chat-input-wrap {
+  padding: 16px;
+  background: #fff;
+  border-top: 1px solid var(--border);
+  display: flex; gap: 10px;
+}
+.chat-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+  transition: var(--transition);
+}
+.chat-input:focus { border-color: var(--purple); }
+.chat-send {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--gradient);
+  color: #fff; border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+}
+.chat-send:hover { transform: scale(1.05); }
+
+@media (max-width: 480px) {
+  .chat-widget { bottom: 20px; right: 20px; }
+  .chat-window { width: 300px; height: 400px; bottom: 80px; }
+}
+
 @media (max-width: 960px) {
   section { padding: 72px 0; }
   .hero { padding: 80px 0 60px; }
@@ -929,16 +1036,6 @@ section { padding: 96px 0; position: relative; }
   .stat-value { font-size: 1.4rem; }
   .scroll-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
   .certifications ul { grid-template-columns: 1fr; }
-}
-@media (max-width: 480px) {
-  .container { padding: 0 18px; }
-  .hero { padding: 70px 0 50px; }
-  .avatar-ring { width: 180px; height: 180px; }
-  .btn { padding: 11px 22px; font-size: 0.87rem; }
-  .contact-form-wrap { padding: 24px 20px; }
-  .hero-stats { gap: 20px; }
-  .stat-value { font-size: 1.3rem; }
-  .stat-label { font-size: 0.72rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -985,11 +1082,11 @@ section { padding: 96px 0; position: relative; }
         specializing in production-ready <strong>LLM applications</strong>, <strong>RAG pipelines</strong>,
         <strong>chatbot systems</strong>, and scalable <strong>full-stack software</strong>. Experienced
         across AI engineering, data science, and full-stack development through hands-on work with
-        <strong>GO Viral Communication (NASTP)</strong>, <strong>Post Fusion</strong>, and <strong>Self-Learning Projects</strong>.
+        <strong>GO Viral Communication (NASTP)</strong> and <strong>Post Fusion</strong>.
       </p>
       <div class="hero-stats">
         <div class="stat-item"><span class="stat-value">9+</span><span class="stat-label">Projects Shipped</span></div>
-        <div class="stat-item"><span class="stat-value">4</span><span class="stat-label">Companies</span></div>
+        <div class="stat-item"><span class="stat-value">2</span><span class="stat-label">Companies</span></div>
         <div class="stat-item"><span class="stat-value">2027</span><span class="stat-label">BSCS Graduate</span></div>
         <div class="stat-item"><span class="stat-value">Remote</span><span class="stat-label">&amp; Onsite Ready</span></div>
       </div>
@@ -1020,7 +1117,7 @@ section { padding: 96px 0; position: relative; }
     <div class="about-grid">
       <div class="about-text reveal">
         <p>I'm an AI and Software Engineer focused on building <strong>production-ready LLM applications</strong> and <strong>scalable full-stack solutions</strong> that solve real-world problems. My expertise spans LLM integration, RAG systems, chatbot architecture, and cloud-native development.</p>
-        <p>I've worked with <strong>four companies</strong> across leading Pakistan-based tech organizations, gaining hands-on experience in <strong>AI engineering</strong>, <strong>data science</strong>, <strong>mobile development</strong>, and <strong>full-stack engineering</strong>. I'm actively seeking <strong>entry-level AI &amp; Software Engineering roles</strong> where I can contribute to impactful AI products and scalable systems.</p>
+        <p>I've worked with <strong>two companies</strong> across leading Pakistan-based tech organizations, gaining hands-on experience in <strong>AI engineering</strong>, <strong>data science</strong>, <strong>mobile development</strong>, and <strong>full-stack engineering</strong>. I'm actively seeking <strong>entry-level AI &amp; Software Engineering roles</strong> where I can contribute to impactful AI products and scalable systems.</p>
         <p>I'm <strong>open to both onsite and remote opportunities</strong> — locally in Pakistan and internationally — as well as <strong>freelance projects</strong> in AI, LLM, and full-stack development.</p>
         <div class="learning-box">
           <i class="fas fa-graduation-cap"></i>
@@ -1030,7 +1127,7 @@ section { padding: 96px 0; position: relative; }
       <div class="about-highlights reveal">
         <div class="highlight"><h4>Specializations</h4><p>Full-stack development (<strong>React, Node.js, Python</strong>), LLM integration (<strong>Gemini, Groq, OpenAI</strong>), RAG systems, Data science &amp; ML (<strong>K-Means, SVD, Scikit-learn</strong>), Cloud deployment (<strong>Render, Railway, Vercel</strong>).</p></div>
         <div class="highlight"><h4>Final Year Project</h4><p>AI-Powered Clothing &amp; Inventory Management System with <strong>vision-based auto-tagging</strong> using Google Gemini 2.5 Flash, deployed as both desktop (Tkinter) and web (Streamlit) applications.</p></div>
-        <div class="highlight"><h4>Professional Experience</h4><p>Worked with <strong>4 companies</strong> — <strong>GO Viral Communication (NASTP)</strong> (Software Engineering), <strong>Post Fusion</strong> (AI Engineering), and <strong>Self-Learning Projects</strong> (2 tracks — Data Science &amp; Mobile Development).</p></div>
+        <div class="highlight"><h4>Professional Experience</h4><p>Worked with <strong>2 companies</strong> — <strong>GO Viral Communication (NASTP)</strong> (Software Engineering) and <strong>Post Fusion</strong> (AI Engineering), alongside self-driven Data Science &amp; Mobile Development projects.</p></div>
       </div>
     </div>
   </div>
@@ -1110,54 +1207,7 @@ section { padding: 96px 0; position: relative; }
 
     <div class="projects-grid reveal">
 
-      <article class="project-card">
-        <div class="project-thumb">
-          <img src="advanced-ai.png" alt="LLM Evaluation Dashboard">
-          <span class="project-type-label">LLM &amp; AI Systems</span>
-        </div>
-        <div class="project-body">
-          <div class="tech-tags"><span>Python</span><span>LangGraph</span><span>Streamlit</span><span>Groq</span></div>
-          <h3>Advanced AI Systems: LLM Eval &amp; Multi-Agent</h3>
-          <p>Built with <strong>Python</strong> using the <strong>Groq</strong> inference API. <strong>Part 1:</strong> An LLM evaluation dashboard using <strong>LLM-as-judge methodology</strong> to score outputs on Faithfulness and Answer Relevance, visualized with <strong>Plotly</strong> charts in a <strong>Streamlit</strong> UI — cutting manual review time by <strong>~70%</strong>. <strong>Part 2:</strong> A <strong>LangGraph</strong> multi-agent state machine where <strong>Agent A (Structurer)</strong> converts messy text into clean JSON and <strong>Agent B (Validator)</strong> applies business rules. Execution pauses at checkpoints for <strong>Human-in-the-Loop</strong> approval.</p>
-          <div class="project-links">
-            <a href="https://advanced-ai-systems-fsz7jtqn7o8shhntitckpp.streamlit.app/" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
-            <a href="https://github.com/Sawaira-Mumtaz786/advanced-ai-systems" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-thumb">
-          <img src="notifications.png" alt="Notifications and AI Incident Engine">
-          <span class="project-type-label">Full-Stack Enterprise</span>
-        </div>
-        <div class="project-body">
-          <div class="tech-tags"><span>React</span><span>NestJS</span><span>TypeScript</span><span>Gemini AI</span></div>
-          <h3>Notifications &amp; AI Incident Engine</h3>
-          <p>Full-stack enterprise app with a <strong>React + TypeScript</strong> frontend and a modular <strong>NestJS</strong> backend (Controllers, Services, DTOs, Guards). Replaced MD5 with <strong>bcrypt (10 rounds)</strong> and cookie sessions with stateless <strong>JWT authentication</strong>. Strict resource isolation ensures users can only see their own notifications. INFO alerts auto-dismiss after <strong>90 seconds</strong>. Integrated <strong>Google Gemini AI</strong> for auto-triage, urgency scoring (1-10), and RCA playbooks — reducing incident resolution time by <strong>~40%</strong>.</p>
-          <div class="project-links">
-            <a href="https://full-stack-app-k9jl.onrender.com" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
-            <a href="https://github.com/Sawaira-Mumtaz786/Notification-app" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-thumb">
-          <img src="clothing.png" alt="AI Clothing and Inventory System">
-          <span class="project-type-label">Final Year Project</span>
-        </div>
-        <div class="project-body">
-          <div class="tech-tags"><span>Python</span><span>Tkinter</span><span>Streamlit</span><span>Gemini</span><span>SQLite</span></div>
-          <h3>AI Clothing &amp; Inventory System — Final Year Project</h3>
-          <p><strong>Final Year Project (FYP)</strong> — Originally developed as a desktop-based <strong>Clothing Management System</strong> in <strong>Python + Tkinter</strong> with dedicated <strong>Admin and Staff</strong> sections for inventory control, stock tracking, and billing. Submitted to Virtual University of Pakistan as my BS Computer Science capstone. I later enhanced the project with <strong>AI capabilities</strong> — integrating <strong>Google Gemini 2.5 Flash</strong> via the GenAI SDK for <strong>vision-based auto-tagging</strong> (upload a photo and the model extracts item name, category, season, size, and color), reducing manual entry time by <strong>over 80%</strong>. Rebuilt as a <strong>Streamlit web app</strong> and deployed publicly on GitHub with the added AI features.</p>
-          <div class="project-links">
-            <a href="https://ai-powered-clothing-inventory-management-system.streamlit.app" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
-            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
-          </div>
-        </div>
-      </article>
-
+      <!-- Chatbot Project - #1 Spot -->
       <article class="project-card">
         <div class="project-thumb">
           <img src="rag-chatbot.png" alt="MGT501 RAG AI Chatbot">
@@ -1174,6 +1224,58 @@ section { padding: 96px 0; position: relative; }
         </div>
       </article>
 
+      <!-- AI Project 1 -->
+      <article class="project-card">
+        <div class="project-thumb">
+          <img src="advanced-ai.png" alt="LLM Evaluation Dashboard">
+          <span class="project-type-label">LLM &amp; AI Systems</span>
+        </div>
+        <div class="project-body">
+          <div class="tech-tags"><span>Python</span><span>LangGraph</span><span>Streamlit</span><span>Groq</span></div>
+          <h3>Advanced AI Systems: LLM Eval &amp; Multi-Agent</h3>
+          <p>Built with <strong>Python</strong> using the <strong>Groq</strong> inference API. <strong>Part 1:</strong> An LLM evaluation dashboard using <strong>LLM-as-judge methodology</strong> to score outputs on Faithfulness and Answer Relevance, visualized with <strong>Plotly</strong> charts in a <strong>Streamlit</strong> UI — cutting manual review time by <strong>~70%</strong>. <strong>Part 2:</strong> A <strong>LangGraph</strong> multi-agent state machine where <strong>Agent A (Structurer)</strong> converts messy text into clean JSON and <strong>Agent B (Validator)</strong> applies business rules. Execution pauses at checkpoints for <strong>Human-in-the-Loop</strong> approval.</p>
+          <div class="project-links">
+            <a href="https://advanced-ai-systems-fsz7jtqn7o8shhntitckpp.streamlit.app/" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="https://github.com/Sawaira-Mumtaz786/advanced-ai-systems" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- AI Project 2 -->
+      <article class="project-card">
+        <div class="project-thumb">
+          <img src="notifications.png" alt="Notifications and AI Incident Engine">
+          <span class="project-type-label">Full-Stack Enterprise</span>
+        </div>
+        <div class="project-body">
+          <div class="tech-tags"><span>React</span><span>NestJS</span><span>TypeScript</span><span>Gemini AI</span></div>
+          <h3>Notifications &amp; AI Incident Engine</h3>
+          <p>Full-stack enterprise app with a <strong>React + TypeScript</strong> frontend and a modular <strong>NestJS</strong> backend (Controllers, Services, DTOs, Guards). Replaced MD5 with <strong>bcrypt (10 rounds)</strong> and cookie sessions with stateless <strong>JWT authentication</strong>. Strict resource isolation ensures users can only see their own notifications. INFO alerts auto-dismiss after <strong>90 seconds</strong>. Integrated <strong>Google Gemini AI</strong> for auto-triage, urgency scoring (1-10), and RCA playbooks — reducing incident resolution time by <strong>~40%</strong>.</p>
+          <div class="project-links">
+            <a href="https://full-stack-app-k9jl.onrender.com" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="https://github.com/Sawaira-Mumtaz786/Notification-app" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- AI Project 3 -->
+      <article class="project-card">
+        <div class="project-thumb">
+          <img src="clothing.png" alt="AI Clothing and Inventory System">
+          <span class="project-type-label">Final Year Project</span>
+        </div>
+        <div class="project-body">
+          <div class="tech-tags"><span>Python</span><span>Tkinter</span><span>Streamlit</span><span>Gemini</span><span>SQLite</span></div>
+          <h3>AI Clothing &amp; Inventory System — Final Year Project</h3>
+          <p><strong>Final Year Project (FYP)</strong> — Originally developed as a desktop-based <strong>Clothing Management System</strong> in <strong>Python + Tkinter</strong> with dedicated <strong>Admin and Staff</strong> sections for inventory control, stock tracking, and billing. Submitted to Virtual University of Pakistan as my BS Computer Science capstone. I later enhanced the project with <strong>AI capabilities</strong> — integrating <strong>Google Gemini 2.5 Flash</strong> via the GenAI SDK for <strong>vision-based auto-tagging</strong> (upload a photo and the model extracts item name, category, season, size, and color), reducing manual entry time by <strong>over 80%</strong>. Rebuilt as a <strong>Streamlit web app</strong> and deployed publicly on GitHub with the added AI features.</p>
+          <div class="project-links">
+            <a href="https://ai-powered-clothing-inventory-management-system.streamlit.app" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- AI Project 5 -->
       <article class="project-card">
         <div class="project-thumb">
           <img src="posts-fusion.png" alt="Posts Fusion Studio">
@@ -1190,6 +1292,7 @@ section { padding: 96px 0; position: relative; }
         </div>
       </article>
 
+      <!-- Mobile App 1 -->
       <article class="project-card">
         <div class="project-thumb">
           <img src="collegealert.png" alt="College Alert App">
@@ -1206,6 +1309,7 @@ section { padding: 96px 0; position: relative; }
         </div>
       </article>
 
+      <!-- Mobile App 2 -->
       <article class="project-card">
         <div class="project-thumb">
           <img src="ecommerce.png" alt="E-Commerce Marketplace App">
@@ -1222,6 +1326,7 @@ section { padding: 96px 0; position: relative; }
         </div>
       </article>
 
+      <!-- Mobile App 3 -->
       <article class="project-card">
         <div class="project-thumb">
           <img src="artgallery.png" alt="Digital Art Gallery">
@@ -1238,6 +1343,7 @@ section { padding: 96px 0; position: relative; }
         </div>
       </article>
 
+      <!-- Mobile App 4 -->
       <article class="project-card">
         <div class="project-thumb">
           <img src="timezone.png" alt="Time Zone Converter">
@@ -1275,7 +1381,7 @@ section { padding: 96px 0; position: relative; }
     <div class="section-head reveal">
       <span class="section-label">Career</span>
       <h2 class="section-title">Professional <span class="accent">Experience</span></h2>
-      <p class="section-sub">Worked with 4 companies across software engineering, AI engineering, data science, and mobile development — most recent first.</p>
+      <p class="section-sub">Worked with 2 companies across software engineering and AI engineering — most recent first.</p>
     </div>
     <div class="experience-list reveal">
 
@@ -1471,7 +1577,29 @@ section { padding: 96px 0; position: relative; }
 
 <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
 
+<!-- ==================== AI CHAT AGENT WIDGET ==================== -->
+<div class="chat-widget">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <h4><i class="fas fa-robot"></i> Sawaira's AI Assistant</h4>
+      <button class="chat-close" id="chatClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <!-- Initial Greeting -->
+      <div class="msg bot">Hi! I'm Sawaira's AI assistant. I can answer questions about her skills, experience, projects, or education. How can I help you?</div>
+    </div>
+    <form class="chat-input-wrap" id="chatForm">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything..." autocomplete="off">
+      <button type="submit" class="chat-send"><i class="fas fa-paper-plane"></i></button>
+    </form>
+  </div>
+  <button class="chat-toggle" id="chatToggle" aria-label="Open AI Chat">
+    <i class="fas fa-comment-dots"></i>
+  </button>
+</div>
+
 <script>
+// ==================== MOBILE NAV ====================
 const hamburger = document.getElementById('hamburger');
 const navList = document.getElementById('navList');
 hamburger.addEventListener('click', () => {
@@ -1480,6 +1608,7 @@ hamburger.addEventListener('click', () => {
 });
 navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navList.classList.remove('open')));
 
+// ==================== SCROLL UI ====================
 const scrollProgress = document.getElementById('scrollProgress');
 const siteHeader = document.getElementById('siteHeader');
 const scrollTop = document.getElementById('scrollTop');
@@ -1494,6 +1623,7 @@ window.addEventListener('scroll', updateScrollUI, { passive: true });
 updateScrollUI();
 scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
+// ==================== REVEAL ANIMATIONS ====================
 const revealElements = document.querySelectorAll('.reveal');
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {
@@ -1507,6 +1637,103 @@ if ('IntersectionObserver' in window) {
   revealElements.forEach(el => observer.observe(el));
 } else {
   revealElements.forEach(el => el.classList.add('visible'));
+}
+
+// ==================== AI CHAT AGENT LOGIC ====================
+const chatToggle = document.getElementById('chatToggle');
+const chatWindow = document.getElementById('chatWindow');
+const chatClose = document.getElementById('chatClose');
+const chatForm = document.getElementById('chatForm');
+const chatInput = document.getElementById('chatInput');
+const chatMessages = document.getElementById('chatMessages');
+
+// Toggle Chat Window
+chatToggle.addEventListener('click', () => {
+  chatWindow.classList.toggle('open');
+  if (chatWindow.classList.contains('open')) {
+    chatInput.focus();
+  }
+});
+chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
+
+// Knowledge Base
+const knowledgeBase = [
+  {
+    keywords: ['hi', 'hello', 'hey', 'greet'],
+    response: "Hello! I'm Sawaira's AI assistant. Ask me about her skills, projects, experience, or education!"
+  },
+  {
+    keywords: ['skill', 'tech', 'stack', 'know', 'language'],
+    response: "Sawaira specializes in <strong>AI & Machine Learning</strong> (LLM Integration, RAG Systems, LangChain, LangGraph) and <strong>Full-Stack Development</strong> (Python, React, Node.js, NestJS, Flask). She also has strong knowledge of databases like MongoDB and PostgreSQL."
+  },
+  {
+    keywords: ['experience', 'work', 'company', 'job', 'intern'],
+    response: "She has worked with <strong>2 companies</strong>:<br>1. <strong>GO Viral Communication (ISB NASTP)</strong> as a Software Engineer Intern.<br>2. <strong>Post Fusion</strong> as an AI Engineer Intern.<br>She also works on self-driven Data Science and Mobile Development projects."
+  },
+  {
+    keywords: ['project', 'portfolio', 'build', 'app', 'chatbot', 'rag'],
+    response: "Sawaira has built 9+ projects! Her top AI projects include the <strong>MGT501 RAG AI Chatbot</strong>, an <strong>LLM Evaluation Dashboard</strong>, a <strong>Notifications & AI Incident Engine</strong>, and an <strong>AI Clothing & Inventory System</strong> (Final Year Project). Check out the Projects section to see live demos!"
+  },
+  {
+    keywords: ['education', 'degree', 'study', 'university', 'graduate', 'vu'],
+    response: "She is a <strong>BS Computer Science graduate (February 2027)</strong> from <strong>Virtual University of Pakistan</strong> (Saddar Campus, Rawalpindi)."
+  },
+  {
+    keywords: ['certification', 'certificate', 'course'],
+    response: "She holds 13 certifications, including Advanced Web Application Development (NAVTECH), CIT, Python Programming, C/C++, Certified Ethical Hacking, Cloud Computing, and Data Analytics."
+  },
+  {
+    keywords: ['contact', 'email', 'hire', 'reach', 'linkedin', 'phone'],
+    response: "You can reach Sawaira at <strong>sawairamumtaz369@gmail.com</strong> or call <strong>+92 315 506 9089</strong>. She is open to onsite and remote opportunities worldwide!"
+  },
+  {
+    keywords: ['resume', 'cv', 'download'],
+    response: "You can download her resume by clicking the 'Download Resume' button at the top of the page."
+  },
+  {
+    keywords: ['fyp', 'final year'],
+    response: "Her Final Year Project is an <strong>AI-Powered Clothing & Inventory Management System</strong>. It uses Python, Tkinter, SQLite, and Google Gemini 2.5 Flash for vision-based auto-tagging."
+  }
+];
+
+// Handle Message Submit
+chatForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const text = chatInput.value.trim();
+  if (!text) return;
+
+  // Add User Message
+  appendMessage(text, 'user');
+  chatInput.value = '';
+
+  // Simulate AI Thinking
+  setTimeout(() => {
+    const response = getBotResponse(text);
+    appendMessage(response, 'bot');
+  }, 600);
+});
+
+// Add Message to UI
+function appendMessage(text, sender) {
+  const msgDiv = document.createElement('div');
+  msgDiv.classList.add('msg', sender);
+  msgDiv.innerHTML = text;
+  chatMessages.appendChild(msgDiv);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Match User Query to Knowledge Base
+function getBotResponse(input) {
+  const lowerInput = input.toLowerCase();
+  
+  for (let item of knowledgeBase) {
+    if (item.keywords.some(kw => lowerInput.includes(kw))) {
+      return item.response;
+    }
+  }
+
+  // Fallback
+  return "I'm still learning! You can ask me about her <strong>skills</strong>, <strong>experience</strong>, <strong>projects</strong>, or <strong>education</strong>. Or contact Sawaira directly at <a href='mailto:sawairamumtaz369@gmail.com' style='color:var(--purple);text-decoration:underline;'>sawairamumtaz369@gmail.com</a>.";
 }
 </script>
 
