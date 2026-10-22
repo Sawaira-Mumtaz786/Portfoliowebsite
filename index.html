@@ -491,6 +491,22 @@ section { padding: 96px 0; position: relative; }
 .project-links a.source { color: var(--text-secondary); }
 .project-links a.source:hover { color: #111827; transform: translateX(3px); }
 
+/* GitHub Section */
+.github-section { background: #faf5ff; padding: 60px 0; border-top: 1px solid var(--border); }
+.github-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px;
+}
+.github-card {
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 20px; transition: var(--transition); display: flex; flex-direction: column;
+}
+.github-card:hover { border-color: var(--purple); box-shadow: var(--shadow-sm); }
+.github-card h4 { font-family: var(--font-heading); font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 8px; }
+.github-card p { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px; flex: 1; }
+.github-meta { display: flex; align-items: center; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); }
+.github-meta span { display: flex; align-items: center; gap: 4px; }
+.github-lang { width: 10px; height: 10px; border-radius: 50%; background: var(--purple); display: inline-block; }
+
 .view-all-cta {
   text-align: center;
   margin-top: 56px;
@@ -889,6 +905,33 @@ section { padding: 96px 0; position: relative; }
 .scroll-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .scroll-top:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(147, 51, 234, 0.5); }
 
+/* ==================== MODALS ==================== */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(17, 24, 39, 0.8); backdrop-filter: blur(4px);
+  z-index: 2000; display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: var(--transition);
+}
+.modal-overlay.open { opacity: 1; visibility: visible; }
+.modal-content {
+  background: #fff; border-radius: var(--radius); width: 90%; max-width: 800px; height: 85vh;
+  display: flex; flex-direction: column; overflow: hidden; position: relative;
+  transform: translateY(20px); transition: var(--transition);
+}
+.modal-overlay.open .modal-content { transform: translateY(0); }
+.modal-header {
+  padding: 16px 24px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.modal-header h3 { font-family: var(--font-heading); font-size: 1.25rem; color: #111827; }
+.modal-close {
+  background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted);
+  transition: var(--transition);
+}
+.modal-close:hover { color: var(--pink); }
+.modal-body { flex: 1; overflow: hidden; }
+.modal-body iframe { width: 100%; height: 100%; border: none; }
+
 /* ==================== AI CHATBOT WIDGET ==================== */
 .chat-widget {
   position: fixed;
@@ -970,7 +1013,6 @@ section { padding: 96px 0; position: relative; }
 }
 .msg.bot a { color: var(--purple); text-decoration: underline; font-weight: 600; }
 
-/* Typing Indicator */
 .typing-indicator {
   display: flex; gap: 4px;
   padding: 12px 16px;
@@ -1021,7 +1063,6 @@ section { padding: 96px 0; position: relative; }
 }
 .chat-send:hover { transform: scale(1.05); }
 
-/* Quick Replies */
 .chat-quick-replies {
   display: flex; flex-wrap: wrap; gap: 8px;
   padding: 0 16px 12px;
@@ -1043,10 +1084,51 @@ section { padding: 96px 0; position: relative; }
   color: #fff;
 }
 
+/* ==================== TERMINAL WIDGET ==================== */
+.terminal-widget {
+  position: fixed; bottom: 30px; right: 160px; z-index: 1000;
+}
+.terminal-toggle {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #111827; color: #10b981; border: 2px solid #10b981;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  transition: var(--transition);
+}
+.terminal-toggle:hover { transform: scale(1.05); box-shadow: 0 12px 32px rgba(16, 185, 129, 0.4); }
+.terminal-window {
+  position: absolute; bottom: 70px; right: 0;
+  width: 450px; height: 350px;
+  background: #0f172a; border-radius: var(--radius-sm);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  display: flex; flex-direction: column;
+  overflow: hidden; opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #334155; font-family: var(--font-mono);
+}
+.terminal-window.open { opacity: 1; visibility: visible; transform: translateY(0); }
+.terminal-header {
+  background: #1e293b; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid #334155; color: #94a3b8; font-size: 0.8rem;
+}
+.terminal-close { background: none; border: none; color: #ef4444; cursor: pointer; font-size: 1rem; }
+.terminal-body {
+  flex: 1; padding: 16px; overflow-y: auto; color: #e2e8f0; font-size: 0.9rem; line-height: 1.5;
+}
+.term-line { margin-bottom: 4px; }
+.term-prompt { color: #10b981; margin-right: 8px; }
+.term-input-wrap { display: flex; align-items: center; margin-top: 8px; }
+.term-input {
+  background: transparent; border: none; color: #e2e8f0; font-family: var(--font-mono);
+  font-size: 0.9rem; flex: 1; outline: none;
+}
+.blinking-cursor { color: #10b981; animation: blink 1s step-end infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
 @media (max-width: 480px) {
-  .chat-widget { bottom: 20px; right: 20px; }
-  .chat-window { width: 300px; height: 450px; bottom: 80px; }
-  .scroll-top { display: none; } /* Hide scroll top on mobile to make room for chat */
+  .chat-widget, .terminal-widget { bottom: 20px; right: 20px; }
+  .chat-window, .terminal-window { width: 300px; height: 400px; bottom: 80px; }
+  .scroll-top { display: none; }
 }
 
 @media (max-width: 960px) {
@@ -1140,8 +1222,8 @@ section { padding: 96px 0; position: relative; }
       </div>
       <div class="hero-buttons">
         <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
-        <a href="SawairaMumtaz-Resume.pdf" download class="btn btn-resume"><i class="fas fa-download"></i> Download Resume</a>
-        <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+        <button class="btn btn-outline" id="viewResumeBtn"><i class="fas fa-file-pdf"></i> View Resume</button>
+        <a href="SawairaMumtaz-Resume.pdf" download class="btn btn-resume"><i class="fas fa-download"></i> Download</a>
       </div>
       <div class="hero-social">
         <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -1424,6 +1506,21 @@ section { padding: 96px 0; position: relative; }
   </div>
 </section>
 
+<!-- LIVE GITHUB SECTION -->
+<section class="github-section">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom: 20px;">
+      <span class="section-label">Live from GitHub</span>
+      <h2 class="section-title">Recent <span class="accent">Repositories</span></h2>
+      <p class="section-sub">Dynamically fetched from the GitHub API.</p>
+    </div>
+    <div class="github-grid" id="githubRepos">
+      <!-- JavaScript will inject repos here -->
+      <p style="text-align: center; width: 100%; color: var(--text-muted);">Loading repositories...</p>
+    </div>
+  </div>
+</section>
+
 <section class="experience" id="experience">
   <div class="container">
     <div class="section-head reveal">
@@ -1625,6 +1722,19 @@ section { padding: 96px 0; position: relative; }
 
 <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
 
+<!-- ==================== MODALS ==================== -->
+<div class="modal-overlay" id="resumeModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3><i class="fas fa-file-pdf" style="color:var(--pink); margin-right:8px;"></i> Resume Preview</h3>
+      <button class="modal-close" id="closeResumeBtn"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <iframe src="SawairaMumtaz-Resume.pdf" title="Resume PDF"></iframe>
+    </div>
+  </div>
+</div>
+
 <!-- ==================== AI CHAT AGENT WIDGET ==================== -->
 <div class="chat-widget">
   <div class="chat-window" id="chatWindow">
@@ -1633,18 +1743,14 @@ section { padding: 96px 0; position: relative; }
       <button class="chat-close" id="chatClose"><i class="fas fa-times"></i></button>
     </div>
     <div class="chat-messages" id="chatMessages">
-      <!-- Initial Greeting -->
       <div class="msg bot">Hi! I'm Sawaira's AI assistant. I can answer questions about her skills, experience, projects, or education. How can I help you?</div>
     </div>
-    
-    <!-- Quick Replies -->
     <div class="chat-quick-replies" id="quickReplies">
       <button type="button" class="quick-reply-btn" data-query="What are your skills?">Skills</button>
       <button type="button" class="quick-reply-btn" data-query="Show me your projects">Projects</button>
       <button type="button" class="quick-reply-btn" data-query="What is your experience?">Experience</button>
       <button type="button" class="quick-reply-btn" data-query="How can I contact you?">Contact</button>
     </div>
-
     <form class="chat-input-wrap" id="chatForm">
       <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything..." autocomplete="off">
       <button type="submit" class="chat-send"><i class="fas fa-paper-plane"></i></button>
@@ -1652,6 +1758,27 @@ section { padding: 96px 0; position: relative; }
   </div>
   <button class="chat-toggle" id="chatToggle" aria-label="Open AI Chat">
     <i class="fas fa-comment-dots"></i>
+  </button>
+</div>
+
+<!-- ==================== INTERACTIVE CLI TERMINAL WIDGET ==================== -->
+<div class="terminal-widget">
+  <div class="terminal-window" id="terminalWindow">
+    <div class="terminal-header">
+      <span>sawaira@portfolio:~</span>
+      <button class="terminal-close" id="terminalClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="terminal-body" id="terminalBody">
+      <div class="term-line">Type <span style="color:#f472b6;">help</span> to see available commands.</div>
+      <div class="term-input-wrap">
+        <span class="term-prompt">$</span>
+        <input type="text" class="term-input" id="termInput" autocomplete="off" spellcheck="false">
+        <span class="blinking-cursor">|</span>
+      </div>
+    </div>
+  </div>
+  <button class="terminal-toggle" id="terminalToggle" aria-label="Open Terminal">
+    <i class="fas fa-terminal"></i>
   </button>
 </div>
 
@@ -1696,6 +1823,67 @@ if ('IntersectionObserver' in window) {
   revealElements.forEach(el => el.classList.add('visible'));
 }
 
+// ==================== RESUME MODAL ====================
+const viewResumeBtn = document.getElementById('viewResumeBtn');
+const resumeModal = document.getElementById('resumeModal');
+const closeResumeBtn = document.getElementById('closeResumeBtn');
+
+viewResumeBtn.addEventListener('click', () => resumeModal.classList.add('open'));
+closeResumeBtn.addEventListener('click', () => resumeModal.classList.remove('open'));
+resumeModal.addEventListener('click', (e) => {
+  if(e.target === resumeModal) resumeModal.classList.remove('open');
+});
+
+// ==================== LIVE GITHUB API ====================
+async function fetchGitHubRepos() {
+  const container = document.getElementById('githubRepos');
+  try {
+    // Fetch repos from GitHub API (sorted by update time, max 4)
+    const response = await fetch('https://api.github.com/users/Sawaira-Mumtaz786/repos?sort=updated&per_page=4');
+    if (!response.ok) throw new Error('API Rate Limit');
+    const repos = await response.json();
+
+    container.innerHTML = ''; // Clear loading message
+
+    repos.forEach(repo => {
+      // Don't show the portfolio repo itself
+      if(repo.name.toLowerCase() === 'portfoliowebsite') return;
+
+      const langColor = repo.language === 'Python' ? '#3572A5' : 
+                        repo.language === 'JavaScript' ? '#f1e05a' : 
+                        repo.language === 'TypeScript' ? '#2b7489' : '#9333ea';
+
+      const card = document.createElement('a');
+      card.href = repo.html_url;
+      card.target = '_blank';
+      card.className = 'github-card';
+      card.innerHTML = `
+        <h4><i class="fab fa-github"></i> ${repo.name}</h4>
+        <p>${repo.description ? repo.description.substring(0, 80) + '...' : 'No description provided.'}</p>
+        <div class="github-meta">
+          <span><span class="github-lang" style="background:${langColor}"></span> ${repo.language || 'Code'}</span>
+          <span><i class="fas fa-star" style="color:#fbbf24;"></i> ${repo.stargazers_count}</span>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+
+    if(container.children.length === 0) {
+      container.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted);">No public repositories found.</p>';
+    }
+
+  } catch (error) {
+    // If API limit reached or fails, show a static link
+    container.innerHTML = `
+      <div style="text-align:center; width:100%;">
+        <p style="color:var(--text-muted); margin-bottom:16px;">Unable to load live stats right now.</p>
+        <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" class="btn btn-primary">Visit GitHub Profile</a>
+      </div>
+    `;
+  }
+}
+fetchGitHubRepos();
+
 // ==================== AI CHAT AGENT LOGIC ====================
 const chatToggle = document.getElementById('chatToggle');
 const chatWindow = document.getElementById('chatWindow');
@@ -1706,16 +1894,12 @@ const chatMessages = document.getElementById('chatMessages');
 const quickReplies = document.getElementById('quickReplies');
 let isBotTyping = false;
 
-// Toggle Chat Window
 chatToggle.addEventListener('click', () => {
   chatWindow.classList.toggle('open');
-  if (chatWindow.classList.contains('open')) {
-    chatInput.focus();
-  }
+  if (chatWindow.classList.contains('open')) chatInput.focus();
 });
 chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
 
-// Knowledge Base
 const knowledgeBase = [
   {
     keywords: ['hi', 'hello', 'hey', 'greet'],
@@ -1753,7 +1937,7 @@ const knowledgeBase = [
   },
   {
     keywords: ['resume', 'cv', 'download'],
-    response: "You can download her resume by clicking the 'Download Resume' button at the top of the page."
+    response: "You can view or download her resume by clicking the buttons at the top of the page!"
   },
   {
     keywords: ['fyp', 'final year'],
@@ -1762,16 +1946,13 @@ const knowledgeBase = [
   }
 ];
 
-// Handle Quick Replies
 document.querySelectorAll('.quick-reply-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     if (isBotTyping) return;
-    const query = btn.getAttribute('data-query');
-    processUserMessage(query);
+    processUserMessage(btn.getAttribute('data-query'));
   });
 });
 
-// Handle Message Submit
 chatForm.addEventListener('submit', (e) => {
   e.preventDefault();
   if (isBotTyping) return;
@@ -1781,16 +1962,11 @@ chatForm.addEventListener('submit', (e) => {
   chatInput.value = '';
 });
 
-// Process the user's message
 function processUserMessage(text) {
-  // Add User Message
   appendMessage(text, 'user');
-  
-  // Hide quick replies while bot is thinking
   quickReplies.style.display = 'none';
   isBotTyping = true;
 
-  // Show typing indicator
   const typingIndicator = document.createElement('div');
   typingIndicator.classList.add('typing-indicator');
   typingIndicator.id = 'typingIndicator';
@@ -1798,34 +1974,25 @@ function processUserMessage(text) {
   chatMessages.appendChild(typingIndicator);
   chatMessages.scrollTop = chatMessages.scrollHeight;
 
-  // Simulate AI Thinking
   setTimeout(() => {
-    // Remove typing indicator
     const indicator = document.getElementById('typingIndicator');
     if (indicator) indicator.remove();
 
     const responseData = getBotResponse(text);
-    
-    // Add Bot Message
     appendMessage(responseData.response, 'bot');
     isBotTyping = false;
 
-    // Scroll to section if applicable
     if (responseData.scrollTo) {
       setTimeout(() => {
         document.getElementById(responseData.scrollTo).scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 500);
     }
 
-    // Bring back quick replies
-    setTimeout(() => {
-      quickReplies.style.display = 'flex';
-    }, 2000);
+    setTimeout(() => { quickReplies.style.display = 'flex'; }, 2000);
 
-  }, 1200); // 1.2 seconds delay to feel human
+  }, 1200);
 }
 
-// Add Message to UI
 function appendMessage(text, sender) {
   const msgDiv = document.createElement('div');
   msgDiv.classList.add('msg', sender);
@@ -1834,21 +2001,83 @@ function appendMessage(text, sender) {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-// Match User Query to Knowledge Base
 function getBotResponse(input) {
   const lowerInput = input.toLowerCase();
-  
   for (let item of knowledgeBase) {
-    if (item.keywords.some(kw => lowerInput.includes(kw))) {
-      return item;
-    }
+    if (item.keywords.some(kw => lowerInput.includes(kw))) return item;
   }
-
-  // Fallback
   return {
     response: "I'm still learning! You can ask me about her <strong>skills</strong>, <strong>experience</strong>, <strong>projects</strong>, or <strong>education</strong>. Or contact Sawaira directly at <a href='mailto:sawairamumtaz369@gmail.com'>sawairamumtaz369@gmail.com</a>."
   };
 }
+
+// ==================== INTERACTIVE CLI TERMINAL LOGIC ====================
+const terminalToggle = document.getElementById('terminalToggle');
+const terminalWindow = document.getElementById('terminalWindow');
+const terminalClose = document.getElementById('terminalClose');
+const termInput = document.getElementById('termInput');
+const terminalBody = document.getElementById('terminalBody');
+
+terminalToggle.addEventListener('click', () => {
+  terminalWindow.classList.toggle('open');
+  if (terminalWindow.classList.contains('open')) termInput.focus();
+});
+terminalClose.addEventListener('click', () => terminalWindow.classList.remove('open'));
+
+termInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    const command = termInput.value.trim().toLowerCase();
+    termInput.value = '';
+    
+    if(!command) return;
+
+    // Create user command line
+    const userLine = document.createElement('div');
+    userLine.className = 'term-line';
+    userLine.innerHTML = `<span class="term-prompt">$</span> ${command}`;
+    terminalBody.insertBefore(userLine, terminalBody.lastElementChild);
+
+    // Process command
+    let output = '';
+    switch(command) {
+      case 'help':
+        output = 'Available commands:<br>- <span style="color:#f472b6;">about</span> : Read bio<br>- <span style="color:#f472b6;">skills</span> : List technical skills<br>- <span style="color:#f472b6;">projects</span> : View projects<br>- <span style="color:#f472b6;">contact</span> : Get contact info<br>- <span style="color:#f472b6;">clear</span> : Clear terminal';
+        break;
+      case 'about':
+        output = 'BSCS Graduate (Feb 2027) | AI & Software Engineer | Specialized in LLM, RAG, Chatbot Systems.';
+        break;
+      case 'skills':
+        output = 'Python, React, Node.js, TypeScript, LangChain, LangGraph, Gemini API, NestJS, Flask, MongoDB.';
+        break;
+      case 'projects':
+        output = 'Opening projects section...';
+        document.getElementById('projects').scrollIntoView({behavior:'smooth'});
+        break;
+      case 'contact':
+        output = 'Email: sawairamumtaz369@gmail.com<br>LinkedIn: linkedin.com/in/sawaira-mumtaz-3b77972b1';
+        break;
+      case 'clear':
+        // Clear all lines except the input wrapper
+        while(terminalBody.children.length > 1) {
+          terminalBody.removeChild(terminalBody.firstChild);
+        }
+        return;
+      default:
+        output = `Command not found: ${command}. Type <span style="color:#f472b6;">help</span> for options.`;
+    }
+
+    // Create output line
+    const outputLine = document.createElement('div');
+    outputLine.className = 'term-line';
+    outputLine.style.color = '#94a3b8';
+    outputLine.innerHTML = output;
+    
+    // Insert output before the input wrapper
+    terminalBody.insertBefore(outputLine, terminalBody.lastElementChild);
+    terminalBody.scrollTop = terminalBody.scrollHeight;
+  }
+});
 </script>
 
 </body>
