@@ -685,8 +685,8 @@ section { padding: 96px 0; position: relative; }
   font-size: 0.95rem;
 }
 .certifications ul {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
 .certifications li {
@@ -928,6 +928,7 @@ section { padding: 96px 0; position: relative; }
   .hero-stats { gap: 24px; }
   .stat-value { font-size: 1.4rem; }
   .scroll-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
+  .certifications ul { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .container { padding: 0 18px; }
@@ -1400,22 +1401,19 @@ section { padding: 96px 0; position: relative; }
         <div class="certifications">
           <h4><i class="fas fa-certificate"></i> Certifications</h4>
           <ul>
-            <li>
-              <strong>Advanced Web Application Development</strong>
-              <span class="issuer">— NAVTECH · Foundation Institute of Technology, Chaklala Rawalpindi</span>
-            </li>
-            <li>
-              <strong>CIT (Certificate in Information Technology)</strong>
-              <span class="issuer">— Foundation Institute of Technology, Chaklala Rawalpindi</span>
-            </li>
-            <li>
-              <strong>Python Programming</strong>
-              <span class="issuer">— Udemy</span>
-            </li>
-            <li>
-              <strong>C / C++ Programming</strong>
-              <span class="issuer">— NET-ACAD</span>
-            </li>
+            <li><strong>Advanced Web Application Development</strong></li>
+            <li><strong>CIT (Certificate in Information Technology)</strong></li>
+            <li><strong>Python Programming</strong></li>
+            <li><strong>C / C++ Programming</strong></li>
+            <li><strong>Introduction to Cyber Security</strong></li>
+            <li><strong>Certified Ethical Hacking</strong></li>
+            <li><strong>Freelancing</strong></li>
+            <li><strong>AI Content Generator</strong></li>
+            <li><strong>Web Penetration Testing</strong></li>
+            <li><strong>WordPress</strong></li>
+            <li><strong>Data Analytics &amp; Business Intelligence</strong></li>
+            <li><strong>Cloud Computing</strong></li>
+            <li><strong>UI/UX &amp; Webflow</strong></li>
           </ul>
         </div>
 
