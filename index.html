@@ -5,139 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sawaira Mumtaz | AI & Software Engineer — LLM, RAG & Chatbot Systems</title>
 <meta name="description" content="BSCS Graduate (February 2027) — AI & Software Engineer specializing in LLM, RAG, and chatbot systems.">
+<meta name="author" content="Sawaira Mumtaz">
+<link rel="canonical" href="https://sawaira-mumtaz786.github.io/Portfoliowebsite/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}img{max-width:100%;display:block}a{text-decoration:none;color:inherit}ul{list-style:none}button{font-family:inherit}*:focus-visible{outline:2px solid var(--purple);outline-offset:3px;border-radius:4px}
 :root{--gradient:linear-gradient(135deg,#9333ea 0%,#db2777 100%);--gradient-soft:linear-gradient(135deg,#a855f7 0%,#ec4899 100%);--purple:#9333ea;--pink:#db2777;--green:#10b981;--bg-page:#faf5ff;--bg-card:#ffffff;--bg-muted:#f3e8ff;--text-primary:#1f2937;--text-secondary:#4b5563;--text-muted:#6b7280;--border:#f3e8ff;--border-strong:#e9d5ff;--font-heading:'Space Grotesk',sans-serif;--font-body:'Inter',sans-serif;--font-mono:'JetBrains Mono',monospace;--shadow-sm:0 2px 8px rgba(147,51,234,0.06);--shadow-md:0 8px 24px rgba(147,51,234,0.10);--shadow-lg:0 20px 48px rgba(147,51,234,0.16);--radius:18px;--radius-sm:12px;--radius-pill:100px;--transition:0.3s cubic-bezier(0.4,0,0.2,1)}
 body{font-family:var(--font-body);background:var(--bg-page);color:var(--text-primary);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 .container{max-width:1120px;margin:0 auto;padding:0 24px}section{padding:96px 0;position:relative}
-.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.85);backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid var(--border)}
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--gradient);z-index:1000;transition:width 0.1s linear;box-shadow:0 0 12px rgba(219,39,119,0.5)}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.85);backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid transparent;transition:var(--transition)}
+.site-header.scrolled{border-bottom-color:var(--border);box-shadow:0 4px 20px rgba(147,51,234,0.06)}
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
 .brand{font-family:var(--font-heading);font-weight:700;font-size:1.25rem;background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.nav-list{display:flex;align-items:center;gap:28px}.nav-list a{font-size:0.9rem;font-weight:500;color:var(--text-secondary)}
-.nav-list a.nav-cta{background:var(--gradient);color:#fff;padding:9px 22px;border-radius:var(--radius-pill);font-weight:600}
+.nav-list{display:flex;align-items:center;gap:28px}.nav-list a{font-size:0.9rem;font-weight:500;color:var(--text-secondary);transition:var(--transition);position:relative}
+.nav-list a:not(.nav-cta)::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:2px;background:var(--gradient);transform:scaleX(0);transform-origin:right;transition:transform 0.3s ease;border-radius:2px}
+.nav-list a:not(.nav-cta):hover::after{transform:scaleX(1);transform-origin:left}.nav-list a:hover{color:var(--purple)}
+.nav-list a.nav-cta{background:var(--gradient);color:#fff;padding:9px 22px;border-radius:var(--radius-pill);font-weight:600;box-shadow:0 4px 14px rgba(147,51,234,0.3)}
+.hero{padding:100px 0 80px;background:linear-gradient(180deg,#faf5ff 0%,#ffffff 100%);position:relative;overflow:hidden}
 .section-head{text-align:center;margin-bottom:56px}.section-label{display:inline-block;font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--purple);background:var(--bg-muted);border:1px solid var(--border-strong);padding:6px 16px;border-radius:var(--radius-pill);margin-bottom:14px}
-.section-title{font-family:var(--font-heading);font-size:clamp(1.85rem,3.8vw,2.5rem);font-weight:700;color:#111827;margin-bottom:12px}.section-title .accent{background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.section-title{font-family:var(--font-heading);font-size:clamp(1.85rem,3.8vw,2.5rem);font-weight:700;letter-spacing:-0.025em;color:#111827;margin-bottom:12px;line-height:1.15}.section-title .accent{background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .projects{background:#fdf2f8}.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:28px}
 .project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:var(--transition)}
-.project-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
-.project-thumb{height:210px;position:relative;overflow:hidden;background:var(--gradient-soft)}.project-thumb img{width:100%;height:100%;object-fit:cover;object-position:top center}
-.project-type-label{position:absolute;top:14px;left:14px;z-index:2;font-family:var(--font-mono);font-size:0.65rem;background:rgba(255,255,255,0.95);color:var(--purple);padding:4px 12px;border-radius:var(--radius-pill)}
-.project-body{padding:24px;display:flex;flex-direction:column;flex:1}.tech-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}.tech-tags span{font-family:var(--font-mono);font-size:0.66rem;background:var(--bg-muted);color:var(--purple);padding:4px 11px;border-radius:var(--radius-pill);border:1px solid var(--border-strong)}
-.project-body h3{font-family:var(--font-heading);font-size:1.12rem;font-weight:700;color:#111827;margin-bottom:10px}.project-body p{font-size:0.88rem;color:var(--text-secondary);line-height:1.7;margin-bottom:18px;flex:1}
-.project-links{display:flex;gap:16px;padding-top:16px;border-top:1px solid var(--border)}.project-links a{font-size:0.83rem;font-weight:600}.project-links a.live{color:var(--green)}
-</style>
-</head>
-<body>
-<header class="site-header"><div class="container nav-wrap"><div class="brand">Sawaira Mumtaz</div><nav class="nav-list"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#" class="nav-cta">Contact</a></nav></div></header>
-
-<section class="projects" id="projects">
-<div class="container">
-<div class="section-head"><span class="section-label">PORTFOLIO</span><h2 class="section-title">Featured <span class="accent">Projects</span></h2><p style="color:var(--text-secondary);font-size:0.95rem;">Production-ready AI systems on top, full-stack & mobile apps below — each shipped from design to deployment.</p></div>
-<div class="projects-grid">
-
-<!-- 1. AI CLOTHING FYP - TOP PRIORITY -->
-<article class="project-card">
-<div class="project-thumb"><span class="project-type-label">FINAL YEAR PROJECT • AI</span><img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800" alt=""></div>
-<div class="project-body">
-<div class="tech-tags"><span>PYTHON</span><span>TKINTER</span><span>STREAMLIT</span><span>GEMINI</span><span>SQLITE</span></div>
-<h3>AI Clothing & Inventory System — Final Year Project</h3>
-<p>Final Year Project (FYP) — Originally desktop-based Clothing Management System in Python + Tkinter with Admin and Staff sections. Submitted to Virtual University of Pakistan. Later enhanced with AI features by integrating Google Gemini 2.5 Flash via GenAI SDK for vision-based auto-tagging, reducing manual entry time by over 80%. Rebuilt as Streamlit web app and deployed publicly.</p>
-<div class="project-links"><a href="#" class="live">Live Demo</a><a href="#" class="source">Source</a></div>
-</div>
-</article>
-
-<!-- 2. MGT501 RAG CHATBOT -->
-<article class="project-card">
-<div class="project-thumb"><span class="project-type-label">RAG & CHATBOT</span><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800" alt=""></div>
-<div class="project-body">
-<div class="tech-tags"><span>PYTHON</span><span>FLASK</span><span>SERENITY</span><span>RAG</span></div>
-<h3>MGT501 RAG AI Chatbot</h3>
-<p>Retrieval-Augmented Generation chatbot built in Python + Flask. Uses Google text-embedding-004 to convert 45+ MGT501 course handouts into vector embeddings. System runs cosine similarity search to fetch Top-K relevant lecture chunks, then passes them to Gemini with strict academic grounding prompt. Enforces out-of-domain refusal — preventing hallucinated answers.</p>
-<div class="project-links"><a href="#" class="live">Live Demo</a><a href="#" class="source">Source</a></div>
-</div>
-</article>
-
-<!-- 3. ADVANCED AI SYSTEMS -->
-<article class="project-card">
-<div class="project-thumb"><span class="project-type-label">LLM & AI SYSTEMS</span><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800" alt=""></div>
-<div class="project-body">
-<div class="tech-tags"><span>PYTHON</span><span>LANGGRAPH</span><span>STREAMLIT</span><span>RAG</span></div>
-<h3>Advanced AI Systems: LLM Eval & Multi-Agent</h3>
-<p>Built with Python using Groq inference API. Part 1: An LLM evaluation dashboard using LLM-as-judge methodology to score outputs on Faithfulness and Answer Relevance, visualized with Plotly charts in Streamlit UI — cutting manual review time by ~70%. Part 2: LangGraph multi-agent state machine where Agent A converts messy text into clean JSON and Agent B validates business rules. Pauses for Human-in-the-Loop approval.</p>
-<div class="project-links"><a href="#" class="live">Live Demo</a><a href="#" class="source">Source</a></div>
-</div>
-</article>
-
-<!-- 4. NOTIFICATIONS & INCIDENT ENGINE -->
-<article class="project-card">
-<div class="project-thumb"><span class="project-type-label">FULL-STACK ENTERPRISE</span><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800" alt=""></div>
-<div class="project-body">
-<div class="tech-tags"><span>REACT</span><span>NESTJS</span><span>TYPESCRIPT</span><span>SERENITY AI</span></div>
-<h3>Notifications & AI Incident Engine</h3>
-<p>Full-stack enterprise app with React + TypeScript frontend and modular NestJS backend. Replaced MD5 with bcrypt (10 rounds) and cookie sessions with stateless JWT authentication. Integrated Google Gemini AI for auto-triage, urgency scoring (1-10), and RCA playbooks — reducing incident resolution time by ~40%. INFO alerts auto-dismiss after 90 seconds.</p>
-<div class="project-links"><a href="#" class="live">Live Demo</a><a href="#" class="source">Source</a></div>
-</div>
-</article>
-
-<!-- 5. POSTS FUSION STUDIO -->
-<article class="project-card">
-<div class="project-thumb"><span class="project-type-label">AI CONTENT GEN</span><img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800" alt=""></div>
-<div class="project-body">
-<div class="tech-tags"><span>NODE JS</span><span>EXPRESS</span><span>JAVASCRIPT</span><span>SSE</span></div>
-<h3>Posts Fusion Studio — AI Content Gen</h3>
-<p>Real-time AI content streaming app built with Node.js + Express. Implemented Server-Sent Events (SSE) to push tokens from backend to browser as they were generated. Architected for easy swapping to real APIs of OpenAI, OpenRouter, Groq — reducing content creation time from ~30 min to under 3 min per post.</p>
-<div class="project-links"><a href="#" class="live">Live Demo</a><a href="#" class="source">Source</a></div>
-</div>
-</article>
-
-<!-- 6. COLLEGE ALERT APP -->
-<article class="project-card">
-<div class="project-thumb"><span class="project-type-label">MOBILE APP</span><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800" alt=""></div>
-<div class="project-body">
-<div class="tech-tags"><span>REACT NATIVE</span><span>EXPO</span><span>JAVASCRIPT</span></div>
-<h3>College Alert App</h3>
-<p>Mobile app built with React Native + Expo for managing college events. State management using React useState hooks. Renders cards via FlatList for optimized scrolling. Features add event with validation, delete with confirmation, and scheduled local push notifications via expo-notifications.</p>
-<div class="project-links"><a href="#" class="live">Live Demo</a><a href="#" class="source">Source</a></div>
-</div>
-</article>
-
-<!-- 7. E-COMMERCE MARKETPLACE APP -->
-<article class="project-card">
-<div class="project-thumb"><span class="project-type-label">MOBILE APP</span><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800" alt=""></div>
-<div class="project-body">
-<div class="tech-tags"><span>REACT NATIVE</span><span>EXPO</span><span>STATE MGMT</span></div>
-<h3>E-Commerce Marketplace App</h3>
-<p>Multi-screen mobile marketplace built with React Native + Expo using conditional state rendering to navigate between login, home, cart, add-product, and payment screens. Users browse products in a FlatList, add items to cart with running total, list products for sale, and complete a simulated payment flow.</p>
-<div class="project-links"><a href="#" class="live">Live Demo</a><a href="#" class="source">Source</a></div>
-</div>
-</article>
-
-<!-- 8. DIGITAL ART GALLERY -->
-<article class="project-card">
-<div class="project-thumb"><span class="project-type-label">CROSS-PLATFORM</span><img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800" alt=""></div>
-<div class="project-body">
-<div class="tech-tags"><span>REACT NATIVE</span><span>EXPO</span><span>REACT NATIVE WEB</span></div>
-<h3>Digital Art Gallery</h3>
-<p>Cross-platform gallery app built with React Native + Expo and React Native Web so same codebase runs on both Android and browser. Designed a responsive grid layout showcasing famous artwork (The Starry Night, Mona Lisa, Girl with a Pearl Earring, The Scream, Guernica) with title and artist credits.</p>
-<div class="project-links"><a href="#" class="live">Live Demo</a><a href="#" class="source">Source</a></div>
-</div>
-</article>
-
-<!-- 9. TIME ZONE CONVERTER -->
-<article class="project-card">
-<div class="project-thumb"><span class="project-type-label">UTILITY APP</span><img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=800" alt=""></div>
-<div class="project-body">
-<div class="tech-tags"><span>REACT NATIVE</span><span>EXPO</span><span>LUXON</span></div>
-<h3>Time Zone Converter</h3>
-<p>Utility app for converting time across 9 major global zones (NY, LA, London, Paris, Dubai, Kolkata, Tokyo, Sydney, Auckland). Built with React Native + Expo for cross-platform support. Uses Luxon for accurate timezone math including DST handling.</p>
-<div class="project-links"><a href="#" class="live">Live Demo</a><a href="#" class="source">Source</a></div>
-</div>
-</article>
-
-</div>
-</div>
-</section>
-</body>
-</html>
+.project-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--border-strong)}
+.project-thumb{height:210px;position:relative;overflow:hidden;background:var(--gradient-soft)}.project-thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform 0.5s ease}.project-card:hover .project-thumb img{transform:scale(1.06)}
+.project-type-label{position:absolute;top:14px;left:14px;z-index:2;font-family:var(--font-mono);font-size:0.65rem;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);color:var(--purple);padding:4px 12px;border-radius:var(--radius-pill);box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.project-body{padding:24px;display:flex;flex-direction:column;flex:1}.tech-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}.tech-tags span{font-family:var(--font-mono);font-size:0.66rem;font-weight:500;text-transform:uppercase;letter-spacing:0.05em;background:var(--bg-muted);color:var(--purple);padding:4px 11px;border-radius:var(--radius-pill);border:1px solid var(--border-strong)}
+.project-body h3{font-family:var(--font-heading);font-size:1.12rem;font-weight:700;color:#111827;line-height:1.35;margin-bottom:10px}.project-body p{font-size:0.88rem
