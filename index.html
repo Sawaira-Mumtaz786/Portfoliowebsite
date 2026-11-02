@@ -426,16 +426,16 @@ section { padding: 96px 0; position: relative; }
   border-color: var(--border-strong);
 }
 .project-thumb {
-  height: 210px;
+  height: 200px;
   position: relative; overflow: hidden;
   background: var(--gradient-soft);
 }
 .project-thumb img {
   width: 100%; height: 100%;
-  object-fit: cover; object-position: top center;
+  object-fit: cover; object-position: center;
   transition: transform 0.5s ease;
 }
-.project-card:hover .project-thumb img { transform: scale(1.06); }
+.project-card:hover .project-thumb img { transform: scale(1.08); }
 .project-type-label {
   position: absolute; top: 14px; left: 14px;
   z-index: 2;
@@ -467,13 +467,13 @@ section { padding: 96px 0; position: relative; }
 }
 .project-body h3 {
   font-family: var(--font-heading);
-  font-size: 1.12rem; font-weight: 700;
+  font-size: 1.15rem; font-weight: 700;
   color: #111827; line-height: 1.35;
   margin-bottom: 10px;
 }
 .project-body p {
   font-size: 0.88rem; color: var(--text-secondary);
-  line-height: 1.7; margin-bottom: 18px; flex: 1;
+  line-height: 1.6; margin-bottom: 18px; flex: 1;
 }
 .project-body p strong { color: var(--purple); font-weight: 600; }
 .project-links {
@@ -482,7 +482,7 @@ section { padding: 96px 0; position: relative; }
 }
 .project-links a {
   display: inline-flex; align-items: center; gap: 6px;
-  font-size: 0.83rem; font-weight: 600;
+  font-size: 0.85rem; font-weight: 600;
   color: var(--text-secondary);
   transition: var(--transition);
 }
@@ -1335,13 +1335,13 @@ section { padding: 96px 0; position: relative; }
       <p class="section-sub">Production-ready AI systems, full-stack applications, and mobile apps — each shipped from design to deployment.</p>
     </div>
 
-    <!-- Removed "reveal" class here so it never stays invisible -->
     <div class="projects-grid">
 
       <!-- AI Project 1 -->
       <article class="project-card">
         <div class="project-thumb">
-          <img src="advanced-ai.png" alt="LLM Evaluation Dashboard">
+          <!-- Unsplash AI/Coding Image -->
+          <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop" alt="Advanced AI Systems">
           <span class="project-type-label">LLM &amp; AI Systems</span>
         </div>
         <div class="project-body">
@@ -1358,7 +1358,8 @@ section { padding: 96px 0; position: relative; }
       <!-- AI Project 2 -->
       <article class="project-card">
         <div class="project-thumb">
-          <img src="notifications.png" alt="Notifications and AI Incident Engine">
+          <!-- Unsplash Dashboard Image -->
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Notifications and AI Incident Engine">
           <span class="project-type-label">Full-Stack Enterprise</span>
         </div>
         <div class="project-body">
@@ -1375,7 +1376,8 @@ section { padding: 96px 0; position: relative; }
       <!-- AI Project 3 -->
       <article class="project-card">
         <div class="project-thumb">
-          <img src="clothing.png" alt="AI Clothing and Inventory System">
+          <!-- Unsplash Clothing/Fashion Image -->
+          <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1000&auto=format&fit=crop" alt="AI Clothing and Inventory System">
           <span class="project-type-label">Final Year Project</span>
         </div>
         <div class="project-body">
@@ -1392,7 +1394,8 @@ section { padding: 96px 0; position: relative; }
       <!-- AI Project 4 -->
       <article class="project-card">
         <div class="project-thumb">
-          <img src="rag-chatbot.png" alt="MGT501 RAG AI Chatbot">
+          <!-- Unsplash Chat/AI Image -->
+          <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1000&auto=format&fit=crop" alt="MGT501 RAG AI Chatbot">
           <span class="project-type-label">RAG &amp; Chatbot</span>
         </div>
         <div class="project-body">
@@ -1409,7 +1412,8 @@ section { padding: 96px 0; position: relative; }
       <!-- AI Project 5 -->
       <article class="project-card">
         <div class="project-thumb">
-          <img src="posts-fusion.png" alt="Posts Fusion Studio">
+          <!-- Unsplash Content Creation Image -->
+          <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=1000&auto=format&fit=crop" alt="Posts Fusion Studio">
           <span class="project-type-label">AI Content Gen</span>
         </div>
         <div class="project-body">
@@ -1426,7 +1430,8 @@ section { padding: 96px 0; position: relative; }
       <!-- Mobile App 1 -->
       <article class="project-card">
         <div class="project-thumb">
-          <img src="collegealert.png" alt="College Alert App">
+          <!-- Unsplash Mobile Phone Image -->
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop" alt="College Alert App">
           <span class="project-type-label">Mobile App</span>
         </div>
         <div class="project-body">
@@ -1443,7 +1448,8 @@ section { padding: 96px 0; position: relative; }
       <!-- Mobile App 2 -->
       <article class="project-card">
         <div class="project-thumb">
-          <img src="ecommerce.png" alt="E-Commerce Marketplace App">
+          <!-- Unsplash Ecommerce/Shopping Image -->
+          <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1000&auto=format&fit=crop" alt="E-Commerce Marketplace App">
           <span class="project-type-label">Mobile App</span>
         </div>
         <div class="project-body">
@@ -1460,7 +1466,8 @@ section { padding: 96px 0; position: relative; }
       <!-- Mobile App 3 -->
       <article class="project-card">
         <div class="project-thumb">
-          <img src="artgallery.png" alt="Digital Art Gallery">
+          <!-- Unsplash Art Gallery Image -->
+          <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=1000&auto=format&fit=crop" alt="Digital Art Gallery">
           <span class="project-type-label">Cross-Platform</span>
         </div>
         <div class="project-body">
@@ -1477,7 +1484,8 @@ section { padding: 96px 0; position: relative; }
       <!-- Mobile App 4 -->
       <article class="project-card">
         <div class="project-thumb">
-          <img src="timezone.png" alt="Time Zone Converter">
+          <!-- Unsplash Watch/Time Image -->
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop" alt="Time Zone Converter">
           <span class="project-type-label">Utility App</span>
         </div>
         <div class="project-body">
@@ -1507,7 +1515,7 @@ section { padding: 96px 0; position: relative; }
   </div>
 </section>
 
-<!-- LIVE GITHUB SECTION (Reveal removed to fix blank space) -->
+<!-- LIVE GITHUB SECTION -->
 <section class="github-section">
   <div class="container">
     <div class="section-head" style="margin-bottom: 20px;">
@@ -1823,7 +1831,7 @@ if ('IntersectionObserver' in window) {
 } else {
   revealElements.forEach(el => el.classList.add('visible'));
 }
-// Fallback: Ensure elements become visible even if observer fails
+// Fallback for hidden elements
 setTimeout(() => {
   document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
 }, 1500);
