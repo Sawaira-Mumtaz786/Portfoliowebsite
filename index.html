@@ -598,3 +598,1484 @@ section { padding: 96px 0; position: relative; }
 }
 .exp-achievements { display: flex; flex-direction: column; gap: 10px; }
 .exp-achievements li {
+  display: flex; gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+.exp-achievements li::before {
+  content: '→';
+  color: var(--purple); font-weight: 700;
+  flex-shrink: 0;
+}
+.exp-achievements li strong { color: var(--purple); font-weight: 600; }
+.exp-tech {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border-strong);
+}
+.exp-tech span {
+  font-family: var(--font-mono);
+  font-size: 0.66rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.04em;
+  background: var(--bg-page); color: var(--purple);
+  padding: 4px 11px; border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+}
+
+.education { background: #fdf2f8; }
+.education-card {
+  max-width: 800px; margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 34px 38px;
+  box-shadow: var(--shadow-md);
+  position: relative; overflow: hidden;
+}
+.education-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; width: 5px; height: 100%;
+  background: var(--gradient);
+}
+.edu-head {
+  display: flex; align-items: flex-start;
+  gap: 18px; margin-bottom: 16px;
+}
+.edu-icon {
+  width: 56px; height: 56px; border-radius: 14px;
+  background: var(--gradient-soft); color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(147, 51, 234, 0.25);
+}
+.edu-head h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem; font-weight: 700;
+  color: #111827; margin-bottom: 3px;
+}
+.edu-institution {
+  font-size: 0.92rem; font-weight: 600;
+  color: var(--purple);
+}
+.edu-date {
+  display: inline-block;
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--pink);
+  background: var(--bg-muted);
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  margin-top: 10px;
+}
+.edu-body p {
+  font-size: 0.93rem; color: var(--text-secondary);
+  line-height: 1.75; margin-bottom: 12px;
+}
+.edu-body p strong { color: #111827; font-weight: 600; }
+.edu-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.edu-tags span {
+  font-size: 0.76rem; font-weight: 600;
+  background: var(--bg-muted); color: var(--purple);
+  border: 1px solid var(--border-strong);
+  padding: 5px 12px; border-radius: var(--radius-pill);
+}
+
+.certifications {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px dashed var(--border-strong);
+}
+.certifications h4 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.certifications h4 i {
+  color: var(--purple);
+  font-size: 0.95rem;
+}
+.certifications ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.certifications li {
+  font-size: 0.89rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: 22px;
+  position: relative;
+}
+.certifications li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--green);
+  font-weight: 700;
+}
+.certifications li strong {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.contact { background: #faf5ff; }
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1.15fr;
+  gap: 48px; align-items: start;
+}
+.contact-info h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem; font-weight: 700;
+  color: #111827; margin-bottom: 12px;
+}
+.contact-info > p {
+  font-size: 0.95rem; color: var(--text-secondary);
+  line-height: 1.75; margin-bottom: 26px;
+}
+.info-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+.info-row {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+.info-row:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(4px);
+}
+.info-row .icon {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--bg-muted); color: var(--purple);
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 1rem;
+}
+.info-row .detail { display: flex; flex-direction: column; gap: 2px; }
+.info-row .label {
+  font-size: 0.7rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+.info-row .value {
+  font-size: 0.92rem; font-weight: 600;
+  color: #111827; word-break: break-word;
+}
+.info-row .value a { color: var(--purple); }
+.info-row .value a:hover { color: var(--pink); }
+
+.availability {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem; font-weight: 600;
+  margin-top: 4px;
+}
+.availability i { color: var(--green); }
+
+.contact-form-wrap {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 34px;
+  box-shadow: var(--shadow-md);
+  position: relative; overflow: hidden;
+}
+.contact-form-wrap::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+  background: var(--gradient);
+}
+.contact-form-wrap h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem; font-weight: 700;
+  color: #111827; margin-bottom: 6px;
+}
+.contact-form-wrap > p {
+  font-size: 0.88rem; color: var(--text-secondary);
+  margin-bottom: 22px;
+}
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block; font-size: 0.82rem;
+  font-weight: 600; color: #111827;
+  margin-bottom: 6px;
+}
+.form-group label .req { color: var(--pink); }
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: inherit; font-size: 0.92rem;
+  color: #111827;
+  background: var(--bg-page);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: var(--transition);
+  resize: vertical;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: #9ca3af; }
+.form-group input:focus,
+.form-group textarea:focus {
+  background: #fff; border-color: var(--purple);
+  box-shadow: 0 0 0 4px rgba(147, 51, 234, 0.12);
+}
+.form-group textarea { min-height: 110px; }
+.submit-btn {
+  width: 100%;
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 10px;
+  padding: 14px 30px; margin-top: 6px;
+  background: var(--gradient); color: #fff;
+  font-family: inherit; font-size: 0.95rem; font-weight: 600;
+  border: none; border-radius: var(--radius-pill);
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(147, 51, 234, 0.32);
+  transition: var(--transition);
+}
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(147, 51, 234, 0.45);
+}
+
+.contact-social-row {
+  display: flex; flex-wrap: wrap;
+  gap: 12px; margin-top: 20px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.contact-social-btn {
+  flex: 1; min-width: 140px;
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem; font-weight: 600;
+  border: 1.5px solid var(--border-strong);
+  background: #fff;
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+.contact-social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.contact-social-btn.github:hover { background: #111827; color: #fff; border-color: #111827; }
+.contact-social-btn.linkedin:hover { background: #0a66c2; color: #fff; border-color: #0a66c2; }
+.contact-social-btn.email:hover { background: var(--gradient); color: #fff; border-color: transparent; }
+
+.site-footer {
+  background: #fff;
+  border-top: 1px solid var(--border);
+  padding: 36px 0;
+  text-align: center;
+}
+.site-footer p { font-size: 0.88rem; color: var(--text-muted); }
+.site-footer .heart { color: var(--pink); }
+.site-footer .copy { margin-top: 8px; font-size: 0.82rem; color: #9ca3af; }
+
+.scroll-top {
+  position: fixed; bottom: 30px; right: 30px;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--gradient);
+  color: #fff; border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 8px 24px rgba(147, 51, 234, 0.4);
+  opacity: 0; visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.35s ease;
+  z-index: 999;
+}
+.scroll-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.scroll-top:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(147, 51, 234, 0.5); }
+
+/* ==================== MODALS ==================== */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(17, 24, 39, 0.8); backdrop-filter: blur(4px);
+  z-index: 2000; display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: var(--transition);
+}
+.modal-overlay.open { opacity: 1; visibility: visible; }
+.modal-content {
+  background: #fff; border-radius: var(--radius); width: 90%; max-width: 800px; height: 85vh;
+  display: flex; flex-direction: column; overflow: hidden; position: relative;
+  transform: translateY(20px); transition: var(--transition);
+}
+.modal-overlay.open .modal-content { transform: translateY(0); }
+.modal-header {
+  padding: 16px 24px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.modal-header h3 { font-family: var(--font-heading); font-size: 1.25rem; color: #111827; }
+.modal-close {
+  background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-muted);
+  transition: var(--transition);
+}
+.modal-close:hover { color: var(--pink); }
+.modal-body { flex: 1; overflow: hidden; }
+.modal-body iframe { width: 100%; height: 100%; border: none; }
+
+/* ==================== AI CHATBOT WIDGET ==================== */
+.chat-widget {
+  position: fixed;
+  bottom: 30px;
+  right: 90px;
+  z-index: 1000;
+}
+.chat-toggle {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--gradient);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 0 8px 24px rgba(147, 51, 234, 0.4);
+  transition: var(--transition);
+}
+.chat-toggle:hover { transform: scale(1.05); box-shadow: 0 12px 32px rgba(147, 51, 234, 0.5); }
+.chat-window {
+  position: absolute;
+  bottom: 70px; right: 0;
+  width: 350px;
+  height: 480px;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-strong);
+}
+.chat-window.open {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.chat-header {
+  background: var(--gradient);
+  color: #fff;
+  padding: 16px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.chat-header h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem; font-weight: 600;
+  display: flex; align-items: center; gap: 8px;
+}
+.chat-close {
+  background: none; border: none; color: #fff;
+  font-size: 1.2rem; cursor: pointer; opacity: 0.8;
+  transition: var(--transition);
+}
+.chat-close:hover { opacity: 1; }
+.chat-messages {
+  flex: 1; padding: 20px;
+  overflow-y: auto;
+  display: flex; flex-direction: column; gap: 12px;
+  background: #fdfbff;
+}
+.msg {
+  max-width: 80%;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.msg.bot {
+  background: var(--bg-muted);
+  color: var(--text-primary);
+  align-self: flex-start;
+  border-bottom-left-radius: 2px;
+}
+.msg.user {
+  background: var(--purple);
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 2px;
+}
+.msg.bot a { color: var(--purple); text-decoration: underline; font-weight: 600; }
+
+.typing-indicator {
+  display: flex; gap: 4px;
+  padding: 12px 16px;
+  background: var(--bg-muted);
+  border-radius: var(--radius-sm);
+  border-bottom-left-radius: 2px;
+  align-self: flex-start;
+  width: fit-content;
+}
+.typing-indicator span {
+  width: 6px; height: 6px;
+  background: var(--purple);
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+.typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+.typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
+
+.chat-input-wrap {
+  padding: 16px;
+  background: #fff;
+  border-top: 1px solid var(--border);
+  display: flex; gap: 10px;
+}
+.chat-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+  transition: var(--transition);
+}
+.chat-input:focus { border-color: var(--purple); }
+.chat-send {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--gradient);
+  color: #fff; border: none;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: var(--transition);
+}
+.chat-send:hover { transform: scale(1.05); }
+
+.chat-quick-replies {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  padding: 0 16px 12px;
+  background: #fff;
+}
+.quick-reply-btn {
+  background: #fff;
+  border: 1px solid var(--purple);
+  color: var(--purple);
+  border-radius: var(--radius-pill);
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.quick-reply-btn:hover {
+  background: var(--purple);
+  color: #fff;
+}
+
+/* ==================== TERMINAL WIDGET ==================== */
+.terminal-widget {
+  position: fixed; bottom: 30px; right: 160px; z-index: 1000;
+}
+.terminal-toggle {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #111827; color: #10b981; border: 2px solid #10b981;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  transition: var(--transition);
+}
+.terminal-toggle:hover { transform: scale(1.05); box-shadow: 0 12px 32px rgba(16, 185, 129, 0.4); }
+.terminal-window {
+  position: absolute; bottom: 70px; right: 0;
+  width: 450px; height: 350px;
+  background: #0f172a; border-radius: var(--radius-sm);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  display: flex; flex-direction: column;
+  overflow: hidden; opacity: 0; visibility: hidden; transform: translateY(20px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #334155; font-family: var(--font-mono);
+}
+.terminal-window.open { opacity: 1; visibility: visible; transform: translateY(0); }
+.terminal-header {
+  background: #1e293b; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid #334155; color: #94a3b8; font-size: 0.8rem;
+}
+.terminal-close { background: none; border: none; color: #ef4444; cursor: pointer; font-size: 1rem; }
+.terminal-body {
+  flex: 1; padding: 16px; overflow-y: auto; color: #e2e8f0; font-size: 0.9rem; line-height: 1.5;
+}
+.term-line { margin-bottom: 4px; }
+.term-prompt { color: #10b981; margin-right: 8px; }
+.term-input-wrap { display: flex; align-items: center; margin-top: 8px; }
+.term-input {
+  background: transparent; border: none; color: #e2e8f0; font-family: var(--font-mono);
+  font-size: 0.9rem; flex: 1; outline: none;
+}
+.blinking-cursor { color: #10b981; animation: blink 1s step-end infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+@media (max-width: 480px) {
+  .chat-widget, .terminal-widget { bottom: 20px; right: 20px; }
+  .chat-window, .terminal-window { width: 300px; height: 400px; bottom: 80px; }
+  .scroll-top { display: none; }
+}
+
+@media (max-width: 960px) {
+  section { padding: 72px 0; }
+  .hero { padding: 80px 0 60px; }
+  .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  .hero .summary { margin-left: auto; margin-right: auto; }
+  .hero-stats { justify-content: center; margin-left: auto; margin-right: auto; }
+  .hero-buttons, .hero-social { justify-content: center; }
+  .hero-visual { order: -1; }
+  .avatar-ring { width: 220px; height: 220px; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 768px) {
+  section { padding: 64px 0; }
+  .nav-list {
+    display: none;
+    position: absolute; top: 68px; right: 20px;
+    background: #fff; flex-direction: column;
+    gap: 20px; padding: 24px 28px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    min-width: 210px; align-items: flex-start;
+  }
+  .nav-list.open { display: flex; }
+  .hamburger { display: flex; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .education-card { padding: 26px 24px; }
+  .edu-head { flex-direction: column; gap: 12px; }
+  .exp-head { flex-direction: column; gap: 12px; }
+  .exp-meta { align-items: flex-start; text-align: left; }
+  .contact-social-btn { flex: 1 1 100%; }
+  .hero-stats { gap: 24px; }
+  .stat-value { font-size: 1.4rem; }
+  .scroll-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
+  .certifications ul { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-wrap">
+    <a href="#" class="brand">Sawaira Mumtaz</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+    <nav aria-label="Main navigation">
+      <ul class="nav-list" id="navList">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Tech Stack</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <span class="status-badge"><span class="status-dot"></span> BSCS Graduate — Open to AI &amp; Software Engineering roles</span>
+      <h1>Sawaira Mumtaz</h1>
+      <p class="role">AI &amp; Software Engineer | LLM, RAG &amp; Chatbot Systems</p>
+      <p class="summary">
+        <strong>BS Computer Science graduate (February 2027)</strong> from Virtual University of Pakistan,
+        specializing in production-ready <strong>LLM applications</strong>, <strong>RAG pipelines</strong>,
+        <strong>chatbot systems</strong>, and scalable <strong>full-stack software</strong>. Experienced
+        across AI engineering, data science, and full-stack development through hands-on work with
+        <strong>GO Viral Communication (NASTP)</strong> and <strong>Post Fusion</strong>.
+      </p>
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-value">9+</span><span class="stat-label">Projects Shipped</span></div>
+        <div class="stat-item"><span class="stat-value">2</span><span class="stat-label">Companies</span></div>
+        <div class="stat-item"><span class="stat-value">2027</span><span class="stat-label">BSCS Graduate</span></div>
+        <div class="stat-item"><span class="stat-value">Remote</span><span class="stat-label">&amp; Onsite Ready</span></div>
+      </div>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
+        <button class="btn btn-outline" id="viewResumeBtn"><i class="fas fa-file-pdf"></i> View Resume</button>
+        <a href="SawairaMumtaz-Resume.pdf" download class="btn btn-resume"><i class="fas fa-download"></i> Download</a>
+      </div>
+      <div class="hero-social">
+        <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/sawaira-mumtaz-3b77972b1/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:sawairamumtaz369@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="avatar-ring"><div class="avatar-inner"><img src="Profile.jpg" alt="Sawaira Mumtaz"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">About</span>
+      <h2 class="section-title">About <span class="accent">Me</span></h2>
+      <p class="section-sub">Passionate about building AI that ships.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm an AI and Software Engineer focused on building <strong>production-ready LLM applications</strong> and <strong>scalable full-stack solutions</strong> that solve real-world problems. My expertise spans LLM integration, RAG systems, chatbot architecture, and cloud-native development.</p>
+        <p>I've worked with <strong>two companies</strong> across leading Pakistan-based tech organizations, gaining hands-on experience in <strong>AI engineering</strong>, <strong>data science</strong>, <strong>mobile development</strong>, and <strong>full-stack engineering</strong>. I'm actively seeking <strong>entry-level AI &amp; Software Engineering roles</strong> where I can contribute to impactful AI products and scalable systems.</p>
+        <p>I'm <strong>open to both onsite and remote opportunities</strong> — locally in Pakistan and internationally — as well as <strong>freelance projects</strong> in AI, LLM, and full-stack development.</p>
+        <div class="learning-box">
+          <i class="fas fa-graduation-cap"></i>
+          <div><h4>Currently Learning</h4><p>Agentic AI systems, vector databases at scale, and cloud-native LLM deployment patterns.</p></div>
+        </div>
+      </div>
+      <div class="about-highlights reveal">
+        <div class="highlight"><h4>Specializations</h4><p>Full-stack development (<strong>React, Node.js, Python</strong>), LLM integration (<strong>Gemini, Groq, OpenAI</strong>), RAG systems, Data science &amp; ML (<strong>K-Means, SVD, Scikit-learn</strong>), Cloud deployment (<strong>Render, Railway, Vercel</strong>).</p></div>
+        <div class="highlight"><h4>Final Year Project</h4><p>AI-Powered Clothing &amp; Inventory Management System with <strong>vision-based auto-tagging</strong> using Google Gemini 2.5 Flash, deployed as both desktop (Tkinter) and web (Streamlit) applications.</p></div>
+        <div class="highlight"><h4>Professional Experience</h4><p>Worked with <strong>2 companies</strong> — <strong>GO Viral Communication (NASTP)</strong> (Software Engineering) and <strong>Post Fusion</strong> (AI Engineering), alongside self-driven Data Science &amp; Mobile Development projects.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">Expertise</span>
+      <h2 class="section-title">Tech <span class="accent">Stack</span></h2>
+      <p class="section-sub">A complete overview of the technologies, tools, and concepts I work with daily.</p>
+    </div>
+    <div class="skills-grid reveal">
+      <div class="skill-card">
+        <h3><i class="fas fa-brain"></i> AI &amp; Machine Learning</h3>
+        <div class="skill-tags">
+          <span>LLM Integration</span><span>RAG Systems</span><span>Prompt Engineering</span>
+          <span>Semantic Search</span><span>AI Agents</span><span>AI Automation</span>
+          <span>Model Testing</span><span>Deep Learning</span><span>Machine Learning</span>
+          <span>Vector Databases</span><span>pgvector</span><span>Chroma</span>
+          <span>Scikit-learn</span><span>Pandas</span><span>NumPy</span>
+          <span>K-Means Clustering</span><span>Collaborative Filtering (SVD)</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3><i class="fas fa-code"></i> Programming Languages &amp; Frameworks</h3>
+        <div class="skill-tags">
+          <span>Python</span><span>JavaScript</span><span>TypeScript</span>
+          <span>Node.js</span><span>React</span><span>React Native</span>
+          <span>HTML5</span><span>CSS3</span><span>Bootstrap</span><span>C</span><span>C++</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3><i class="fas fa-toolbox"></i> Frameworks &amp; Libraries</h3>
+        <div class="skill-tags">
+          <span>LangChain</span><span>LangGraph</span><span>HuggingFace</span>
+          <span>TensorFlow.js</span><span>Mongoose</span><span>Flask</span>
+          <span>Streamlit</span><span>Tkinter</span><span>Express.js</span>
+          <span>NestJS</span><span>Tailwind CSS</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3><i class="fas fa-plug"></i> APIs &amp; Integrations</h3>
+        <div class="skill-tags">
+          <span>Google Gemini</span><span>OpenAI</span><span>Groq</span>
+          <span>OpenRouter</span><span>Ollama</span><span>REST APIs</span>
+          <span>Flask APIs</span><span>Server-Sent Events (SSE)</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3><i class="fas fa-database"></i> Databases &amp; Authentication</h3>
+        <div class="skill-tags">
+          <span>MongoDB</span><span>PostgreSQL</span><span>SQLite</span>
+          <span>Supabase</span><span>JWT Authentication</span><span>bcrypt</span>
+          <span>Secure User Auth</span><span>CRUD Operations</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3><i class="fas fa-rocket"></i> DevOps &amp; Tools</h3>
+        <div class="skill-tags">
+          <span>Git</span><span>GitHub</span><span>GitLab CI/CD</span><span>Docker</span>
+          <span>Nginx</span><span>Linux</span><span>Render</span><span>Railway</span>
+          <span>Vercel</span><span>Google Colab</span><span>Jupyter</span><span>Agile / Scrum</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">Portfolio</span>
+      <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+      <p class="section-sub">Production-ready AI systems, full-stack applications, and mobile apps — each shipped from design to deployment.</p>
+    </div>
+
+    <!-- Removed "reveal" class here so it never stays invisible -->
+    <div class="projects-grid">
+
+      <!-- AI Project 1 -->
+      <article class="project-card">
+        <div class="project-thumb">
+          <img src="advanced-ai.png" alt="LLM Evaluation Dashboard">
+          <span class="project-type-label">LLM &amp; AI Systems</span>
+        </div>
+        <div class="project-body">
+          <div class="tech-tags"><span>Python</span><span>LangGraph</span><span>Streamlit</span><span>Groq</span></div>
+          <h3>Advanced AI Systems: LLM Eval &amp; Multi-Agent</h3>
+          <p>Built with <strong>Python</strong> using the <strong>Groq</strong> inference API. <strong>Part 1:</strong> An LLM evaluation dashboard using <strong>LLM-as-judge methodology</strong> to score outputs on Faithfulness and Answer Relevance, visualized with <strong>Plotly</strong> charts in a <strong>Streamlit</strong> UI — cutting manual review time by <strong>~70%</strong>. <strong>Part 2:</strong> A <strong>LangGraph</strong> multi-agent state machine where <strong>Agent A (Structurer)</strong> converts messy text into clean JSON and <strong>Agent B (Validator)</strong> applies business rules. Execution pauses at checkpoints for <strong>Human-in-the-Loop</strong> approval.</p>
+          <div class="project-links">
+            <a href="https://advanced-ai-systems-fsz7jtqn7o8shhntitckpp.streamlit.app/" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="https://github.com/Sawaira-Mumtaz786/advanced-ai-systems" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- AI Project 2 -->
+      <article class="project-card">
+        <div class="project-thumb">
+          <img src="notifications.png" alt="Notifications and AI Incident Engine">
+          <span class="project-type-label">Full-Stack Enterprise</span>
+        </div>
+        <div class="project-body">
+          <div class="tech-tags"><span>React</span><span>NestJS</span><span>TypeScript</span><span>Gemini AI</span></div>
+          <h3>Notifications &amp; AI Incident Engine</h3>
+          <p>Full-stack enterprise app with a <strong>React + TypeScript</strong> frontend and a modular <strong>NestJS</strong> backend (Controllers, Services, DTOs, Guards). Replaced MD5 with <strong>bcrypt (10 rounds)</strong> and cookie sessions with stateless <strong>JWT authentication</strong>. Strict resource isolation ensures users can only see their own notifications. INFO alerts auto-dismiss after <strong>90 seconds</strong>. Integrated <strong>Google Gemini AI</strong> for auto-triage, urgency scoring (1-10), and RCA playbooks — reducing incident resolution time by <strong>~40%</strong>.</p>
+          <div class="project-links">
+            <a href="https://full-stack-app-k9jl.onrender.com" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="https://github.com/Sawaira-Mumtaz786/Notification-app" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- AI Project 3 -->
+      <article class="project-card">
+        <div class="project-thumb">
+          <img src="clothing.png" alt="AI Clothing and Inventory System">
+          <span class="project-type-label">Final Year Project</span>
+        </div>
+        <div class="project-body">
+          <div class="tech-tags"><span>Python</span><span>Tkinter</span><span>Streamlit</span><span>Gemini</span><span>SQLite</span></div>
+          <h3>AI Clothing &amp; Inventory System — Final Year Project</h3>
+          <p><strong>Final Year Project (FYP)</strong> — Originally developed as a desktop-based <strong>Clothing Management System</strong> in <strong>Python + Tkinter</strong> with dedicated <strong>Admin and Staff</strong> sections for inventory control, stock tracking, and billing. Submitted to Virtual University of Pakistan as my BS Computer Science capstone. I later enhanced the project with <strong>AI capabilities</strong> — integrating <strong>Google Gemini 2.5 Flash</strong> via the GenAI SDK for <strong>vision-based auto-tagging</strong> (upload a photo and the model extracts item name, category, season, size, and color), reducing manual entry time by <strong>over 80%</strong>. Rebuilt as a <strong>Streamlit web app</strong> and deployed publicly on GitHub with the added AI features.</p>
+          <div class="project-links">
+            <a href="https://ai-powered-clothing-inventory-management-system.streamlit.app" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- AI Project 4 -->
+      <article class="project-card">
+        <div class="project-thumb">
+          <img src="rag-chatbot.png" alt="MGT501 RAG AI Chatbot">
+          <span class="project-type-label">RAG &amp; Chatbot</span>
+        </div>
+        <div class="project-body">
+          <div class="tech-tags"><span>Python</span><span>Flask</span><span>Gemini</span><span>RAG</span></div>
+          <h3>MGT501 RAG AI Chatbot</h3>
+          <p>Retrieval-Augmented Generation chatbot built in <strong>Python + Flask</strong>. Uses <strong>Google text-embedding-004</strong> to convert <strong>45+ MGT501 course handouts</strong> into vector embeddings. When a user asks a question, the system runs <strong>cosine similarity search</strong> to fetch Top-K relevant lecture chunks, then passes them to <strong>Gemini</strong> with a strict academic grounding prompt. Enforces <strong>out-of-domain refusal</strong> — preventing hallucinated answers on non-course queries.</p>
+          <div class="project-links">
+            <a href="https://mgt501-rag-ai-chatbot.streamlit.app" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- AI Project 5 -->
+      <article class="project-card">
+        <div class="project-thumb">
+          <img src="posts-fusion.png" alt="Posts Fusion Studio">
+          <span class="project-type-label">AI Content Gen</span>
+        </div>
+        <div class="project-body">
+          <div class="tech-tags"><span>Node.js</span><span>Express</span><span>JavaScript</span><span>SSE</span></div>
+          <h3>Posts Fusion Studio — AI Content Gen</h3>
+          <p>Real-time AI content streaming app built with <strong>Node.js + Express</strong>. Implemented <strong>Server-Sent Events (SSE)</strong> to push tokens from backend to browser as they're generated. Two modes: <strong>Streaming mode</strong> using <code>EventSource</code> for live word-by-word rendering, and <strong>Full Post mode</strong> with JSON fetch. Architected for easy swapping to real APIs (OpenAI, OpenRouter, Groq) via environment variables — reducing content creation time from <strong>~30 min to under 3 min</strong> per post.</p>
+          <div class="project-links">
+            <a href="https://posts-fusion-studio.streamlit.app" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Mobile App 1 -->
+      <article class="project-card">
+        <div class="project-thumb">
+          <img src="collegealert.png" alt="College Alert App">
+          <span class="project-type-label">Mobile App</span>
+        </div>
+        <div class="project-body">
+          <div class="tech-tags"><span>React Native</span><span>Expo</span><span>JavaScript</span></div>
+          <h3>College Alert App</h3>
+          <p>Mobile app built with <strong>React Native + Expo</strong> for managing college events. State management using <strong>React useState hooks</strong>. Renders cards via <strong>FlatList</strong> for optimized scrolling. Features add event with validation, delete with confirmation, and <strong>scheduled local push notifications</strong> via <code>expo-notifications</code>.</p>
+          <div class="project-links">
+            <a href="https://rainbow-crumble-1234.web.app" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Mobile App 2 -->
+      <article class="project-card">
+        <div class="project-thumb">
+          <img src="ecommerce.png" alt="E-Commerce Marketplace App">
+          <span class="project-type-label">Mobile App</span>
+        </div>
+        <div class="project-body">
+          <div class="tech-tags"><span>React Native</span><span>Expo</span><span>State Mgmt</span></div>
+          <h3>E-Commerce Marketplace App</h3>
+          <p>Multi-screen mobile marketplace built with <strong>React Native + Expo</strong> using <strong>conditional state rendering</strong> to navigate between login, home, cart, add-product, and payment screens. Users browse products in a <code>FlatList</code>, add items to cart with running total, list products for sale, and complete a simulated payment flow.</p>
+          <div class="project-links">
+            <a href="https://marketplace-green.vercel.app" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Mobile App 3 -->
+      <article class="project-card">
+        <div class="project-thumb">
+          <img src="artgallery.png" alt="Digital Art Gallery">
+          <span class="project-type-label">Cross-Platform</span>
+        </div>
+        <div class="project-body">
+          <div class="tech-tags"><span>React Native</span><span>Expo</span><span>React Native Web</span></div>
+          <h3>Digital Art Gallery</h3>
+          <p>Cross-platform gallery app built with <strong>React Native + Expo</strong> and <strong>React Native Web</strong> so the same codebase runs on both Android and browser. Designed a responsive grid layout showcasing famous artwork (The Starry Night, Mona Lisa, Girl with a Pearl Earring, The Scream, Guernica) with title and artist credits.</p>
+          <div class="project-links">
+            <a href="https://digitalartgallery1.surge.sh" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Mobile App 4 -->
+      <article class="project-card">
+        <div class="project-thumb">
+          <img src="timezone.png" alt="Time Zone Converter">
+          <span class="project-type-label">Utility App</span>
+        </div>
+        <div class="project-body">
+          <div class="tech-tags"><span>React Native</span><span>Expo</span><span>Luxon</span></div>
+          <h3>Time Zone Converter</h3>
+          <p>Utility app for converting time across <strong>9 major global zones</strong> (NY, LA, London, Paris, Dubai, Kolkata, Tokyo, Sydney, Auckland). Built with <strong>React Native + Expo</strong> for cross-platform support. Uses <strong>Luxon</strong> for accurate timezone math including DST handling.</p>
+          <div class="project-links">
+            <a href="https://timezone-converter-six-oak.vercel.app" target="_blank" rel="noopener" class="live"><i class="fas fa-globe"></i> Live Demo</a>
+            <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="source"><i class="fab fa-github"></i> Source</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="view-all-cta">
+      <p>Explore more experiments, work-in-progress builds, and open-source contributions on GitHub.</p>
+      <div class="cta-buttons-row">
+        <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="btn btn-outline">
+          <i class="fab fa-github"></i> View All Projects on GitHub
+        </a>
+        <a href="https://github.com/Sawaira-Mumtaz786?tab=repositories&q=data+science" target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="fas fa-chart-line"></i> View All Data Science Projects
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE GITHUB SECTION (Reveal removed to fix blank space) -->
+<section class="github-section">
+  <div class="container">
+    <div class="section-head" style="margin-bottom: 20px;">
+      <span class="section-label">Live from GitHub</span>
+      <h2 class="section-title">Recent <span class="accent">Repositories</span></h2>
+      <p class="section-sub">Dynamically fetched from the GitHub API.</p>
+    </div>
+    <div class="github-grid" id="githubRepos">
+      <!-- JavaScript will inject repos here -->
+      <p style="text-align: center; width: 100%; color: var(--text-muted);">Loading repositories...</p>
+    </div>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">Career</span>
+      <h2 class="section-title">Professional <span class="accent">Experience</span></h2>
+      <p class="section-sub">Worked with 2 companies across software engineering and AI engineering — most recent first.</p>
+    </div>
+    <div class="experience-list reveal">
+
+      <article class="exp-item">
+        <div class="exp-head">
+          <div class="exp-title-group">
+            <div class="exp-role">Software Engineering</div>
+            <div class="exp-company">GO Viral Communication, ISB NASTP</div>
+          </div>
+          <div class="exp-meta">
+            <span class="exp-date"><i class="far fa-calendar-alt"></i> 4 Mar – 4 Jun 2026</span>
+            <span class="exp-mode onsite"><i class="fas fa-building"></i> Onsite</span>
+          </div>
+        </div>
+        <p class="exp-location"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</p>
+        <p class="exp-desc">12-week onsite software engineering internship focused on building enterprise-grade full-stack systems with modern security practices.</p>
+        <ul class="exp-achievements">
+          <li>Developed a full-stack <strong>Notifications System</strong> using <strong>React TypeScript</strong> (frontend), <strong>NestJS</strong> (backend), <strong>MongoDB</strong>, and RESTful APIs</li>
+          <li>Implemented secure authentication using <strong>JWT token-based auth</strong> and <strong>bcrypt</strong> password hashing for user data protection</li>
+          <li>Built comprehensive backend with <strong>CRUD operations</strong>, data validation, and RESTful architecture</li>
+          <li>Gained practical experience in <strong>C</strong>, <strong>Python Flask APIs</strong>, Git/GitHub, <strong>Linux</strong>, <strong>Docker</strong>, and <strong>Nginx</strong> web server administration</li>
+        </ul>
+        <div class="exp-tech"><span>React</span><span>TypeScript</span><span>NestJS</span><span>MongoDB</span><span>JWT</span><span>bcrypt</span><span>Docker</span><span>Nginx</span><span>Linux</span></div>
+      </article>
+
+      <article class="exp-item">
+        <div class="exp-head">
+          <div class="exp-title-group">
+            <div class="exp-role">AI Engineering — AI &amp; ML Department</div>
+            <div class="exp-company">Post Fusion (Pro Fusion AI)</div>
+          </div>
+          <div class="exp-meta">
+            <span class="exp-date"><i class="far fa-calendar-alt"></i> 1 Jun – 28 Aug 2026</span>
+            <span class="exp-mode onsite"><i class="fas fa-building"></i> Onsite</span>
+          </div>
+        </div>
+        <p class="exp-location"><i class="fas fa-map-marker-alt"></i> Rawalpindi, Pakistan</p>
+        <p class="exp-desc">8-week structured AI/ML curriculum with hands-on exposure to real client projects and industry-standard workflows under professional mentorship.</p>
+        <ul class="exp-achievements">
+          <li>Developed <strong>LinkedIn Post Generator</strong> using <strong>Python</strong>, <strong>LangChain</strong>, and <strong>Ollama</strong>, implementing prompt engineering and AI quality scoring</li>
+          <li>Designed and deployed an AI-powered content generation studio integrating <strong>multiple LLM APIs</strong> (OpenAI, Groq, OpenRouter) with <strong>real-time streaming</strong> via Server-Sent Events (SSE)</li>
+          <li>Built a full-stack streaming content platform using <strong>React + Node.js/Express</strong>, vector databases, and multi-LLM routing</li>
+          <li>Mastered advanced concepts: <strong>Machine Learning</strong>, <strong>Deep Learning</strong>, <strong>Prompt Engineering</strong>, LLM Applications, AI Workflows, and <strong>AI Agents</strong></li>
+          <li>Implemented version control and CI/CD workflows using <strong>Git &amp; GitHub</strong> under professional mentorship</li>
+        </ul>
+        <div class="exp-tech"><span>Python</span><span>LangChain</span><span>Ollama</span><span>OpenAI</span><span>Groq</span><span>OpenRouter</span><span>React</span><span>Node.js</span><span>SSE</span><span>Vector DBs</span></div>
+      </article>
+
+      <article class="exp-item">
+        <div class="exp-head">
+          <div class="exp-title-group">
+            <div class="exp-role">Data Science</div>
+            <div class="exp-company">Self-Learning Projects</div>
+          </div>
+          <div class="exp-meta">
+            <span class="exp-date"><i class="far fa-calendar-alt"></i> Jul – Sep 2026</span>
+            <span class="exp-mode remote"><i class="fas fa-wifi"></i> Remote</span>
+          </div>
+        </div>
+        <p class="exp-location"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan (Remote)</p>
+        <p class="exp-desc">Applied data science and machine learning internship focused on business intelligence, customer segmentation, and recommendation systems.</p>
+        <ul class="exp-achievements">
+          <li>Built a <strong>collaborative filtering recommendation system</strong> (SVD algorithm) using the <strong>Surprise</strong> library, achieving industry-standard RMSE scores for rating predictions</li>
+          <li>Applied <strong>K-Means clustering</strong> (Scikit-learn) to segment retail customers into <strong>5 distinct personas</strong>, enabling targeted marketing strategies</li>
+          <li>Performed data cleaning, visualization, and statistical analysis using <strong>Python</strong>, <strong>Pandas</strong>, and <strong>NumPy</strong> for business intelligence insights</li>
+        </ul>
+        <div class="exp-tech"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>SVD</span><span>K-Means</span><span>Surprise</span></div>
+      </article>
+
+      <article class="exp-item">
+        <div class="exp-head">
+          <div class="exp-title-group">
+            <div class="exp-role">Mobile Development</div>
+            <div class="exp-company">Self-Learning Projects</div>
+          </div>
+          <div class="exp-meta">
+            <span class="exp-date"><i class="far fa-calendar-alt"></i> Jul – Sep 2026</span>
+            <span class="exp-mode remote"><i class="fas fa-wifi"></i> Remote</span>
+          </div>
+        </div>
+        <p class="exp-location"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan (Remote)</p>
+        <p class="exp-desc">Cross-platform mobile development internship focused on building responsive, production-ready apps for iOS and Android with seamless backend API integration.</p>
+        <ul class="exp-achievements">
+          <li>Built cross-platform mobile apps using <strong>Flutter</strong> and <strong>React Native</strong> with responsive UIs</li>
+          <li>Integrated REST APIs and backend services for seamless data flow</li>
+          <li>Implemented modern state management and navigation patterns across multiple screens</li>
+          <li>Delivered fully functional mobile prototypes aligned with industry design standards</li>
+        </ul>
+        <div class="exp-tech"><span>Flutter</span><span>React Native</span><span>Expo</span><span>REST APIs</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="education" id="education">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">Academic</span>
+      <h2 class="section-title">My <span class="accent">Education</span></h2>
+    </div>
+    <article class="education-card reveal">
+      <div class="edu-head">
+        <span class="edu-icon"><i class="fas fa-graduation-cap"></i></span>
+        <div>
+          <h3>BS Computer Science</h3>
+          <p class="edu-institution">Virtual University of Pakistan — Saddar Campus, Rawalpindi</p>
+          <span class="edu-date">Oct 2022 – Feb 2027</span>
+        </div>
+      </div>
+      <div class="edu-body">
+        <p><strong>Specialization:</strong> Production-ready LLM applications, RAG pipelines, chatbot systems, and scalable full-stack software.</p>
+        <p><strong>Final Year Project:</strong> A desktop-based <strong>Clothing Inventory Management System</strong> built in <strong>Python using the Tkinter library</strong> with <strong>SQLite (DBMS)</strong> as the backend database. The application includes separate <strong>Admin and Staff</strong> modules to manage inventory records — add, update, delete, and search clothing items with stock and pricing details. Submitted to Virtual University of Pakistan as-is for my Final Year Project to strengthen my own learning in desktop application development and database management. After submission, I <strong>extended the project with AI features</strong> by integrating <strong>Google Gemini 2.5 Flash</strong> for <strong>vision-based auto-tagging</strong> (upload a clothing photo → AI automatically extracts item name, category, season, size, and color), and rebuilt it as a <strong>Streamlit web application</strong> deployed publicly on GitHub as an enhanced portfolio version.</p>
+
+        <div class="edu-tags">
+          <span>Machine Learning</span>
+          <span>Data Structures</span>
+          <span>Databases</span>
+          <span>Software Engineering</span>
+          <span>Web Technologies</span>
+        </div>
+
+        <div class="certifications">
+          <h4><i class="fas fa-certificate"></i> Certifications</h4>
+          <ul>
+            <li><strong>Advanced Web Application Development</strong></li>
+            <li><strong>CIT (Certificate in Information Technology)</strong></li>
+            <li><strong>Python Programming</strong></li>
+            <li><strong>C / C++ Programming</strong></li>
+            <li><strong>Introduction to Cyber Security</strong></li>
+            <li><strong>Certified Ethical Hacking</strong></li>
+            <li><strong>Freelancing</strong></li>
+            <li><strong>AI Content Generator</strong></li>
+            <li><strong>Web Penetration Testing</strong></li>
+            <li><strong>WordPress</strong></li>
+            <li><strong>Data Analytics &amp; Business Intelligence</strong></li>
+            <li><strong>Cloud Computing</strong></li>
+            <li><strong>UI/UX &amp; Webflow</strong></li>
+          </ul>
+        </div>
+
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="section-title">Let's <span class="accent">Connect</span></h2>
+      <p class="section-sub">I'm actively looking for entry-level AI &amp; Software Engineering roles. Open to onsite and remote opportunities worldwide.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Contact Information</h3>
+        <p>Whether you have a question, a job opportunity, or a freelance project — I'll respond within 24 hours.</p>
+        <div class="info-list">
+          <div class="info-row"><span class="icon"><i class="fas fa-envelope"></i></span><div class="detail"><span class="label">Email</span><span class="value"><a href="mailto:sawairamumtaz369@gmail.com">sawairamumtaz369@gmail.com</a></span></div></div>
+          <div class="info-row"><span class="icon"><i class="fas fa-phone"></i></span><div class="detail"><span class="label">Phone / WhatsApp</span><span class="value"><a href="tel:+923155069089">+92 315 506 9089</a></span></div></div>
+          <div class="info-row"><span class="icon"><i class="fas fa-map-marker-alt"></i></span><div class="detail"><span class="label">Location</span><span class="value">Rawalpindi, Pakistan</span></div></div>
+        </div>
+        <span class="availability"><i class="fas fa-circle-check"></i> Open to Onsite &amp; Remote Opportunities</span>
+      </div>
+      <div class="contact-form-wrap reveal">
+        <h3>Send a Message</h3>
+        <p>I typically respond within 24 hours.</p>
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-group"><label>Your Name <span class="req">*</span></label><input type="text" name="name" placeholder="John Doe" required></div>
+          <div class="form-group"><label>Your Email <span class="req">*</span></label><input type="email" name="email" placeholder="john@company.com" required></div>
+          <div class="form-group"><label>Company / Organization</label><input type="text" name="company" placeholder="Optional"></div>
+          <div class="form-group"><label>Your Message <span class="req">*</span></label><textarea name="message" placeholder="Tell me about the opportunity, project, or what you'd like to discuss..." required></textarea></div>
+          <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+        </form>
+        <div class="contact-social-row">
+          <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" rel="noopener" class="contact-social-btn github"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/sawaira-mumtaz-3b77972b1/" target="_blank" rel="noopener" class="contact-social-btn linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+          <a href="mailto:sawairamumtaz369@gmail.com" class="contact-social-btn email"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Designed &amp; built with <i class="fas fa-heart heart"></i> by Sawaira Mumtaz</p>
+    <p class="copy">&copy; 2026 Sawaira Mumtaz. All rights reserved. | AI &amp; Software Engineer — LLM, RAG &amp; Chatbot Systems.</p>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+<!-- ==================== MODALS ==================== -->
+<div class="modal-overlay" id="resumeModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3><i class="fas fa-file-pdf" style="color:var(--pink); margin-right:8px;"></i> Resume Preview</h3>
+      <button class="modal-close" id="closeResumeBtn"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <iframe src="SawairaMumtaz-Resume.pdf" title="Resume PDF"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== AI CHAT AGENT WIDGET ==================== -->
+<div class="chat-widget">
+  <div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+      <h4><i class="fas fa-robot"></i> Sawaira's AI Assistant</h4>
+      <button class="chat-close" id="chatClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="msg bot">Hi! I'm Sawaira's AI assistant. I can answer questions about her skills, experience, projects, or education. How can I help you?</div>
+    </div>
+    <div class="chat-quick-replies" id="quickReplies">
+      <button type="button" class="quick-reply-btn" data-query="What are your skills?">Skills</button>
+      <button type="button" class="quick-reply-btn" data-query="Show me your projects">Projects</button>
+      <button type="button" class="quick-reply-btn" data-query="What is your experience?">Experience</button>
+      <button type="button" class="quick-reply-btn" data-query="How can I contact you?">Contact</button>
+    </div>
+    <form class="chat-input-wrap" id="chatForm">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything..." autocomplete="off">
+      <button type="submit" class="chat-send"><i class="fas fa-paper-plane"></i></button>
+    </form>
+  </div>
+  <button class="chat-toggle" id="chatToggle" aria-label="Open AI Chat">
+    <i class="fas fa-comment-dots"></i>
+  </button>
+</div>
+
+<!-- ==================== INTERACTIVE CLI TERMINAL WIDGET ==================== -->
+<div class="terminal-widget">
+  <div class="terminal-window" id="terminalWindow">
+    <div class="terminal-header">
+      <span>sawaira@portfolio:~</span>
+      <button class="terminal-close" id="terminalClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="terminal-body" id="terminalBody">
+      <div class="term-line">Type <span style="color:#f472b6;">help</span> to see available commands.</div>
+      <div class="term-input-wrap">
+        <span class="term-prompt">$</span>
+        <input type="text" class="term-input" id="termInput" autocomplete="off" spellcheck="false">
+        <span class="blinking-cursor">|</span>
+      </div>
+    </div>
+  </div>
+  <button class="terminal-toggle" id="terminalToggle" aria-label="Open Terminal">
+    <i class="fas fa-terminal"></i>
+  </button>
+</div>
+
+<script>
+// ==================== MOBILE NAV ====================
+const hamburger = document.getElementById('hamburger');
+const navList = document.getElementById('navList');
+hamburger.addEventListener('click', () => {
+  const open = navList.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', open);
+});
+navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navList.classList.remove('open')));
+
+// ==================== SCROLL UI ====================
+const scrollProgress = document.getElementById('scrollProgress');
+const siteHeader = document.getElementById('siteHeader');
+const scrollTop = document.getElementById('scrollTop');
+function updateScrollUI() {
+  const s = window.pageYOffset || document.documentElement.scrollTop;
+  const d = document.documentElement.scrollHeight - window.innerHeight;
+  scrollProgress.style.width = (d > 0 ? (s / d) * 100 : 0) + '%';
+  siteHeader.classList.toggle('scrolled', s > 40);
+  scrollTop.classList.toggle('visible', s > 400);
+}
+window.addEventListener('scroll', updateScrollUI, { passive: true });
+updateScrollUI();
+scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// ==================== REVEAL ANIMATIONS ====================
+const revealElements = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealElements.forEach(el => observer.observe(el));
+} else {
+  revealElements.forEach(el => el.classList.add('visible'));
+}
+// Fallback: Ensure elements become visible even if observer fails
+setTimeout(() => {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+}, 1500);
+
+// ==================== RESUME MODAL ====================
+const viewResumeBtn = document.getElementById('viewResumeBtn');
+const resumeModal = document.getElementById('resumeModal');
+const closeResumeBtn = document.getElementById('closeResumeBtn');
+
+viewResumeBtn.addEventListener('click', () => resumeModal.classList.add('open'));
+closeResumeBtn.addEventListener('click', () => resumeModal.classList.remove('open'));
+resumeModal.addEventListener('click', (e) => {
+  if(e.target === resumeModal) resumeModal.classList.remove('open');
+});
+
+// ==================== LIVE GITHUB API ====================
+async function fetchGitHubRepos() {
+  const container = document.getElementById('githubRepos');
+  try {
+    const response = await fetch('https://api.github.com/users/Sawaira-Mumtaz786/repos?sort=updated&per_page=4');
+    if (!response.ok) throw new Error('API Rate Limit');
+    const repos = await response.json();
+
+    container.innerHTML = '';
+
+    repos.forEach(repo => {
+      if(repo.name.toLowerCase() === 'portfoliowebsite') return;
+
+      const langColor = repo.language === 'Python' ? '#3572A5' : 
+                        repo.language === 'JavaScript' ? '#f1e05a' : 
+                        repo.language === 'TypeScript' ? '#2b7489' : '#9333ea';
+
+      const card = document.createElement('a');
+      card.href = repo.html_url;
+      card.target = '_blank';
+      card.className = 'github-card';
+      card.innerHTML = `
+        <h4><i class="fab fa-github"></i> ${repo.name}</h4>
+        <p>${repo.description ? repo.description.substring(0, 80) + '...' : 'No description provided.'}</p>
+        <div class="github-meta">
+          <span><span class="github-lang" style="background:${langColor}"></span> ${repo.language || 'Code'}</span>
+          <span><i class="fas fa-star" style="color:#fbbf24;"></i> ${repo.stargazers_count}</span>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+
+    if(container.children.length === 0) {
+      container.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted);">No public repositories found.</p>';
+    }
+
+  } catch (error) {
+    container.innerHTML = `
+      <div style="text-align:center; width:100%;">
+        <p style="color:var(--text-muted); margin-bottom:16px;">Unable to load live stats right now.</p>
+        <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" class="btn btn-primary">Visit GitHub Profile</a>
+      </div>
+    `;
+  }
+}
+fetchGitHubRepos();
+
+// ==================== AI CHAT AGENT LOGIC ====================
+const chatToggle = document.getElementById('chatToggle');
+const chatWindow = document.getElementById('chatWindow');
+const chatClose = document.getElementById('chatClose');
+const chatForm = document.getElementById('chatForm');
+const chatInput = document.getElementById('chatInput');
+const chatMessages = document.getElementById('chatMessages');
+const quickReplies = document.getElementById('quickReplies');
+let isBotTyping = false;
+
+chatToggle.addEventListener('click', () => {
+  chatWindow.classList.toggle('open');
+  if (chatWindow.classList.contains('open')) chatInput.focus();
+});
+chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
+
+const knowledgeBase = [
+  {
+    keywords: ['hi', 'hello', 'hey', 'greet'],
+    response: "Hello! I'm Sawaira's AI assistant. Ask me about her skills, projects, experience, or education!"
+  },
+  {
+    keywords: ['skill', 'tech', 'stack', 'know', 'language'],
+    response: "Sawaira specializes in <strong>AI & Machine Learning</strong> (LLM Integration, RAG Systems, LangChain, LangGraph) and <strong>Full-Stack Development</strong> (Python, React, Node.js, NestJS, Flask). She also has strong knowledge of databases like MongoDB and PostgreSQL.",
+    scrollTo: 'skills'
+  },
+  {
+    keywords: ['experience', 'work', 'company', 'job', 'intern'],
+    response: "She has worked with <strong>2 companies</strong>:<br>1. <strong>GO Viral Communication (ISB NASTP)</strong> as a Software Engineer Intern.<br>2. <strong>Post Fusion</strong> as an AI Engineer Intern.<br>She also works on self-driven Data Science and Mobile Development projects.",
+    scrollTo: 'experience'
+  },
+  {
+    keywords: ['project', 'portfolio', 'build', 'app', 'chatbot', 'rag'],
+    response: "Sawaira has built 9+ projects! Her top AI projects include the <strong>MGT501 RAG AI Chatbot</strong>, an <strong>LLM Evaluation Dashboard</strong>, a <strong>Notifications & AI Incident Engine</strong>, and an <strong>AI Clothing & Inventory System</strong> (Final Year Project). Check out the Projects section to see live demos!",
+    scrollTo: 'projects'
+  },
+  {
+    keywords: ['education', 'degree', 'study', 'university', 'graduate', 'vu'],
+    response: "She is a <strong>BS Computer Science graduate (February 2027)</strong> from <strong>Virtual University of Pakistan</strong> (Saddar Campus, Rawalpindi).",
+    scrollTo: 'education'
+  },
+  {
+    keywords: ['certification', 'certificate', 'course'],
+    response: "She holds 13 certifications, including Advanced Web Application Development (NAVTECH), CIT, Python Programming, C/C++, Certified Ethical Hacking, Cloud Computing, and Data Analytics.",
+    scrollTo: 'education'
+  },
+  {
+    keywords: ['contact', 'email', 'hire', 'reach', 'linkedin', 'phone'],
+    response: "You can reach Sawaira at <strong>sawairamumtaz369@gmail.com</strong> or call <strong>+92 315 506 9089</strong>. She is open to onsite and remote opportunities worldwide!",
+    scrollTo: 'contact'
+  },
+  {
+    keywords: ['resume', 'cv', 'download'],
+    response: "You can view or download her resume by clicking the buttons at the top of the page!"
+  },
+  {
+    keywords: ['fyp', 'final year'],
+    response: "Her Final Year Project is an <strong>AI-Powered Clothing & Inventory Management System</strong>. It uses Python, Tkinter, SQLite, and Google Gemini 2.5 Flash for vision-based auto-tagging.",
+    scrollTo: 'projects'
+  }
+];
+
+document.querySelectorAll('.quick-reply-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (isBotTyping) return;
+    processUserMessage(btn.getAttribute('data-query'));
+  });
+});
+
+chatForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (isBotTyping) return;
+  const text = chatInput.value.trim();
+  if (!text) return;
+  processUserMessage(text);
+  chatInput.value = '';
+});
+
+function processUserMessage(text) {
+  appendMessage(text, 'user');
+  quickReplies.style.display = 'none';
+  isBotTyping = true;
+
+  const typingIndicator = document.createElement('div');
+  typingIndicator.classList.add('typing-indicator');
+  typingIndicator.id = 'typingIndicator';
+  typingIndicator.innerHTML = '<span></span><span></span><span></span>';
+  chatMessages.appendChild(typingIndicator);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+  setTimeout(() => {
+    const indicator = document.getElementById('typingIndicator');
+    if (indicator) indicator.remove();
+
+    const responseData = getBotResponse(text);
+    appendMessage(responseData.response, 'bot');
+    isBotTyping = false;
+
+    if (responseData.scrollTo) {
+      setTimeout(() => {
+        document.getElementById(responseData.scrollTo).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 500);
+    }
+
+    setTimeout(() => { quickReplies.style.display = 'flex'; }, 2000);
+
+  }, 1200);
+}
+
+function appendMessage(text, sender) {
+  const msgDiv = document.createElement('div');
+  msgDiv.classList.add('msg', sender);
+  msgDiv.innerHTML = text;
+  chatMessages.appendChild(msgDiv);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function getBotResponse(input) {
+  const lowerInput = input.toLowerCase();
+  for (let item of knowledgeBase) {
+    if (item.keywords.some(kw => lowerInput.includes(kw))) return item;
+  }
+  return {
+    response: "I'm still learning! You can ask me about her <strong>skills</strong>, <strong>experience</strong>, <strong>projects</strong>, or <strong>education</strong>. Or contact Sawaira directly at <a href='mailto:sawairamumtaz369@gmail.com'>sawairamumtaz369@gmail.com</a>."
+  };
+}
+
+// ==================== INTERACTIVE CLI TERMINAL LOGIC ====================
+const terminalToggle = document.getElementById('terminalToggle');
+const terminalWindow = document.getElementById('terminalWindow');
+const terminalClose = document.getElementById('terminalClose');
+const termInput = document.getElementById('termInput');
+const terminalBody = document.getElementById('terminalBody');
+
+terminalToggle.addEventListener('click', () => {
+  terminalWindow.classList.toggle('open');
+  if (terminalWindow.classList.contains('open')) termInput.focus();
+});
+terminalClose.addEventListener('click', () => terminalWindow.classList.remove('open'));
+
+termInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    const command = termInput.value.trim().toLowerCase();
+    termInput.value = '';
+    
+    if(!command) return;
+
+    const userLine = document.createElement('div');
+    userLine.className = 'term-line';
+    userLine.innerHTML = `<span class="term-prompt">$</span> ${command}`;
+    terminalBody.insertBefore(userLine, terminalBody.lastElementChild);
+
+    let output = '';
+    switch(command) {
+      case 'help':
+        output = 'Available commands:<br>- <span style="color:#f472b6;">about</span> : Read bio<br>- <span style="color:#f472b6;">skills</span> : List technical skills<br>- <span style="color:#f472b6;">projects</span> : View projects<br>- <span style="color:#f472b6;">contact</span> : Get contact info<br>- <span style="color:#f472b6;">clear</span> : Clear terminal';
+        break;
+      case 'about':
+        output = 'BSCS Graduate (Feb 2027) | AI & Software Engineer | Specialized in LLM, RAG, Chatbot Systems.';
+        break;
+      case 'skills':
+        output = 'Python, React, Node.js, TypeScript, LangChain, LangGraph, Gemini API, NestJS, Flask, MongoDB.';
+        break;
+      case 'projects':
+        output = 'Opening projects section...';
+        document.getElementById('projects').scrollIntoView({behavior:'smooth'});
+        break;
+      case 'contact':
+        output = 'Email: sawairamumtaz369@gmail.com<br>LinkedIn: linkedin.com/in/sawaira-mumtaz-3b77972b1';
+        break;
+      case 'clear':
+        while(terminalBody.children.length > 1) {
+          terminalBody.removeChild(terminalBody.firstChild);
+        }
+        return;
+      default:
+        output = `Command not found: ${command}. Type <span style="color:#f472b6;">help</span> for options.`;
+    }
+
+    const outputLine = document.createElement('div');
+    outputLine.className = 'term-line';
+    outputLine.style.color = '#94a3b8';
+    outputLine.innerHTML = output;
+    
+    terminalBody.insertBefore(outputLine, terminalBody.lastElementChild);
+    terminalBody.scrollTop = terminalBody.scrollHeight;
+  }
+});
+</script>
+
+</body>
+</html>
