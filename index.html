@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sawaira Mumtaz | AI & Software Engineer — LLM, RAG & Chatbot Systems</title>
-<meta name="description" content="BSCS Graduate (February 2027) — AI & Software Engineer specializing in LLM, RAG, and chatbot systems.">
+<meta name="description" content="BSCS Graduate (February 2027) — AI & Software Engineer specializing in LLM, RAG, and chatbot systems. Ready for Govt & Defense sector roles.">
 <meta name="author" content="Sawaira Mumtaz">
 <link rel="canonical" href="https://sawaira-mumtaz786.github.io/Portfoliowebsite/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +26,7 @@ button { font-family: inherit; }
   --purple: #9333ea;
   --pink: #db2777;
   --green: #10b981;
+  --govt-green: #047857;
   --bg-page: #faf5ff;
   --bg-card: #ffffff;
   --bg-muted: #f3e8ff;
@@ -151,13 +152,18 @@ section { padding: 96px 0; position: relative; }
   display: grid; grid-template-columns: 1.5fr 1fr;
   gap: 60px; align-items: center;
 }
+.badge-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 22px; }
 .status-badge {
   display: inline-flex; align-items: center; gap: 8px;
   background: #fff; border: 1px solid var(--border-strong);
   padding: 7px 16px; border-radius: var(--radius-pill);
   font-size: 0.78rem; font-weight: 600; color: var(--purple);
-  margin-bottom: 22px; box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm);
 }
+.govt-badge {
+  background: #ecfdf5; border-color: #a7f3d0; color: var(--govt-green);
+}
+.govt-badge i { color: var(--govt-green); }
 .status-dot {
   width: 8px; height: 8px; background: var(--green); border-radius: 50%;
   animation: pulse 2s infinite;
@@ -238,6 +244,15 @@ section { padding: 96px 0; position: relative; }
   background: var(--pink); color: #fff;
   transform: translateY(-3px);
   box-shadow: 0 8px 22px rgba(219, 39, 119, 0.35);
+}
+.btn-govt {
+  background: #ecfdf5; color: var(--govt-green);
+  border: 1.5px solid var(--govt-green);
+}
+.btn-govt:hover {
+  background: var(--govt-green); color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(4, 120, 87, 0.35);
 }
 .hero-social { display: flex; gap: 12px; }
 .hero-social a {
@@ -342,14 +357,24 @@ section { padding: 96px 0; position: relative; }
   border-radius: var(--radius-sm);
   transition: var(--transition);
 }
+.highlight.govt-highlight {
+  background: #f0fdf4;
+  border-left-color: var(--govt-green);
+}
 .highlight:hover {
   background: #fff; border-color: var(--pink);
   box-shadow: var(--shadow-sm); transform: translateX(4px);
+}
+.highlight.govt-highlight:hover {
+  border-color: var(--govt-green);
 }
 .highlight h4 {
   font-family: var(--font-heading);
   font-size: 1rem; font-weight: 700;
   color: #111827; margin-bottom: 8px;
+}
+.highlight.govt-highlight h4 {
+  color: var(--govt-green);
 }
 .highlight p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; margin: 0; }
 .highlight p strong { color: var(--purple); font-weight: 600; }
@@ -914,7 +939,7 @@ section { padding: 96px 0; position: relative; }
 }
 .modal-overlay.open { opacity: 1; visibility: visible; }
 .modal-content {
-  background: #fff; border-radius: var(--radius); width: 90%; max-width: 800px; height: 85vh;
+  background: #fff; border-radius: var(--radius); width: 90%; max-width: 600px;
   display: flex; flex-direction: column; overflow: hidden; position: relative;
   transform: translateY(20px); transition: var(--transition);
 }
@@ -929,8 +954,9 @@ section { padding: 96px 0; position: relative; }
   transition: var(--transition);
 }
 .modal-close:hover { color: var(--pink); }
-.modal-body { flex: 1; overflow: hidden; }
-.modal-body iframe { width: 100%; height: 100%; border: none; }
+.modal-body { padding: 32px; max-height: 80vh; overflow-y: auto; }
+.modal-body p { font-size: 1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+.modal-body p strong { color: #111827; }
 
 /* ==================== AI CHATBOT WIDGET ==================== */
 .chat-widget {
@@ -1204,7 +1230,10 @@ section { padding: 96px 0; position: relative; }
 <section class="hero" id="home">
   <div class="container hero-inner">
     <div class="hero-content">
-      <span class="status-badge"><span class="status-dot"></span> BSCS Graduate — Open to AI &amp; Software Engineering roles</span>
+      <div class="badge-row">
+        <span class="status-badge"><span class="status-dot"></span> BSCS Graduate — Open to Tech Roles</span>
+        <span class="status-badge govt-badge"><i class="fas fa-shield-alt"></i> Govt &amp; Defense Ready</span>
+      </div>
       <h1>Sawaira Mumtaz</h1>
       <p class="role">AI &amp; Software Engineer | LLM, RAG &amp; Chatbot Systems</p>
       <p class="summary">
@@ -1222,7 +1251,8 @@ section { padding: 96px 0; position: relative; }
       </div>
       <div class="hero-buttons">
         <a href="#projects" class="btn btn-primary"><i class="fas fa-rocket"></i> View Projects</a>
-        <button class="btn btn-outline" id="viewResumeBtn"><i class="fas fa-file-pdf"></i> View Resume</button>
+        <button class="btn btn-govt" id="viewObjectiveBtn"><i class="fas fa-flag"></i> Formal Objective</button>
+        <button class="btn btn-outline" id="viewResumeBtn"><i class="fas fa-file-pdf"></i> Resume</button>
         <a href="SawairaMumtaz-Resume.pdf" download class="btn btn-resume"><i class="fas fa-download"></i> Download</a>
       </div>
       <div class="hero-social">
@@ -1255,8 +1285,11 @@ section { padding: 96px 0; position: relative; }
         </div>
       </div>
       <div class="about-highlights reveal">
+        <div class="highlight govt-highlight">
+          <h4><i class="fas fa-shield-alt"></i> Government &amp; Defense Readiness</h4>
+          <p><strong>Pakistani National</strong> with a clean background record. Fully prepared for security clearance processes (NESCOM, SUPARCO, PAEC, PITB). All original educational and character documents are <strong>ready and verified</strong> for immediate physical submission.</p>
+        </div>
         <div class="highlight"><h4>Specializations</h4><p>Full-stack development (<strong>React, Node.js, Python</strong>), LLM integration (<strong>Gemini, Groq, OpenAI</strong>), RAG systems, Data science &amp; ML (<strong>K-Means, SVD, Scikit-learn</strong>), Cloud deployment (<strong>Render, Railway, Vercel</strong>).</p></div>
-        <div class="highlight"><h4>Final Year Project</h4><p>AI-Powered Clothing &amp; Inventory Management System with <strong>vision-based auto-tagging</strong> using Google Gemini 2.5 Flash, deployed as both desktop (Tkinter) and web (Streamlit) applications.</p></div>
         <div class="highlight"><h4>Professional Experience</h4><p>Worked with <strong>2 companies</strong> — <strong>GO Viral Communication (NASTP)</strong> (Software Engineering) and <strong>Post Fusion</strong> (AI Engineering), alongside self-driven Data Science &amp; Mobile Development projects.</p></div>
       </div>
     </div>
@@ -1340,7 +1373,6 @@ section { padding: 96px 0; position: relative; }
       <!-- AI Project 1 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- Unsplash AI/Coding Image -->
           <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop" alt="Advanced AI Systems">
           <span class="project-type-label">LLM &amp; AI Systems</span>
         </div>
@@ -1358,7 +1390,6 @@ section { padding: 96px 0; position: relative; }
       <!-- AI Project 2 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- Unsplash Dashboard Image -->
           <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="Notifications and AI Incident Engine">
           <span class="project-type-label">Full-Stack Enterprise</span>
         </div>
@@ -1376,7 +1407,6 @@ section { padding: 96px 0; position: relative; }
       <!-- AI Project 3 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- Unsplash Clothing/Fashion Image -->
           <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1000&auto=format&fit=crop" alt="AI Clothing and Inventory System">
           <span class="project-type-label">Final Year Project</span>
         </div>
@@ -1394,7 +1424,6 @@ section { padding: 96px 0; position: relative; }
       <!-- AI Project 4 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- Unsplash Chat/AI Image -->
           <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?q=80&w=1000&auto=format&fit=crop" alt="MGT501 RAG AI Chatbot">
           <span class="project-type-label">RAG &amp; Chatbot</span>
         </div>
@@ -1412,7 +1441,6 @@ section { padding: 96px 0; position: relative; }
       <!-- AI Project 5 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- Unsplash Content Creation Image -->
           <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=1000&auto=format&fit=crop" alt="Posts Fusion Studio">
           <span class="project-type-label">AI Content Gen</span>
         </div>
@@ -1430,7 +1458,6 @@ section { padding: 96px 0; position: relative; }
       <!-- Mobile App 1 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- Unsplash Mobile Phone Image -->
           <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop" alt="College Alert App">
           <span class="project-type-label">Mobile App</span>
         </div>
@@ -1448,7 +1475,6 @@ section { padding: 96px 0; position: relative; }
       <!-- Mobile App 2 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- Unsplash Ecommerce/Shopping Image -->
           <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=1000&auto=format&fit=crop" alt="E-Commerce Marketplace App">
           <span class="project-type-label">Mobile App</span>
         </div>
@@ -1466,7 +1492,6 @@ section { padding: 96px 0; position: relative; }
       <!-- Mobile App 3 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- Unsplash Art Gallery Image -->
           <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=1000&auto=format&fit=crop" alt="Digital Art Gallery">
           <span class="project-type-label">Cross-Platform</span>
         </div>
@@ -1484,7 +1509,6 @@ section { padding: 96px 0; position: relative; }
       <!-- Mobile App 4 -->
       <article class="project-card">
         <div class="project-thumb">
-          <!-- Unsplash Watch/Time Image -->
           <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop" alt="Time Zone Converter">
           <span class="project-type-label">Utility App</span>
         </div>
@@ -1524,7 +1548,6 @@ section { padding: 96px 0; position: relative; }
       <p class="section-sub">Dynamically fetched from the GitHub API.</p>
     </div>
     <div class="github-grid" id="githubRepos">
-      <!-- JavaScript will inject repos here -->
       <p style="text-align: center; width: 100%; color: var(--text-muted);">Loading repositories...</p>
     </div>
   </div>
@@ -1731,15 +1754,31 @@ section { padding: 96px 0; position: relative; }
 
 <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
 
-<!-- ==================== MODALS ==================== -->
+<!-- ==================== RESUME MODAL ==================== -->
 <div class="modal-overlay" id="resumeModal">
-  <div class="modal-content">
+  <div class="modal-content" style="max-width: 800px; height: 85vh;">
     <div class="modal-header">
       <h3><i class="fas fa-file-pdf" style="color:var(--pink); margin-right:8px;"></i> Resume Preview</h3>
       <button class="modal-close" id="closeResumeBtn"><i class="fas fa-times"></i></button>
     </div>
+    <div class="modal-body" style="padding:0;">
+      <iframe src="SawairaMumtaz-Resume.pdf" title="Resume PDF" style="width:100%; height:100%; border:none;"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== FORMAL GOVT OBJECTIVE MODAL ==================== -->
+<div class="modal-overlay" id="objectiveModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3><i class="fas fa-flag" style="color:var(--govt-green); margin-right:8px;"></i> Formal Government Objective</h3>
+      <button class="modal-close" id="closeObjectiveBtn"><i class="fas fa-times"></i></button>
+    </div>
     <div class="modal-body">
-      <iframe src="SawairaMumtaz-Resume.pdf" title="Resume PDF"></iframe>
+      <p><strong>Career Objective for Government &amp; Defense Sector (NESCOM, SUPARCO, PAEC, PITB, etc.)</strong></p>
+      <p>A dedicated and technically skilled <strong>BS Computer Science graduate (February 2027)</strong> from Virtual University of Pakistan, seeking to contribute my expertise in AI, LLM systems, and Full-Stack development to a reputable Government or Defense organization.</p>
+      <p>As a <strong>Pakistani National</strong> with a clean background record, I am fully prepared for security clearance processes and have all original educational, domicile, and character documents ready for immediate physical verification.</p>
+      <p>I am eager to apply my technical skills to support national technological advancement, while upholding the core values of <strong>integrity, discipline, accountability, and excellence</strong> that define public service.</p>
     </div>
   </div>
 </div>
@@ -1752,12 +1791,12 @@ section { padding: 96px 0; position: relative; }
       <button class="chat-close" id="chatClose"><i class="fas fa-times"></i></button>
     </div>
     <div class="chat-messages" id="chatMessages">
-      <div class="msg bot">Hi! I'm Sawaira's AI assistant. I can answer questions about her skills, experience, projects, or education. How can I help you?</div>
+      <div class="msg bot">Hi! I'm Sawaira's AI assistant. I can answer questions about her skills, projects, or <strong>Government/PAEC/NESCOM readiness</strong>. How can I help?</div>
     </div>
     <div class="chat-quick-replies" id="quickReplies">
+      <button type="button" class="quick-reply-btn" data-query="Are you ready for PAEC or NESCOM?">Govt Ready?</button>
       <button type="button" class="quick-reply-btn" data-query="What are your skills?">Skills</button>
       <button type="button" class="quick-reply-btn" data-query="Show me your projects">Projects</button>
-      <button type="button" class="quick-reply-btn" data-query="What is your experience?">Experience</button>
       <button type="button" class="quick-reply-btn" data-query="How can I contact you?">Contact</button>
     </div>
     <form class="chat-input-wrap" id="chatForm">
@@ -1831,12 +1870,11 @@ if ('IntersectionObserver' in window) {
 } else {
   revealElements.forEach(el => el.classList.add('visible'));
 }
-// Fallback for hidden elements
 setTimeout(() => {
   document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
 }, 1500);
 
-// ==================== RESUME MODAL ====================
+// ==================== MODALS ====================
 const viewResumeBtn = document.getElementById('viewResumeBtn');
 const resumeModal = document.getElementById('resumeModal');
 const closeResumeBtn = document.getElementById('closeResumeBtn');
@@ -1845,6 +1883,16 @@ viewResumeBtn.addEventListener('click', () => resumeModal.classList.add('open'))
 closeResumeBtn.addEventListener('click', () => resumeModal.classList.remove('open'));
 resumeModal.addEventListener('click', (e) => {
   if(e.target === resumeModal) resumeModal.classList.remove('open');
+});
+
+const viewObjectiveBtn = document.getElementById('viewObjectiveBtn');
+const objectiveModal = document.getElementById('objectiveModal');
+const closeObjectiveBtn = document.getElementById('closeObjectiveBtn');
+
+viewObjectiveBtn.addEventListener('click', () => objectiveModal.classList.add('open'));
+closeObjectiveBtn.addEventListener('click', () => objectiveModal.classList.remove('open'));
+objectiveModal.addEventListener('click', (e) => {
+  if(e.target === objectiveModal) objectiveModal.classList.remove('open');
 });
 
 // ==================== LIVE GITHUB API ====================
@@ -1913,7 +1961,11 @@ chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
 const knowledgeBase = [
   {
     keywords: ['hi', 'hello', 'hey', 'greet'],
-    response: "Hello! I'm Sawaira's AI assistant. Ask me about her skills, projects, experience, or education!"
+    response: "Hello! I'm Sawaira's AI assistant. Ask me about her skills, projects, or <strong>Government/PAEC/NESCOM readiness</strong>!"
+  },
+  {
+    keywords: ['government', 'nescom', 'defense', 'suparco', 'pitb', 'clearance', 'national', 'govt', 'fwo', 'krl', 'paec', 'nastp', 'nadra', 'salary', 'benefits', 'atomic'],
+    response: "Sawaira is targeting top-tier Government & Defense organizations like <strong>NESCOM, PAEC, FWO, SUPARCO, KRL, NASTP, and NADRA</strong>. She is a Pakistani National with a clean record, ready for security clearance, and has all original documents verified. These organizations offer elite Special Pay Scales (SPS) and high-impact national projects."
   },
   {
     keywords: ['skill', 'tech', 'stack', 'know', 'language'],
@@ -2017,7 +2069,7 @@ function getBotResponse(input) {
     if (item.keywords.some(kw => lowerInput.includes(kw))) return item;
   }
   return {
-    response: "I'm still learning! You can ask me about her <strong>skills</strong>, <strong>experience</strong>, <strong>projects</strong>, or <strong>education</strong>. Or contact Sawaira directly at <a href='mailto:sawairamumtaz369@gmail.com'>sawairamumtaz369@gmail.com</a>."
+    response: "I'm still learning! You can ask me about her <strong>skills</strong>, <strong>experience</strong>, <strong>projects</strong>, or <strong>Government readiness</strong>. Or contact Sawaira directly at <a href='mailto:sawairamumtaz369@gmail.com'>sawairamumtaz369@gmail.com</a>."
   };
 }
 
@@ -2050,7 +2102,7 @@ termInput.addEventListener('keydown', (e) => {
     let output = '';
     switch(command) {
       case 'help':
-        output = 'Available commands:<br>- <span style="color:#f472b6;">about</span> : Read bio<br>- <span style="color:#f472b6;">skills</span> : List technical skills<br>- <span style="color:#f472b6;">projects</span> : View projects<br>- <span style="color:#f472b6;">contact</span> : Get contact info<br>- <span style="color:#f472b6;">clear</span> : Clear terminal';
+        output = 'Available commands:<br>- <span style="color:#f472b6;">about</span> : Read bio<br>- <span style="color:#f472b6;">skills</span> : List technical skills<br>- <span style="color:#f472b6;">projects</span> : View projects<br>- <span style="color:#f472b6;">govt</span> : Govt readiness info<br>- <span style="color:#f472b6;">clear</span> : Clear terminal';
         break;
       case 'about':
         output = 'BSCS Graduate (Feb 2027) | AI & Software Engineer | Specialized in LLM, RAG, Chatbot Systems.';
@@ -2062,8 +2114,8 @@ termInput.addEventListener('keydown', (e) => {
         output = 'Opening projects section...';
         document.getElementById('projects').scrollIntoView({behavior:'smooth'});
         break;
-      case 'contact':
-        output = 'Email: sawairamumtaz369@gmail.com<br>LinkedIn: linkedin.com/in/sawaira-mumtaz-3b77972b1';
+      case 'govt':
+        output = 'Pakistani National | Clean Record | Documents Ready | Clearance Eligible for NESCOM/PAEC/SUPARCO.';
         break;
       case 'clear':
         while(terminalBody.children.length > 1) {
