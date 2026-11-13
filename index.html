@@ -7,6 +7,33 @@
 <meta name="description" content="BSCS Graduate (February 2027) — AI & Software Engineer specializing in LLM, RAG, and chatbot systems.">
 <meta name="author" content="Sawaira Mumtaz">
 <link rel="canonical" href="https://sawaira-mumtaz786.github.io/Portfoliowebsite/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>S</text></svg>">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sawaira Mumtaz | AI & Software Engineer">
+<meta property="og:description" content="LLM, RAG, chatbot and full-stack projects.">
+<meta property="og:url" content="https://sawaira-mumtaz786.github.io/Portfoliowebsite/">
+<meta property="og:image" content="https://sawaira-mumtaz786.github.io/Portfoliowebsite/Profile.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sawaira Mumtaz | AI & Software Engineer">
+<meta name="twitter:description" content="LLM, RAG, chatbot and full-stack projects.">
+<meta name="twitter:image" content="https://sawaira-mumtaz786.github.io/Portfoliowebsite/Profile.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sawaira Mumtaz",
+  "jobTitle": "AI & Software Engineer",
+  "url": "https://sawaira-mumtaz786.github.io/Portfoliowebsite/",
+  "email": "mailto:sawairamumtaz369@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Rawalpindi", "addressCountry": "PK" },
+  "sameAs": [
+    "https://github.com/Sawaira-Mumtaz786",
+    "https://www.linkedin.com/in/sawaira-mumtaz-3b77972b1/"
+  ],
+  "knowsAbout": ["LLM applications", "RAG", "Chatbots", "Full-stack development", "Machine learning"]
+}
+</script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- Premium Fonts: Plus Jakarta Sans (headings & body), Instrument Serif (elegant accents), JetBrains Mono (code) -->
@@ -359,7 +386,10 @@ section { padding: 96px 0; position: relative; }
 }
 .avatar-inner img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
-/* ==================== SKILLS MARQUEE ==================== */
+/* ====== END OF PART 1 — paste PART 2 directly below this line ====== */
+
+  /* ==================== SKILLS MARQUEE ==================== */
+  
 .skills-marquee {
   overflow: hidden;
   padding: 22px 0;
@@ -423,6 +453,7 @@ section { padding: 96px 0; position: relative; }
 }
 
 /* ==================== MATCHING SECTION TITLES ==================== */
+  
 .section-title {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 4.2vw, 2.8rem);
@@ -474,6 +505,7 @@ section { padding: 96px 0; position: relative; }
 .highlight p strong { color: var(--purple); font-weight: 700; }
 
 /* ==================== SKILLS & ANIMATED BARS ==================== */
+  
 .skills { background: #faf5ff; }
 .core-skills-container {
   display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
@@ -857,10 +889,22 @@ section { padding: 96px 0; position: relative; }
   .reveal { opacity: 1; transform: none; }
   .marquee-track { animation: none !important; }
 }
+
+/* ==================== NEW: form status + touch-device cursor fix ==================== */
+  
+.form-status { margin-top: 12px; font-size: .88rem; font-weight: 600; min-height: 1.2em; }
+.form-status.ok { color: #065f46; }
+.form-status.err { color: #b91c1c; }
+@media (hover: none), (pointer: coarse) {
+  body, a, button, input, textarea { cursor: auto; }
+  .cursor-glow, .cursor-dot { display: none; }
+}
 </style>
 </head>
 
-<body>
+<!-- ====== END OF PART 2 — paste PART 3 directly below this line ====== -->
+  
+  <body>
 <!-- ==================== HIRE RIBBON ==================== -->
 <div class="hire-ribbon">
   <span class="hire-dot"></span>
@@ -1283,6 +1327,7 @@ section { padding: 96px 0; position: relative; }
     </div>
     <div class="experience-list reveal">
 
+      <!-- CHECK: "12-week" vs dates 4 Mar - 4 Jun 2026 (about 13 weeks) -->
       <article class="exp-item">
         <div class="exp-head">
           <div class="exp-title-group">
@@ -1305,6 +1350,7 @@ section { padding: 96px 0; position: relative; }
         <div class="exp-tech"><span>React</span><span>TypeScript</span><span>NestJS</span><span>MongoDB</span><span>JWT</span><span>bcrypt</span><span>Docker</span><span>Nginx</span><span>Linux</span></div>
       </article>
 
+      <!-- CHECK: "8-week" vs dates 1 Jun - 28 Aug 2026 (about 12.6 weeks); also overlaps GO Viral 1-4 Jun; confirm exact company name -->
       <article class="exp-item">
         <div class="exp-head">
           <div class="exp-title-group">
@@ -1328,6 +1374,7 @@ section { padding: 96px 0; position: relative; }
         <div class="exp-tech"><span>Python</span><span>LangChain</span><span>Ollama</span><span>OpenAI</span><span>Groq</span><span>OpenRouter</span><span>React</span><span>Node.js</span><span>SSE</span><span>Vector DBs</span></div>
       </article>
 
+      <!-- CHECK: "Self-Learning Projects" but description says "internship" -->
       <article class="exp-item">
         <div class="exp-head">
           <div class="exp-title-group">
@@ -1391,7 +1438,7 @@ section { padding: 96px 0; position: relative; }
         </div>
       </div>
       <div class="edu-body">
-        <p><strong>Specialization:</strong> Production-ready LLM applications, RAG pipelines, chatbot systems, and scalable full-stack software.</p>
+        <p><strong>Focus areas:</strong> Production-ready LLM applications, RAG pipelines, chatbot systems, and scalable full-stack software.</p>
         <p><strong>Final Year Project:</strong> A desktop-based <strong>Clothing Inventory Management System</strong> built in <strong>Python using the Tkinter library</strong> with <strong>SQLite (DBMS)</strong> as the backend database. The application includes separate <strong>Admin and Staff</strong> modules to manage inventory records — add, update, delete, and search clothing items with stock and pricing details. Submitted to Virtual University of Pakistan as-is for my Final Year Project to strengthen my own learning in desktop application development and database management. After submission, I <strong>extended the project with AI features</strong> by integrating <strong>Google Gemini 2.5 Flash</strong> for <strong>vision-based auto-tagging</strong> (upload a clothing photo → AI automatically extracts item name, category, season, size, and color), and rebuilt it as a <strong>Streamlit web application</strong> deployed publicly on GitHub as an enhanced portfolio version.</p>
 
         <div class="edu-tags">
@@ -1447,7 +1494,7 @@ section { padding: 96px 0; position: relative; }
       <div class="contact-form-wrap reveal">
         <h3>Send a Message</h3>
         <p>I typically respond within 24 hours.</p>
-        <!-- REPLACE 'YOUR_FORM_ID' WITH YOUR ACTUAL FORMSPREE ID -->
+        <!-- The Formspree ID is set in the script at the bottom of this file (FORMSPREE_ID) -->
         <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
           <div class="form-group"><label>Your Name <span class="req">*</span></label><input type="text" name="name" placeholder="John Doe" required></div>
           <div class="form-group"><label>Your Email <span class="req">*</span></label><input type="email" name="email" placeholder="john@company.com" required></div>
@@ -1477,11 +1524,14 @@ section { padding: 96px 0; position: relative; }
 <button class="scroll-top" id="scrollTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
 
 <!-- ==================== RESUME MODAL ==================== -->
-<div class="modal-overlay" id="resumeModal">
+<div class="modal-overlay" id="resumeModal" role="dialog" aria-modal="true">
   <div class="modal-content" style="max-width: 800px; height: 85vh;">
     <div class="modal-header">
       <h3><i class="fas fa-file-pdf" style="color:var(--pink); margin-right:8px;"></i> Resume Preview</h3>
-      <button class="modal-close" id="closeResumeBtn"><i class="fas fa-times"></i></button>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <a href="SawairaMumtaz-Resume.pdf" target="_blank" rel="noopener" style="font-size:.85rem;font-weight:700;color:var(--purple);">Open in new tab</a>
+        <button class="modal-close" id="closeResumeBtn" aria-label="Close resume"><i class="fas fa-times"></i></button>
+      </div>
     </div>
     <div class="modal-body" style="padding:0;">
       <iframe src="SawairaMumtaz-Resume.pdf" title="Resume PDF" style="width:100%; height:100%; border:none;"></iframe>
@@ -1489,15 +1539,15 @@ section { padding: 96px 0; position: relative; }
   </div>
 </div>
 
-<!-- ==================== AI CHAT AGENT WIDGET ==================== -->
+<!-- ==================== CHAT WIDGET ==================== -->
 <div class="chat-widget">
   <div class="chat-window" id="chatWindow">
     <div class="chat-header">
-      <h4><i class="fas fa-robot"></i> Sawaira's AI Assistant</h4>
+      <h4><i class="fas fa-robot"></i> Portfolio Assistant</h4>
       <button class="chat-close" id="chatClose"><i class="fas fa-times"></i></button>
     </div>
     <div class="chat-messages" id="chatMessages">
-      <div class="msg bot">Hi! I'm Sawaira's AI assistant. I can answer questions about her skills, projects, or experience. How can I help?</div>
+      <div class="msg bot">Hi! I'm a quick-answer assistant for Sawaira's portfolio. Ask about her skills, projects or experience.</div>
     </div>
     <div class="chat-quick-replies" id="quickReplies">
       <button type="button" class="quick-reply-btn" data-query="What are your skills?">Skills</button>
@@ -1509,7 +1559,7 @@ section { padding: 96px 0; position: relative; }
       <button type="submit" class="chat-send"><i class="fas fa-paper-plane"></i></button>
     </form>
   </div>
-  <button class="chat-toggle" id="chatToggle" aria-label="Open AI Chat">
+  <button class="chat-toggle" id="chatToggle" aria-label="Open Chat">
     <i class="fas fa-comment-dots"></i>
   </button>
 </div>
@@ -1535,7 +1585,12 @@ section { padding: 96px 0; position: relative; }
   </button>
 </div>
 
-<script>
+<!-- ====== END OF PART 3 — paste PART 4 (the script) directly below this line ====== -->
+    <script>
+// ==================== SETTINGS ====================
+// Create a free form at formspree.io, then paste its ID here (the part after /f/).
+const FORMSPREE_ID = 'YOUR_FORM_ID';
+
 // ==================== CUSTOM CURSOR ====================
 const cursorGlow = document.getElementById('cursorGlow');
 const cursorDot = document.getElementById('cursorDot');
@@ -1702,7 +1757,7 @@ cards.forEach(card => {
   });
 });
 
-// ==================== MODALS ====================
+// ==================== RESUME MODAL ====================
 const viewResumeBtn = document.getElementById('viewResumeBtn');
 const resumeModal = document.getElementById('resumeModal');
 const closeResumeBtn = document.getElementById('closeResumeBtn');
@@ -1710,7 +1765,10 @@ const closeResumeBtn = document.getElementById('closeResumeBtn');
 viewResumeBtn.addEventListener('click', () => resumeModal.classList.add('open'));
 closeResumeBtn.addEventListener('click', () => resumeModal.classList.remove('open'));
 resumeModal.addEventListener('click', (e) => {
-  if(e.target === resumeModal) resumeModal.classList.remove('open');
+  if (e.target === resumeModal) resumeModal.classList.remove('open');
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') resumeModal.classList.remove('open');
 });
 
 // ==================== MARQUEE DUPLICATION (seamless loop) ====================
@@ -1753,54 +1811,134 @@ if (counters.length && 'IntersectionObserver' in window) {
   });
 }
 
-// ==================== LIVE GITHUB API ====================
+// ==================== LAZY-LOAD PROJECT IMAGES ====================
+document.querySelectorAll('.project-thumb img').forEach(img => { img.loading = 'lazy'; });
+
+// ==================== CONTACT FORM (Formspree) ====================
+(function () {
+  const form = document.querySelector('.contact-form');
+  if (!form) return;
+  if (FORMSPREE_ID !== 'YOUR_FORM_ID') {
+    form.action = 'https://formspree.io/f/' + FORMSPREE_ID;
+  }
+  const status = document.createElement('p');
+  status.className = 'form-status';
+  status.setAttribute('role', 'status');
+  status.setAttribute('aria-live', 'polite');
+  form.appendChild(status);
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.className = 'form-status';
+    if (FORMSPREE_ID === 'YOUR_FORM_ID') {
+      status.textContent = 'Form not configured yet. Please email sawairamumtaz369@gmail.com directly.';
+      status.classList.add('err');
+      return;
+    }
+    const btn = form.querySelector('.submit-btn');
+    btn.disabled = true;
+    status.textContent = 'Sending...';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      });
+      if (!res.ok) throw new Error('Request failed');
+      status.textContent = 'Thank you! Your message was sent. I will reply within 24 hours.';
+      status.classList.add('ok');
+      form.reset();
+    } catch (err) {
+      status.textContent = 'Could not send. Please email sawairamumtaz369@gmail.com instead.';
+      status.classList.add('err');
+    } finally {
+      btn.disabled = false;
+    }
+  });
+})();
+
+// ==================== LIVE GITHUB API (safe text, cached, fallback) ====================
 async function fetchGitHubRepos() {
   const container = document.getElementById('githubRepos');
+  const colors = { Python: '#3572A5', JavaScript: '#f1e05a', TypeScript: '#2b7489' };
+  const KEY = 'gh_repos_v1';
+
+  function showFallback() {
+    container.textContent = '';
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'text-align:center;width:100%;';
+    const p = document.createElement('p');
+    p.style.cssText = 'color:var(--text-muted);margin-bottom:16px;';
+    p.textContent = 'Live repositories are unavailable right now.';
+    const a = document.createElement('a');
+    a.href = 'https://github.com/Sawaira-Mumtaz786';
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.className = 'btn btn-primary';
+    a.textContent = 'Visit GitHub Profile';
+    wrap.append(p, a);
+    container.appendChild(wrap);
+  }
+
+  function render(repos) {
+    container.textContent = '';
+    repos
+      .filter(r => !r.fork && r.name.toLowerCase() !== 'portfoliowebsite')
+      .slice(0, 4)
+      .forEach(repo => {
+        const card = document.createElement('a');
+        card.href = repo.html_url;
+        card.target = '_blank';
+        card.rel = 'noopener';
+        card.className = 'github-card';
+
+        const h4 = document.createElement('h4');
+        const icon = document.createElement('i');
+        icon.className = 'fab fa-github';
+        h4.append(icon, ' ' + repo.name);
+
+        const p = document.createElement('p');
+        const d = repo.description || 'No description provided.';
+        p.textContent = d.length > 80 ? d.substring(0, 80) + '...' : d;
+
+        const meta = document.createElement('div');
+        meta.className = 'github-meta';
+        const lang = document.createElement('span');
+        const dot = document.createElement('span');
+        dot.className = 'github-lang';
+        dot.style.background = colors[repo.language] || '#9333ea';
+        lang.append(dot, ' ' + (repo.language || 'Code'));
+        const stars = document.createElement('span');
+        const star = document.createElement('i');
+        star.className = 'fas fa-star';
+        star.style.color = '#fbbf24';
+        stars.append(star, ' ' + repo.stargazers_count);
+        meta.append(lang, stars);
+
+        card.append(h4, p, meta);
+        container.appendChild(card);
+      });
+    if (!container.children.length) showFallback();
+  }
+
   try {
-    const response = await fetch('https://api.github.com/users/Sawaira-Mumtaz786/repos?sort=updated&per_page=4');
-    if (!response.ok) throw new Error('API Rate Limit');
-    const repos = await response.json();
+    const cached = sessionStorage.getItem(KEY);
+    if (cached) { render(JSON.parse(cached)); return; }
+  } catch (e) { /* storage unavailable */ }
 
-    container.innerHTML = '';
-
-    repos.forEach(repo => {
-      if(repo.name.toLowerCase() === 'portfoliowebsite') return;
-
-      const langColor = repo.language === 'Python' ? '#3572A5' :
-                        repo.language === 'JavaScript' ? '#f1e05a' :
-                        repo.language === 'TypeScript' ? '#2b7489' : '#9333ea';
-
-      const card = document.createElement('a');
-      card.href = repo.html_url;
-      card.target = '_blank';
-      card.className = 'github-card';
-      card.innerHTML = `
-        <h4><i class="fab fa-github"></i> ${repo.name}</h4>
-        <p>${repo.description ? repo.description.substring(0, 80) + '...' : 'No description provided.'}</p>
-        <div class="github-meta">
-          <span><span class="github-lang" style="background:${langColor}"></span> ${repo.language || 'Code'}</span>
-          <span><i class="fas fa-star" style="color:#fbbf24;"></i> ${repo.stargazers_count}</span>
-        </div>
-      `;
-      container.appendChild(card);
-    });
-
-    if(container.children.length === 0) {
-      container.innerHTML = '<p style="text-align:center; width:100%; color:var(--text-muted);">No public repositories found.</p>';
-    }
-
-  } catch (error) {
-    container.innerHTML = `
-      <div style="text-align:center; width:100%;">
-        <p style="color:var(--text-muted); margin-bottom:16px;">Unable to load live stats right now.</p>
-        <a href="https://github.com/Sawaira-Mumtaz786" target="_blank" class="btn btn-primary">Visit GitHub Profile</a>
-      </div>
-    `;
+  try {
+    const res = await fetch('https://api.github.com/users/Sawaira-Mumtaz786/repos?sort=updated&per_page=8');
+    if (!res.ok) throw new Error('GitHub API error ' + res.status);
+    const repos = await res.json();
+    try { sessionStorage.setItem(KEY, JSON.stringify(repos)); } catch (e) {}
+    render(repos);
+  } catch (err) {
+    showFallback();
   }
 }
 fetchGitHubRepos();
 
-// ==================== AI CHAT AGENT LOGIC ====================
+// ==================== CHAT ASSISTANT LOGIC ====================
 const chatToggle = document.getElementById('chatToggle');
 const chatWindow = document.getElementById('chatWindow');
 const chatClose = document.getElementById('chatClose');
@@ -1819,7 +1957,7 @@ chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
 const knowledgeBase = [
   {
     keywords: ['hi', 'hello', 'hey', 'greet'],
-    response: "Hello! I'm Sawaira's AI assistant. Ask me about her skills, projects, or experience!"
+    response: "Hello! I'm a quick-answer assistant for Sawaira's portfolio. Ask me about her skills, projects, or experience!"
   },
   {
     keywords: ['skill', 'tech', 'stack', 'know', 'language'],
@@ -1917,13 +2055,19 @@ function appendMessage(text, sender) {
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
+// Whole-word matching for short keywords so "hire" no longer triggers "hi"
 function getBotResponse(input) {
-  const lowerInput = input.toLowerCase();
-  for (let item of knowledgeBase) {
-    if (item.keywords.some(kw => lowerInput.includes(kw))) return item;
+  const text = input.toLowerCase();
+  const matches = (kw) => {
+    const safe = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = kw.length <= 3 ? new RegExp('\\b' + safe + '\\b') : new RegExp('\\b' + safe);
+    return re.test(text);
+  };
+  for (const item of knowledgeBase) {
+    if (item.keywords.some(matches)) return item;
   }
   return {
-    response: "I'm still learning! You can ask me about her <strong>skills</strong>, <strong>experience</strong>, <strong>projects</strong>, or <strong>contact information</strong>. Or contact Sawaira directly at <a href='mailto:sawairamumtaz369@gmail.com'>sawairamumtaz369@gmail.com</a>."
+    response: "I can answer questions about her <strong>skills</strong>, <strong>experience</strong>, <strong>projects</strong>, <strong>education</strong> or <strong>contact information</strong>. Or email Sawaira at <a href='mailto:sawairamumtaz369@gmail.com'>sawairamumtaz369@gmail.com</a>."
   };
 }
 
@@ -1943,18 +2087,22 @@ terminalClose.addEventListener('click', () => terminalWindow.classList.remove('o
 termInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     e.preventDefault();
-    const command = termInput.value.trim().toLowerCase();
+    const raw = termInput.value.trim();
+    const command = raw.toLowerCase();
     termInput.value = '';
 
-    if(!command) return;
+    if (!command) return;
 
     const userLine = document.createElement('div');
     userLine.className = 'term-line';
-    userLine.innerHTML = `<span class="term-prompt">$</span> ${command}`;
+    const prompt = document.createElement('span');
+    prompt.className = 'term-prompt';
+    prompt.textContent = '$';
+    userLine.append(prompt, ' ' + raw);
     terminalBody.insertBefore(userLine, terminalBody.lastElementChild);
 
     let output = '';
-    switch(command) {
+    switch (command) {
       case 'help':
         output = 'Available commands:<br>- <span style="color:#f472b6;">about</span> : Read bio<br>- <span style="color:#f472b6;">skills</span> : List technical skills<br>- <span style="color:#f472b6;">projects</span> : View projects<br>- <span style="color:#f472b6;">clear</span> : Clear terminal';
         break;
@@ -1966,15 +2114,15 @@ termInput.addEventListener('keydown', (e) => {
         break;
       case 'projects':
         output = 'Opening projects section...';
-        document.getElementById('projects').scrollIntoView({behavior:'smooth'});
+        document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
         break;
       case 'clear':
-        while(terminalBody.children.length > 1) {
+        while (terminalBody.children.length > 1) {
           terminalBody.removeChild(terminalBody.firstChild);
         }
         return;
       default:
-        output = `Command not found: ${command}. Type <span style="color:#f472b6;">help</span> for options.`;
+        output = 'Command not found. Type <span style="color:#f472b6;">help</span> for options.';
     }
 
     const outputLine = document.createElement('div');
@@ -1990,3 +2138,5 @@ termInput.addEventListener('keydown', (e) => {
 
 </body>
 </html>
+
+  
