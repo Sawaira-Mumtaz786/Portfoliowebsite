@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sawaira Mumtaz | AI & Software Engineer — LLM, RAG & Chatbot Systems</title>
-<meta name="description" content="BSCS Graduate (February 2027) — AI & Software Engineer specializing in LLM, RAG, and chatbot systems. Ready for Govt & Defense sector roles.">
+<meta name="description" content="BSCS Graduate (February 2027) — AI & Software Engineer specializing in LLM, RAG, and chatbot systems.">
 <meta name="author" content="Sawaira Mumtaz">
 <link rel="canonical" href="https://sawaira-mumtaz786.github.io/Portfoliowebsite/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,12 +23,11 @@ button { font-family: inherit; }
 
 :root {
   --gradient: linear-gradient(135deg, #9333ea 0%, #db2777 100%);
-  --gradient-text: linear-gradient(135deg, #111827 0%, #4c1d95 45%, #db2777 100%);
+  --gradient-text: linear-gradient(135deg, #4c1d95 0%, #db2777 100%);
   --gradient-soft: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
   --purple: #9333ea;
   --pink: #db2777;
   --green: #10b981;
-  --govt-green: #047857;
   --bg-page: #faf5ff;
   --bg-card: #ffffff;
   --bg-muted: #f3e8ff;
@@ -223,22 +222,6 @@ section { padding: 96px 0; position: relative; }
   font-size: 0.78rem; font-weight: 600; color: var(--purple);
   box-shadow: var(--shadow-sm);
 }
-.govt-badge {
-  background: #ecfdf5; border-color: #a7f3d0; color: var(--govt-green);
-  position: relative; overflow: hidden;
-}
-.govt-badge::after {
-  content: '';
-  position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-  background: linear-gradient(to right, transparent, rgba(255,255,255,0.8), transparent);
-  transform: skewX(-25deg);
-  animation: shimmer 3s infinite;
-}
-@keyframes shimmer {
-  0% { left: -100%; }
-  100% { left: 200%; }
-}
-.govt-badge i { color: var(--govt-green); }
 .status-dot {
   width: 8px; height: 8px; background: var(--green); border-radius: 50%;
   animation: pulse 2s infinite;
@@ -248,18 +231,27 @@ section { padding: 96px 0; position: relative; }
   50% { opacity: 0.9; transform: scale(1.05); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
 }
 
-/* ==================== UNIFIED PROFESSIONAL HERO HEADING ==================== */
+/* ==================== MATCHING HERO HEADING ==================== */
 .hero h1 {
   font-family: var(--font-heading);
-  font-size: clamp(2.6rem, 6vw, 4rem);
+  font-size: clamp(2.8rem, 6vw, 4.2rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.03em;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.hero-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.15em; /* Slightly larger to balance the bold sans-serif */
   background: var(--gradient-text);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 12px;
+  padding-right: 0.05em;
 }
 
 .hero .role {
@@ -334,19 +326,6 @@ section { padding: 96px 0; position: relative; }
   border: 1.5px solid var(--pink);
 }
 .btn-resume:hover { background: var(--pink); color: #fff; box-shadow: 0 8px 22px rgba(219, 39, 119, 0.35); }
-.btn-govt {
-  background: #ecfdf5; color: var(--govt-green);
-  border: 1.5px solid var(--govt-green);
-  position: relative; overflow: hidden;
-}
-.btn-govt::after {
-  content: '';
-  position: absolute; top: 0; left: -100%; width: 50%; height: 100%;
-  background: linear-gradient(to right, transparent, rgba(255,255,255,0.5), transparent);
-  transform: skewX(-25deg);
-  animation: shimmer 3s infinite;
-}
-.btn-govt:hover { background: var(--govt-green); color: #fff; box-shadow: 0 8px 22px rgba(4, 120, 87, 0.35); }
 .hero-social { display: flex; gap: 12px; }
 .hero-social a {
   display: inline-flex; align-items: center; justify-content: center;
@@ -457,11 +436,12 @@ section { padding: 96px 0; position: relative; }
   font-family: var(--font-serif);
   font-style: italic;
   font-weight: 400;
-  background: linear-gradient(135deg, #4c1d95 0%, #db2777 100%);
+  font-size: 1.15em; /* Same size bump as hero name for balance */
+  background: var(--gradient-text);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  padding-right: 0.08em;
+  padding-right: 0.05em;
 }
 .section-sub { font-size: 0.98rem; color: var(--text-secondary); max-width: 620px; margin: 0 auto; }
 
@@ -488,11 +468,8 @@ section { padding: 96px 0; position: relative; }
   padding: 22px 26px; background: var(--bg-page); border-left: 4px solid var(--purple);
   border-radius: var(--radius-sm); transition: var(--transition);
 }
-.highlight.govt-highlight { background: #f0fdf4; border-left-color: var(--govt-green); }
 .highlight:hover { background: #fff; border-color: var(--pink); box-shadow: var(--shadow-sm); transform: translateX(4px); }
-.highlight.govt-highlight:hover { border-color: var(--govt-green); }
 .highlight h4 { font-family: var(--font-heading); font-size: 1rem; font-weight: 800; color: #111827; margin-bottom: 8px; }
-.highlight.govt-highlight h4 { color: var(--govt-green); }
 .highlight p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65; margin: 0; }
 .highlight p strong { color: var(--purple); font-weight: 700; }
 
@@ -920,10 +897,10 @@ section { padding: 96px 0; position: relative; }
   <div class="container hero-inner">
     <div class="hero-content">
       <div class="badge-row">
-        <span class="status-badge"><span class="status-dot"></span> BSCS Graduate — Open to Tech Roles</span>
-        <span class="status-badge govt-badge"><i class="fas fa-shield-alt"></i> Govt &amp; Defense Ready</span>
+        <span class="status-badge"><span class="status-dot"></span> BSCS Graduate — February 2027</span>
+        <span class="status-badge"><i class="fas fa-rocket"></i> Open to Software &amp; AI Roles</span>
       </div>
-      <h1>Sawaira Mumtaz</h1>
+      <h1>Sawaira <span class="hero-accent">Mumtaz</span></h1>
       <p class="role"><span class="typing-text" id="typingText"></span></p>
       <p class="summary">
         <strong>BS Computer Science graduate (February 2027)</strong> from Virtual University of Pakistan,
@@ -940,7 +917,6 @@ section { padding: 96px 0; position: relative; }
       </div>
       <div class="hero-buttons">
         <a href="#projects" class="btn btn-primary magnetic"><i class="fas fa-rocket"></i> View Projects</a>
-        <button class="btn btn-govt magnetic" id="viewObjectiveBtn"><i class="fas fa-flag"></i> Formal Objective</button>
         <button class="btn btn-outline magnetic" id="viewResumeBtn"><i class="fas fa-file-pdf"></i> Resume</button>
         <a href="SawairaMumtaz-Resume.pdf" download class="btn btn-resume magnetic"><i class="fas fa-download"></i> Download</a>
       </div>
@@ -995,12 +971,14 @@ section { padding: 96px 0; position: relative; }
         </div>
       </div>
       <div class="about-highlights reveal">
-        <div class="highlight govt-highlight">
-          <h4><i class="fas fa-shield-alt"></i> Government &amp; Defense Readiness</h4>
-          <p><strong>Pakistani National</strong> with a clean background record. Fully prepared for security clearance processes (NESCOM, SUPARCO, PAEC, PITB). All original educational and character documents are <strong>ready and verified</strong> for immediate physical submission.</p>
+        <div class="highlight">
+          <h4>Specializations</h4>
+          <p>Full-stack development (<strong>React, Node.js, Python</strong>), LLM integration (<strong>Gemini, Groq, OpenAI</strong>), RAG systems, Data science &amp; ML (<strong>K-Means, SVD, Scikit-learn</strong>), Cloud deployment (<strong>Render, Railway, Vercel</strong>).</p>
         </div>
-        <div class="highlight"><h4>Specializations</h4><p>Full-stack development (<strong>React, Node.js, Python</strong>), LLM integration (<strong>Gemini, Groq, OpenAI</strong>), RAG systems, Data science &amp; ML (<strong>K-Means, SVD, Scikit-learn</strong>), Cloud deployment (<strong>Render, Railway, Vercel</strong>).</p></div>
-        <div class="highlight"><h4>Professional Experience</h4><p>Worked with <strong>2 companies</strong> — <strong>GO Viral Communication (NASTP)</strong> (Software Engineering) and <strong>Post Fusion</strong> (AI Engineering), alongside self-driven Data Science &amp; Mobile Development projects.</p></div>
+        <div class="highlight">
+          <h4>Professional Experience</h4>
+          <p>Worked with <strong>2 companies</strong> — <strong>GO Viral Communication (NASTP)</strong> (Software Engineering) and <strong>Post Fusion</strong> (AI Engineering), alongside self-driven Data Science &amp; Mobile Development projects.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1469,6 +1447,7 @@ section { padding: 96px 0; position: relative; }
       <div class="contact-form-wrap reveal">
         <h3>Send a Message</h3>
         <p>I typically respond within 24 hours.</p>
+        <!-- REPLACE 'YOUR_FORM_ID' WITH YOUR ACTUAL FORMSPREE ID -->
         <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
           <div class="form-group"><label>Your Name <span class="req">*</span></label><input type="text" name="name" placeholder="John Doe" required></div>
           <div class="form-group"><label>Your Email <span class="req">*</span></label><input type="email" name="email" placeholder="john@company.com" required></div>
@@ -1510,22 +1489,6 @@ section { padding: 96px 0; position: relative; }
   </div>
 </div>
 
-<!-- ==================== FORMAL GOVT OBJECTIVE MODAL ==================== -->
-<div class="modal-overlay" id="objectiveModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h3><i class="fas fa-flag" style="color:var(--govt-green); margin-right:8px;"></i> Formal Government Objective</h3>
-      <button class="modal-close" id="closeObjectiveBtn"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="modal-body">
-      <p><strong>Career Objective for Government &amp; Defense Sector (NESCOM, SUPARCO, PAEC, PITB, etc.)</strong></p>
-      <p>A dedicated and technically skilled <strong>BS Computer Science graduate (February 2027)</strong> from Virtual University of Pakistan, seeking to contribute my expertise in AI, LLM systems, and Full-Stack development to a reputable Government or Defense organization.</p>
-      <p>As a <strong>Pakistani National</strong> with a clean background record, I am fully prepared for security clearance processes and have all original educational, domicile, and character documents ready for immediate physical verification.</p>
-      <p>I am eager to apply my technical skills to support national technological advancement, while upholding the core values of <strong>integrity, discipline, accountability, and excellence</strong> that define public service.</p>
-    </div>
-  </div>
-</div>
-
 <!-- ==================== AI CHAT AGENT WIDGET ==================== -->
 <div class="chat-widget">
   <div class="chat-window" id="chatWindow">
@@ -1534,10 +1497,9 @@ section { padding: 96px 0; position: relative; }
       <button class="chat-close" id="chatClose"><i class="fas fa-times"></i></button>
     </div>
     <div class="chat-messages" id="chatMessages">
-      <div class="msg bot">Hi! I'm Sawaira's AI assistant. I can answer questions about her skills, projects, or <strong>Government/PAEC/NESCOM readiness</strong>. How can I help?</div>
+      <div class="msg bot">Hi! I'm Sawaira's AI assistant. I can answer questions about her skills, projects, or experience. How can I help?</div>
     </div>
     <div class="chat-quick-replies" id="quickReplies">
-      <button type="button" class="quick-reply-btn" data-query="Are you ready for PAEC or NESCOM?">Govt Ready?</button>
       <button type="button" class="quick-reply-btn" data-query="What are your skills?">Skills</button>
       <button type="button" class="quick-reply-btn" data-query="Show me your projects">Projects</button>
       <button type="button" class="quick-reply-btn" data-query="How can I contact you?">Contact</button>
@@ -1685,7 +1647,7 @@ const roles = [
   "AI & Software Engineer",
   "LLM & RAG Specialist",
   "Full-Stack Developer",
-  "Govt & Defense Ready"
+  "Problem Solver"
 ];
 let roleIndex = 0;
 let charIndex = 0;
@@ -1749,16 +1711,6 @@ viewResumeBtn.addEventListener('click', () => resumeModal.classList.add('open'))
 closeResumeBtn.addEventListener('click', () => resumeModal.classList.remove('open'));
 resumeModal.addEventListener('click', (e) => {
   if(e.target === resumeModal) resumeModal.classList.remove('open');
-});
-
-const viewObjectiveBtn = document.getElementById('viewObjectiveBtn');
-const objectiveModal = document.getElementById('objectiveModal');
-const closeObjectiveBtn = document.getElementById('closeObjectiveBtn');
-
-viewObjectiveBtn.addEventListener('click', () => objectiveModal.classList.add('open'));
-closeObjectiveBtn.addEventListener('click', () => objectiveModal.classList.remove('open'));
-objectiveModal.addEventListener('click', (e) => {
-  if(e.target === objectiveModal) objectiveModal.classList.remove('open');
 });
 
 // ==================== MARQUEE DUPLICATION (seamless loop) ====================
@@ -1867,11 +1819,7 @@ chatClose.addEventListener('click', () => chatWindow.classList.remove('open'));
 const knowledgeBase = [
   {
     keywords: ['hi', 'hello', 'hey', 'greet'],
-    response: "Hello! I'm Sawaira's AI assistant. Ask me about her skills, projects, or <strong>Government/PAEC/NESCOM readiness</strong>!"
-  },
-  {
-    keywords: ['government', 'nescom', 'defense', 'suparco', 'pitb', 'clearance', 'national', 'govt', 'fwo', 'krl', 'paec', 'nastp', 'nadra', 'salary', 'benefits', 'atomic'],
-    response: "Sawaira is targeting top-tier Government & Defense organizations like <strong>NESCOM, PAEC, FWO, SUPARCO, KRL, NASTP, and NADRA</strong>. She is a Pakistani National with a clean record, ready for security clearance, and has all original documents verified."
+    response: "Hello! I'm Sawaira's AI assistant. Ask me about her skills, projects, or experience!"
   },
   {
     keywords: ['skill', 'tech', 'stack', 'know', 'language'],
@@ -1975,7 +1923,7 @@ function getBotResponse(input) {
     if (item.keywords.some(kw => lowerInput.includes(kw))) return item;
   }
   return {
-    response: "I'm still learning! You can ask me about her <strong>skills</strong>, <strong>experience</strong>, <strong>projects</strong>, or <strong>Government readiness</strong>. Or contact Sawaira directly at <a href='mailto:sawairamumtaz369@gmail.com'>sawairamumtaz369@gmail.com</a>."
+    response: "I'm still learning! You can ask me about her <strong>skills</strong>, <strong>experience</strong>, <strong>projects</strong>, or <strong>contact information</strong>. Or contact Sawaira directly at <a href='mailto:sawairamumtaz369@gmail.com'>sawairamumtaz369@gmail.com</a>."
   };
 }
 
@@ -2008,7 +1956,7 @@ termInput.addEventListener('keydown', (e) => {
     let output = '';
     switch(command) {
       case 'help':
-        output = 'Available commands:<br>- <span style="color:#f472b6;">about</span> : Read bio<br>- <span style="color:#f472b6;">skills</span> : List technical skills<br>- <span style="color:#f472b6;">projects</span> : View projects<br>- <span style="color:#f472b6;">govt</span> : Govt readiness info<br>- <span style="color:#f472b6;">clear</span> : Clear terminal';
+        output = 'Available commands:<br>- <span style="color:#f472b6;">about</span> : Read bio<br>- <span style="color:#f472b6;">skills</span> : List technical skills<br>- <span style="color:#f472b6;">projects</span> : View projects<br>- <span style="color:#f472b6;">clear</span> : Clear terminal';
         break;
       case 'about':
         output = 'BSCS Graduate (Feb 2027) | AI & Software Engineer | Specialized in LLM, RAG, Chatbot Systems.';
@@ -2019,9 +1967,6 @@ termInput.addEventListener('keydown', (e) => {
       case 'projects':
         output = 'Opening projects section...';
         document.getElementById('projects').scrollIntoView({behavior:'smooth'});
-        break;
-      case 'govt':
-        output = 'Pakistani National | Clean Record | Documents Ready | Clearance Eligible for NESCOM/PAEC/SUPARCO.';
         break;
       case 'clear':
         while(terminalBody.children.length > 1) {
