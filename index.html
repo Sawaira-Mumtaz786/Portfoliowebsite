@@ -387,7 +387,6 @@ section { padding: 96px 0; position: relative; }
 .avatar-inner img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
 /* ====== END OF PART 1 — paste PART 2 directly below this line ====== */
-
   /* ==================== SKILLS MARQUEE ==================== */
   
 .skills-marquee {
@@ -673,10 +672,11 @@ section { padding: 96px 0; position: relative; }
 .certifications { margin-top: 24px; padding-top: 22px; border-top: 1px dashed var(--border-strong); }
 .certifications h4 { font-family: var(--font-heading); font-size: 0.95rem; font-weight: 800; color: #111827; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
 .certifications h4 i { color: var(--purple); font-size: 0.95rem; }
-.certifications ul { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.certifications ul { display: grid; grid-template-columns: 1fr; gap: 14px; }
 .certifications li { font-size: 0.89rem; color: var(--text-secondary); line-height: 1.6; padding-left: 22px; position: relative; }
 .certifications li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--green); font-weight: 700; }
 .certifications li strong { color: var(--purple); font-weight: 700; }
+.certifications li .cert-meta { display: block; font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
 
 .contact { background: #faf5ff; }
 .contact-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px; align-items: start; }
@@ -903,7 +903,6 @@ section { padding: 96px 0; position: relative; }
 </head>
 
 <!-- ====== END OF PART 2 — paste PART 3 directly below this line ====== -->
-  
   <body>
 <!-- ==================== HIRE RIBBON ==================== -->
 <div class="hire-ribbon">
@@ -1452,19 +1451,14 @@ section { padding: 96px 0; position: relative; }
         <div class="certifications">
           <h4><i class="fas fa-certificate"></i> Certifications</h4>
           <ul>
-            <li><strong>Advanced Web Application Development</strong></li>
-            <li><strong>CIT (Certificate in Information Technology)</strong></li>
-            <li><strong>Python Programming</strong></li>
-            <li><strong>C / C++ Programming</strong></li>
-            <li><strong>Introduction to Cyber Security</strong></li>
-            <li><strong>Certified Ethical Hacking</strong></li>
-            <li><strong>Freelancing</strong></li>
-            <li><strong>AI Content Generator</strong></li>
-            <li><strong>Web Penetration Testing</strong></li>
-            <li><strong>WordPress</strong></li>
-            <li><strong>Data Analytics &amp; Business Intelligence</strong></li>
-            <li><strong>Cloud Computing</strong></li>
-            <li><strong>UI/UX &amp; Webflow</strong></li>
+            <li>
+              <strong>Software Engineering Internship Certificate</strong>
+              <span class="cert-meta">GO Viral Communication, NASTP · March – June 2026</span>
+            </li>
+            <li>
+              <strong>AI Engineering Internship Certificate</strong>
+              <span class="cert-meta">Post Fusion (Pro Fusion AI) | eEarn Innovative, Rawalpindi · June – August 2026</span>
+            </li>
           </ul>
         </div>
 
@@ -1586,6 +1580,7 @@ section { padding: 96px 0; position: relative; }
 </div>
 
 <!-- ====== END OF PART 3 — paste PART 4 (the script) directly below this line ====== -->
+
     <script>
 // ==================== SETTINGS ====================
 // Create a free form at formspree.io, then paste its ID here (the part after /f/).
@@ -1981,7 +1976,7 @@ const knowledgeBase = [
   },
   {
     keywords: ['certification', 'certificate', 'course'],
-    response: "She holds 13 certifications, including Advanced Web Application Development (NAVTECH), CIT, Python Programming, C/C++, Certified Ethical Hacking, Cloud Computing, and Data Analytics.",
+    response: "She holds 2 internship certificates: <strong>Software Engineering Internship</strong> at GO Viral Communication (NASTP), March – June 2026, and <strong>AI Engineering Internship</strong> at Post Fusion (Pro Fusion AI), June – August 2026.",
     scrollTo: 'education'
   },
   {
@@ -2138,5 +2133,3 @@ termInput.addEventListener('keydown', (e) => {
 
 </body>
 </html>
-
-  
